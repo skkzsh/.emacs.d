@@ -31,3 +31,9 @@
 [submodule "public_repos/org-mode"]
 	path = public_repos/org-mode
 	url = https://github.com/jwiegley/org-mode.git
+[submodule "public_repos/org-s5"]
+	path = public_repos/org-s5
+	url = https://github.com/eschulte/org-S5.git
+[submodule "public_repos/emacsfiles"]
+	path = public_repos/emacsfiles
+	url = https://github.com/maple/emacsfiles.git
