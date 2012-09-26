@@ -19,7 +19,8 @@
 ;; C-g で終了
 (add-hook 'browse-kill-ring-hook
           (lambda ()
-            (define-key browse-kill-ring-mode-map (kbd "\C-g") 'browse-kill-ring-quit)))
+            (define-key browse-kill-ring-mode-map "\C-g" 'browse-kill-ring-quit)
+            ))
 
 ;; kill-ring に同じ内容の文字列を複数入れない
 (defadvice kill-new (before ys:no-kill-new-duplicates activate)
