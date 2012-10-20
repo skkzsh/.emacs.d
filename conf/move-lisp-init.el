@@ -31,7 +31,10 @@
 
 ;;;; Undo History
 (require 'undohist)
-(undohist-initialize)
+(unless (eq system-type 'windows-nt)
+  ;; org-modeやMarkdownのHTML Previewができなくなるため
+  (undohist-initialize)
+  )
 
 
 ;;;; Point Undo

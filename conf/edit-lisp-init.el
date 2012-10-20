@@ -1,13 +1,16 @@
 ;;;; yasnippet
 (add-to-list 'load-path "~/.emacs.d/public_repos/yasnippet")
 (require 'yasnippet)
+(setq yas-snippet-dirs '("~/.emacs.d/conf/snippets" "~/.emacs.d/public_repos/yasnippet/extras/imported"))
+(yas-global-mode 1)
+
 ; (setq yas/root-directory '(
 ;                             "~/.emacs.d/public_repos/yasnippet-org-mode"
 ;                             "~/.emacs.d/conf/snippets"
 ;                             ))
-(yas/initialize)
+; (yas/initialize)
 ; (mapc 'yas/load-directory yas/root-directory)
-(yas/load-directory "~/.emacs.d/conf/snippets")
+; (yas/load-directory "~/.emacs.d/conf/snippets")
 
 (setq yas/prompt-functions '(yas/dropdown-prompt))
 

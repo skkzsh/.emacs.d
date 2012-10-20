@@ -15,6 +15,8 @@
 ;; (global-set-key "\C-cl" 'org-store-link)
 ;; (global-set-key "\C-ca" 'org-agenda)
 
+;;; 折り返し
+(setq org-startup-truncated nil)
 
 ;;; org-modeでの強調表示を可能にする
 ;; (add-hook 'org-mode-hook 'turn-on-font-lock)
@@ -55,7 +57,10 @@
 ;; (setq calendar-holidays nil)
 
 
+;;; Browser
+
 ;;; LaTeX
+; (require 'org-latex)
 (setq org-export-latex-coding-system 'euc-jp-unix)
 (setq org-export-latex-date-format "%Y/%m/%d")
 (setq org-export-latex-classes nil)
@@ -70,6 +75,7 @@
                ))
 (setq org-export-latex-default-class "jarticle")
 (setq org-latex-to-pdf-process '("latexmk -pdfdvi %f"))
+
 ;;; 拡張子epsの取扱いについて
 ;; (setq org-export-latex-inline-image-extensions nil)
 ;; (add-to-list 'org-export-latex-inline-image-extensions "eps")
@@ -106,6 +112,19 @@
 ;;                              (R . t)
 ;;                              ))
 
+
+;;; S5
+(add-to-list 'load-path "~/.emacs.d/public_repos/org-s5")
+(load "org-export-as-s5")
+(add-hook 'org-mode-hook
+           (lambda()
+             (define-key org-mode-map "\C-cs" 'org-export-as-s5)
+             ))
+
+;; (setq org-export-htmlize-output-type 'CSS) ; CSSを変更するとき
+;; (setq org-s5-theme "default")
+(setq org-s5-theme "railscast")
+;; (setq org-s5-theme "i18n")
 
 ;;; MobileOrg
 ;;; 同期するFile

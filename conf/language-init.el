@@ -1,4 +1,4 @@
-;;;; コンパイル
+;;;; Compile
 (setq compilation-window-height 12) ;; デフォルトは画面の下半分
 ;; mode-compile.el
 ; (autoload 'mode-compile "mode-compile"
@@ -13,36 +13,16 @@
 ; (global-set-key "\C-cc" 'smart-compile)
 
 
-;;;; Magit
-(add-to-list 'load-path "~/.emacs.d/public_repos/magit")
-(require 'magit)
-
-
 ;;;; C
 ;;;; C++
 ;;;; Python
 
-;;;; Markdown / GFM
-(add-to-list 'load-path "~/.emacs.d/public_repos/markdown-mode")
-(autoload 'gfm-mode "markdown-mode.el"
-          "Major mode for editing Markdonw files" t)
-; (autoload 'markdown-mode "markdown-mode.el"
-; 		  "Major mode for editing Markdonw files" t)
-(setq auto-mode-alist
-      (append '(
-                ("\\.md$"       . gfm-mode)
-                ("\\.mkd$"      . gfm-mode)
-                ("\\.mdt$"      . gfm-mode)
-                ("\\.mkdn$"     . gfm-mode)
-                ("\\.mdwn$"     . gfm-mode)
-                ("\\.mark$"     . gfm-mode)
-                ("\\.mdown$"    . gfm-mode)
-                ("\\.markdown$" . gfm-mode)
-                ) auto-mode-alist))
-
 ;;;; Lisp
 (require 'lispxmp)
-(define-key emacs-lisp-mode-map "\C-ce" 'lispxmp)
+(add-hook 'emacs-lisp-mode-hook
+           (lambda()
+             (define-key emacs-lisp-mode-map "\C-ce" 'lispxmp)
+             ))
 
 ;;;; Gnuplot
 (setq auto-mode-alist
@@ -55,4 +35,5 @@
 (add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
 
 ;;;; Batch
-(require 'batch-mode)
+;; (require 'batch-mode)
+;;;; PowerShell

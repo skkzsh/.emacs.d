@@ -10,24 +10,18 @@
 ;;; ~/.emacs.d/lisp/wl/wlに入れた.
 ;;; Windowsでは(Open)SSL or (GNU)TLS/(START)TLSをDownloadする?
 
-(when (or
-        (eq system-type 'darwin)
-        (eq system-type 'windows-nt)
-        )
-  ;; "~/.emacs.d/lisp/starttls" ; Windowsで?
-  (setq load-path (append '(
-                            "~/.emacs.d/public_repos/flim"
-                            "~/.emacs.d/public_repos/semi"
-                            "~/.emacs.d/lisp/wl/elmo"
-                            "~/.emacs.d/lisp/wl/utils"
-                            "~/.emacs.d/lisp/wl/wl")
-                          load-path))
+;; "~/.emacs.d/lisp/starttls" ; Windowsで?
+(setq load-path (append '(
+                          "~/.emacs.d/public_repos/flim"
+                          "~/.emacs.d/public_repos/semi"
+                          "~/.emacs.d/lisp/wl/elmo"
+                          "~/.emacs.d/lisp/wl/utils"
+                          "~/.emacs.d/lisp/wl/wl")
+                        load-path))
 
-  (autoload 'wl "wl" "Wanderlust" t)
-  (autoload 'wl-other-frame "wl" "Wanderlust on new frame." t)
-  (autoload 'wl-draft "wl-draft" "Write draft with Wanderlust." t)
-  )
-
+(autoload 'wl "wl" "Wanderlust" t)
+(autoload 'wl-other-frame "wl" "Wanderlust on new frame." t)
+(autoload 'wl-draft "wl-draft" "Write draft with Wanderlust." t)
 
 ;;;; Calendar
 (add-to-list 'load-path "~/.emacs.d/public_repos/emacs-calfw")
@@ -74,4 +68,5 @@
              (define-key twittering-mode-map "\C-ch" 'twittering-home-timeline)
              (define-key twittering-mode-map "F" 'twittering-favorite)
              (define-key twittering-mode-map "R" 'twittering-native-retweet)
-             (define-key twittering-mode-map "Q" 'twittering-organic-retweet)))
+             (define-key twittering-mode-map "Q" 'twittering-organic-retweet)
+             ))

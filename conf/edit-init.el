@@ -69,7 +69,11 @@
                 (python-mode       . "template.py")
                 (yatex-mode        . "template.tex")
                 (org-mode          . "template.org")
+                (markdown-mode     . "template.md")
+                (gfm-mode          . "template.md")
+                (batch-mode     . "template.bat")
                 ) auto-insert-alist))
+
 
 ;;;; Time Stamp
 (require 'time-stamp)

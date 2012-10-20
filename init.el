@@ -6,9 +6,11 @@
                 ) load-path))
 
 
+
 (load "edit-init")
 (load "font-init")
 (load "appear-init")
+(load "color-init")
 (load "base-init")
 (load "ja-init")
 (load "key-init")
@@ -23,6 +25,7 @@
 (load "appear-lisp-init")
 (load "edit-lisp-init")
 (load "language-init")
+(load "develop-init")
 ;; (load "perl-init")
 (load "move-lisp-init")
 (load "browser-init")

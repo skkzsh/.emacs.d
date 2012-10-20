@@ -1,11 +1,11 @@
 ;;;; sequential-command
-(require 'sequential-command-config)
-(sequential-command-setup-keys)
+;; (require 'sequential-command-config)
+;; (sequential-command-setup-keys)
 
 
 ;;;; Key Chord
-; (key-chord-mode t)
-; (setq key-chord-two-keys-delay 0.05)
+;; (key-chord-mode t)
+;; (setq key-chord-two-keys-delay 0.05)
 
 
 ;;;; Vi

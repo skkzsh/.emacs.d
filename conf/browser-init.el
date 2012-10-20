@@ -7,19 +7,21 @@
 ;; (<- /usr/share/emacs/23.2/site-lisp/w3m)から持ってきて
 ;; ~/.emacs.d/lisp/emacs-w3mに入れた.
 
-(when (eq system-type 'darwin)
+
+(cond
+ ((eq system-type 'darwin)
   (add-to-list 'load-path "~/.emacs.d/lisp/emacs-w3m")
-  ; (add-to-list 'Info-additional-directory-list "~/.emacs.d/lisp/emacs-w3m/doc")
+  ;; (add-to-list 'Info-additional-directory-list "~/.emacs.d/lisp/emacs-w3m/doc")
   (require 'w3m-load)
-  (setq w3m-command "/usr/local/bin/w3m")
-  )
+  (setq w3m-command "/usr/local/bin/w3m"))
+ )
 
 ;;;; デフォルト・ブラウザ
 ;(setq browse-url-browser-function
-;	  'w3m-browse-url)
-;	  'browse-url-firefox)
-;	  'browse-url-mozilla)
-;	  'browse-url-opera)
+;     'w3m-browse-url)
+;     'browse-url-firefox)
+;     'browse-url-mozilla)
+;     'browse-url-opera)
 
 ;;;; Opera
 ;; 1
@@ -34,46 +36,57 @@
 (cond
 
   ((eq system-type 'gnu/linux)
+
    (defun browse-url-opera (url)
      (shell-command (format "opera '%s'" url)))
+
+   (defun choose-browser (url &rest args)
+     (interactive "sURL: ")
+     (if (y-or-n-p "Use external browser ?")
+         (browse-url-opera url)
+       (w3m-browse-url url)
+       ))
    )
 
   ((eq system-type 'darwin)
+
    (defun browse-url-open (url)
      (shell-command (format "open '%s'" url)))
+
+   (defun choose-browser (url &rest args)
+     (interactive "sURL: ")
+     (if (y-or-n-p "Use external browser ?")
+         (browse-url-open url)
+       (w3m-browse-url url)
+       ))
    )
 
   )
 
-;;;; ブラウザを選択できるようにする
+;;;; Browserを選択
+;; (setq browse-url-browser-function 'choose-browser)
+
+;;;; Browserを指定
 (cond
 
   ((eq system-type 'gnu/linux)
-   (defun choose-browser (url &rest args)
-     (interactive "sURL: ")
-     (if (y-or-n-p "Use external browser ?")
-       (browse-url-opera url)
-       (w3m-browse-url url)
-       ))
-   (setq browse-url-browser-function 'choose-browser)
+   (setq browse-url-browser-function
+         (lambda (url args)
+           (shell-command (format "opera '%s'" url))
+           )
+         )
    )
 
-  ((eq system-type 'darwin)
-   (defun choose-browser (url &rest args)      
-     (interactive "sURL: ")
-     (if (y-or-n-p "Use external browser ?")
-       (browse-url-open url)
-       (w3m-browse-url url)
-       ))
-   (setq browse-url-browser-function 'choose-browser)
-   )
+  ;; ((eq system-type 'darwin)
+  ;;  (setq browse-url-browser-function 'browse-url-open)
+  ;;  )
 
   )
 
 ;;;; w3mの外部ブラウザ
 ;;;; 未完成
-; (add-hook 'w3m-load-hook 
-;		  '(lambda ()
-;			 (setq browse-url-browser-function 
-;				   'browse-url-opera)
-;			 ))
+; (add-hook 'w3m-load-hook
+;         '(lambda ()
+;            (setq browse-url-browser-function
+;                  'browse-url-opera)
+;            ))
