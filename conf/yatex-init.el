@@ -22,10 +22,11 @@
 (defvar YaTeX-dvi2-command-ext-alist
   '(("[agx]dvi\\|dviout\\|Pictprinter\\|emacsclient" . ".dvi")
     ("ghostview\\|gv" . ".ps")
-    ("acroread\\|pdf\\|Preview\\|TeXShop\\|Skim\\|evince\\|apvlv" . ".pdf")))
+    ("acroread\\|pdf\\|Preview\\|TeXShop\\|Skim\\|evince\\|apvlv\\|zathura" . ".pdf")))
 
 ;; YaTeX Mode
 (when (or
+        (string-match "^over" system-name)
         (string-match "^box" system-name)
         (eq system-type 'darwin)
         (eq system-type 'windows-nt)
@@ -43,7 +44,13 @@
   )
 
 
-;; TODO: command(latexmk)
+; (cond
+;   ((and
+;      (executable-find "latexmk")
+;      (executable-find "perl"))
+;    (setq tex-command'("latexmk -dvi")))
+;   )
+
 (cond
 
   ;;;; Mac
