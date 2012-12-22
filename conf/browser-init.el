@@ -10,7 +10,12 @@
 
 (cond
  ((eq system-type 'darwin)
-  (add-to-list 'load-path "~/.emacs.d/lisp/emacs-w3m")
+  (setq load-path (append '(
+                            "~/.emacs.d/lisp/emacs-w3m"
+                            "~/.emacs.d/lisp/emacs-w3m/attic"
+                            "~/.emacs.d/lisp/emacs-w3m/doc"
+                            "~/.emacs.d/lisp/emacs-w3m/shimbun"
+                            ) load-path))
   ;; (add-to-list 'Info-additional-directory-list "~/.emacs.d/lisp/emacs-w3m/doc")
   (require 'w3m-load)
   (setq w3m-command "/usr/local/bin/w3m"))
