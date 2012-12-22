@@ -37,3 +37,6 @@
 [submodule "public_repos/emacsfiles"]
 	path = public_repos/emacsfiles
 	url = https://github.com/maple/emacsfiles.git
+[submodule "public_repos/wanderlust"]
+	path = public_repos/wanderlust
+	url = https://github.com/wanderlust/wanderlust.git
