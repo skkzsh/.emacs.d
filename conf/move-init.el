@@ -19,6 +19,13 @@
 ; (windmove-default-keybindings)
 ;; ウィンドウ分割字にC-tで移動
 (global-set-key "\C-t" 'other-window)
+;; 反対側のウィンドウに移動可
+(setq windmove-wrap-around t)
+;; C-M-{h,j,k,l}でウィンドウ間を移動
+;; (global-set-key (kbd "C-M-k") 'windmove-up)
+;; (global-set-key (kbd "C-M-j") 'windmove-down)
+;; (global-set-key (kbd "C-M-l") 'windmove-right)
+;; (global-set-key (kbd "C-M-h") 'windmove-left)
 
 ;; ido
 ; (ido-mode file)
