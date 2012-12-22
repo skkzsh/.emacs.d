@@ -2,7 +2,7 @@
 (require 'anything-startup)
 
 ;;; Keybind
-(global-set-key (kbd "C-:") 'anything-filelist+)
+(global-set-key (kbd "C-;") 'anything-filelist+)
 ;; (global-set-key (kbd "C-;") 'anything)
 (global-set-key (kbd "M-y") 'anything-show-kill-ring)
 
@@ -42,3 +42,7 @@
 (add-hook 'dired-mode-hook ; dired
           '(lambda ()
              (local-set-key (kbd "O") 'anything-c-moccur-dired-do-moccur-by-moccur)))
+
+;;;; auto-complete
+(require 'ac-anything)
+(define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-anything)
