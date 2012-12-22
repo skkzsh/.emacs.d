@@ -1955,8 +1955,7 @@ completion menu. This workaround stops that annoying behavior."
 
 (defun ac-filename-candidate ()
   (let (file-name-handler-alist)
-    (unless (or (string-match comment-start-skip ac-prefix)
-                (file-regular-p ac-prefix))
+    (unless (file-regular-p ac-prefix)
       (ignore-errors
         (loop with dir = (file-name-directory ac-prefix)
               with files = (or (assoc-default dir ac-filename-cache)
