@@ -8,16 +8,41 @@
 ;;; wl-news.elだけ/usr/share/emacs23/site-lisp/wl
 ;;; (<- /usr/share/emacs/23.2/site-lisp/wl)から持ってきて
 ;;; ~/.emacs.d/lisp/wl/wlに入れた.
-;;; Windowsでは(Open)SSL or (GNU)TLS/(START)TLSをDownloadする?
+;;; WindowsではSSL/TLSをDownloadする?
+;;; - SSL
+;;; - OpenSSL
+;;; - TLS
+;;; - GNUTLS (gnutls-cli)
+;;; - STARTTLS
+;;; - OpenTLS
 
 ;; "~/.emacs.d/lisp/starttls" ; Windowsで?
+;; github or Debian
 (setq load-path (append '(
+                          ;; github
+                          ; "~/.emacs.d/public_repos/wanderlust/wl"
+                          ; "~/.emacs.d/public_repos/wanderlust/elmo"
+                          ; "~/.emacs.d/public_repos/wanderlust/utils"
+                          ; "~/.emacs.d/public_repos/wanderlust/tests"
                           "~/.emacs.d/public_repos/flim"
                           "~/.emacs.d/public_repos/semi"
-                          "~/.emacs.d/lisp/wl/elmo"
-                          "~/.emacs.d/lisp/wl/utils"
-                          "~/.emacs.d/lisp/wl/wl")
-                        load-path))
+
+                          ;; github
+                          "~/.emacs.d/lisp/wanderlust/wl"
+                          "~/.emacs.d/lisp/wanderlust/elmo"
+                          "~/.emacs.d/lisp/wanderlust/utils"
+                          "~/.emacs.d/lisp/wanderlust/tests"
+
+                          ;; Deiban
+                          ; "~/.emacs.d/lisp/debian/wl/wl"
+                          ; "~/.emacs.d/lisp/debian/wl/elmo"
+                          ; "~/.emacs.d/lisp/debian/wl/utils"
+                          ; "~/.emacs.d/lisp/debian/flim"
+                          ; "~/.emacs.d/lisp/debian/flim/attic"
+                          ; "~/.emacs.d/lisp/debian/semi"
+                          ; "~/.emacs.d/lisp/debian/semi/attic"
+
+                          ) load-path))
 
 (autoload 'wl "wl" "Wanderlust" t)
 (autoload 'wl-other-frame "wl" "Wanderlust on new frame." t)
