@@ -1,5 +1,8 @@
 ;;; 起動時の画面を非表示にする
-(setq inhibit-startup-message t)
+;; (unless
+;;   (eq window-system 'ns)
+   (setq inhibit-startup-message t)
+   ;; )
 ;;; scratchバッファのメッセージを消す(Emacs23)
 (setq initial-scratch-message nil)
 
