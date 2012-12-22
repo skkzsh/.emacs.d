@@ -21,12 +21,12 @@
 ; (require 'hideshow)
 (require 'fold-dwim)
 ; (autoload 'fold-dwim-toggle
-; 		  "fold-dwim"
-; 		  "try to show any hidden text at the cursor" t)
+;         "fold-dwim"
+;         "try to show any hidden text at the cursor" t)
 ; (autoload 'fold-dwim-hide-all
-; 		  "fold-dwim" "hide all folds in the buffer" t)
+;         "fold-dwim" "hide all folds in the buffer" t)
 ; (autoload 'fold-dwim-show-all
-; 		  "fold-dwim" "show all folds in the buffer" t)
+;         "fold-dwim" "show all folds in the buffer" t)
 ;; 機能を利用するMajor Mode一覧
 (let ((hook))
   (dolist (hook '(
