@@ -5,18 +5,24 @@
 ;; (add-to-list 'load-path "~/.emacs.d/public_repos/org-mode/testing/lisp")
 ;; (add-to-list 'Info-additional-directory-list "~/.emacs.d/public_repos/org-mode/doc")
 
-;;; org-modeの初期化
+;;; 初期化
 (require 'org-install)
 ;; 拡張子がorgのFileを開いた時, 自動的にorg-modeにする
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 
 ;;; Keybind
 (global-set-key "\C-cr" 'org-remember)
-;; (global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-cl" 'org-store-link)
 ;; (global-set-key "\C-ca" 'org-agenda)
 
 ;;; 折り返し
 (setq org-startup-truncated nil)
+
+;;; 画像のインライン表示
+;;; 1
+(setq org-startup-with-inline-images t)
+;;; 2
+;; (add-hook 'org-mode-hook 'turn-on-iimage-mode)
 
 ;;; org-modeでの強調表示を可能にする
 ;; (add-hook 'org-mode-hook 'turn-on-font-lock)
@@ -29,16 +35,20 @@
 (setq org-default-notes-file (expand-file-name "notes.org" org-directory))
 
 
-;;; org-remember
-;;; org-rememberの初期化
+;;; Remember
+;;; 初期化
 (org-remember-insinuate)
-;;; org-rememberのTemplates
+;;; Templates
 (setq org-remember-templates
       '(
         ("Note" ?n "** %?\n  %i\n  %a\n  %T" nil "Inbox")
         ("Todo" ?t "** TODO %?\n  %i\n  %a\n  %T" nil "Inbox")
         ))
 
+;;;; Tag
+;; (setq org-tag-alist
+;;   '(("@OFFICE" . ?o) ("@HOME" . ?h) ("SHOPPING" . ?s)
+;;     ("MAIL" . ?m) ("PROJECT" . ?p)))
 
 ;;; TODO状態
 ;; (setq org-use-fast-todo-selection t)
@@ -46,6 +56,8 @@
 ;;       '(
 ;;         (sequence "TODO(t)" "WAIT(w)" "|" "DONE(d)" "SOMEDAY(s)")
 ;;         ))
+;; DONEの時刻を記録
+;; (setq org-log-done 'time)
 
 
 ;;; アジェンダ表示の対象ファイル
@@ -56,6 +68,35 @@
 ;;; 標準の祝日を利用しない
 ;; (setq calendar-holidays nil)
 
+
+;; HTML
+;; Backgroundで変換
+; (setq org-export-run-in-background t)
+
+;;
+; (setq org-export-html-style-include-scripts nil
+;       org-export-html-style-include-default nil)
+
+;;
+; (setq org-export-html-style
+;       "<link rel=\"stylesheet\" type=\"text/css\" href=\"org-style.css\" />")
+
+;; Open Applicaiton
+(cond
+  ;;;; Linux
+  ((eq system-type 'gnu/linux)
+   (setq org-file-apps '(
+                         ("pdf"  . "zathura %s")
+                         )))
+  ;;;; Mac
+  ((eq system-type 'darwin)
+   (setq org-file-apps '(
+                         )))
+  ;;;; Windows
+  ((eq system-type 'windows-nt)
+   (setq org-file-apps '(
+                         )))
+)
 
 ;;; Browser
 
@@ -73,8 +114,24 @@
                ("\\paragraph{%s}" . "\\paragraph*{%s}")
                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
                ))
+(add-to-list 'org-export-latex-classes
+             '("beamer"
+               "\\documentclass[compress,dvipdfm]{beamer}"
+               org-beamer-sectioning
+               )
+             )
 (setq org-export-latex-default-class "jarticle")
-(setq org-latex-to-pdf-process '("latexmk -pdfdvi %f"))
+(cond
+  ((and
+     (executable-find "latexmk")
+     (executable-find "perl"))
+   (setq org-latex-to-pdf-process '("latexmk -pdfdvi %f")))
+  ; (setq org-latex-to-pdf-process '("latexmk -pdf %f")))
+  ((executable-find "pdfplatex")
+   (setq org-latex-to-pdf-process '("pdfplatex %f")))
+ ; ((executable-find "pdflatex")
+ ;  (setq org-latex-to-pdf-process '("pdflatex %f")))
+ )
 
 ;;; 拡張子epsの取扱いについて
 ;; (setq org-export-latex-inline-image-extensions nil)
