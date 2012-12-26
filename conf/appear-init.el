@@ -13,8 +13,10 @@
   (menu-bar-mode 0)
   ; (menu-bar-mode nil)
   )
-;;; Tool Bar
-(tool-bar-mode 0)
+(when window-system
+  ;;; Tool Bar
+  (tool-bar-mode 0)
+  )
 ;;; Scroll Bar
 ;; (set-scroll-bar-mode nil)
 
