@@ -1,12 +1,9 @@
 ;;;; ElScreen
 
 ;; バグ回避のため, Ubuntuではapt-get install
-(when (or
-        (eq system-type 'darwin)
-        (eq system-type 'windows-nt)
-        (string-match "^ride" system-name)
-        (string-match "^debian" system-name)
-        )
+(unless
+  (file-directory-p "/usr/share/emacs/site-lisp/elscreen")
+
   (add-to-list 'load-path "~/.emacs.d/public_repos/elscreen")
   ;;;; Add-On
   (require 'elscreen-dired)
@@ -15,9 +12,7 @@
   (require 'elscreen-speedbar)
   (require 'elscreen-color-theme)
   (require 'elscreen-dnd)
-  (when (eq system-type 'gnu/linux)
-    (require 'elscreen-wl)
-    )
+  (require 'elscreen-wl)
   )
 
 (load "elscreen" "ElScreen" t)
