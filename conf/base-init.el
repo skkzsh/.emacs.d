@@ -1,6 +1,8 @@
 ;;;; Memo
-;; 設定を場合分けしたい場合は, cond/if/whenを使用.
-;; window-system, system-type, emacs(-major)-versionなどを評価.
+;; 設定を場合分けしたい場合は, cond/if/when/unlessを使用.
+;; window-system, system-type, emacs(-major)-version,
+;; system-configuration, invocation-nameなどを評価.
+;; getenvも使用可.
 ;;
 ;; 方法は,
 ;; *scratch*で<C-j>,
