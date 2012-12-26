@@ -30,11 +30,14 @@
 
 
 ;;;; Undo History
+;;;; Errorを出すときは, undohistのFileを消してみる.
+(add-to-list 'load-path "~/.emacs.d/lisp/undohist")
 (require 'undohist)
-(unless (eq system-type 'windows-nt)
-  ;; org-modeやMarkdownのHTML Previewができなくなるため
-  (undohist-initialize)
-  )
+; (unless (eq system-type 'windows-nt)
+  ;; - Windows :: org-modeやMarkdownのHTML Previewができなくなるため
+  ;; Patchを貼る
+(undohist-initialize)
+  ; )
 
 
 ;;;; Point Undo
