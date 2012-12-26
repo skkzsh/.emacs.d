@@ -25,23 +25,16 @@
     ("acroread\\|pdf\\|Preview\\|TeXShop\\|Skim\\|evince\\|apvlv\\|zathura" . ".pdf")))
 
 ;; YaTeX Mode
-(when (or
-        (string-match "^over" system-name)
-        (string-match "^box" system-name)
-        (eq system-type 'darwin)
-        (eq system-type 'windows-nt)
-        )
-  (setq auto-mode-alist
-        (append '(
-                  ("\\.tex$" . yatex-mode)
-                  ("\\.ltx$" . yatex-mode)
-                  ("\\.cls$" . yatex-mode)
-                  ("\\.sty$" . yatex-mode)
-                  ("\\.clo$" . yatex-mode)
-                  ("\\.bbl$" . yatex-mode)
-                  ) auto-mode-alist))
-  (autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
-  )
+(setq auto-mode-alist
+    (append '(
+              ("\\.tex$" . yatex-mode)
+              ("\\.ltx$" . yatex-mode)
+              ("\\.cls$" . yatex-mode)
+              ("\\.sty$" . yatex-mode)
+              ("\\.clo$" . yatex-mode)
+              ("\\.bbl$" . yatex-mode)
+              ) auto-mode-alist))
+(autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
 
 
 ; (cond
@@ -71,11 +64,7 @@
    )
   )
 
-;; dviprintのコマンドをdvipsからdvipdfmxに変更
-;; C-c t lでdvipdfmxを実行
-; (setq dviprint-command-format "dvipdfmx %s")
-
 ;; Emacs23(X)のデフォルトではemacsclientでdviを開く
 ;(when (and (>= emacs-major-version 23)
-;		   (eq window-system 'x))
+;          (eq window-system 'x))
 ;  (setq dvi2-command "emacsclient -n"))
