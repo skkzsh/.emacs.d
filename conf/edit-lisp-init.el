@@ -1,7 +1,10 @@
 ;;;; yasnippet
 (add-to-list 'load-path "~/.emacs.d/public_repos/yasnippet")
 (require 'yasnippet)
-(setq yas-snippet-dirs '("~/.emacs.d/conf/snippets" "~/.emacs.d/public_repos/yasnippet/extras/imported"))
+(setq yas-snippet-dirs '(
+                         "~/.emacs.d/conf/snippets"
+                         "~/.emacs.d/public_repos/yasnippet/extras/imported"
+                         ))
 (yas-global-mode 1)
 
 ; (setq yas/root-directory '(
