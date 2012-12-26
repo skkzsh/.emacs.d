@@ -10,6 +10,9 @@
   ; (color-theme-ld-dark)
   ; (color-theme-clarity)
 
+  ; (color-theme-solarized-light)
+  ; (color-theme-solarized-dark)
+
   ;; 行数を表示 linum/wb-line-number/setnu
   (when (>= emacs-major-version 23)
     (global-linum-mode)
