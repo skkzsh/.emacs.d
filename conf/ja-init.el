@@ -32,12 +32,21 @@
 (cond
   ;;;; Linux
   ((eq system-type 'gnu/linux)
+
+   ;; make installしたEmacsからもSystemにあるmozc.elをLoad
+   (unless (require 'mozc nil t)
+     (when
+       (file-directory-p "/usr/share/emacs/site-lisp/mozc")
+       (add-to-list 'load-path "/usr/share/emacs/site-lisp/mozc")
+     ))
+
    (when (require 'mozc nil t)
      (setq default-input-method "japanese-mozc")
      ;;; 候補の表示 (overlay or echo-area)
      ;; (setq mozc-candidate-style 'overlay)
      (setq mozc-candidate-style 'echo-area)
      )
+
    ;;; iBus
    ;;; SCIM
    )
