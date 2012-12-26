@@ -11,6 +11,7 @@
   (setq migemo-options '("-q" "--emacs"))
 
   ;;; migemo-dictのPath
+  ;;; TODO: migmeo-dictのPATHの取得
   (cond
    ((or (eq system-type 'gnu/linux)
         (eq system-type 'darwin))
