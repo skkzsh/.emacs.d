@@ -12,9 +12,8 @@
 
 
 ;;;; APEL
-(when (or
-        (eq system-type 'darwin)
-        (eq system-type 'windows-nt)
-        )
-  (add-to-list 'load-path "~/.emacs.d/public_repos/apel")
-  )
+(setq load-path
+      (append '(
+                "~/.emacs.d/usr/share/emacs/site-lisp/apel"
+                "~/.emacs.d/usr/share/emacs/site-lisp/emu"
+                ) load-path))

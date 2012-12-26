@@ -1,47 +1,11 @@
 ;;;; Wanderlust
 ;;; Debianではwlとgnutlsはapt-get install
 ;;; Macではgnutlsはbrew install
-;;; Windowsで動かない
 
-;;; wlをInstallしたDebianの
-;;; /usr/share/emacs/site-lisp/wlから持ってきた.
-;;; wl-news.elだけ/usr/share/emacs23/site-lisp/wl
-;;; (<- /usr/share/emacs/23.2/site-lisp/wl)から持ってきて
-;;; ~/.emacs.d/lisp/wl/wlに入れた.
-;;; WindowsではSSL/TLSをDownloadする?
-;;; - SSL
-;;; - OpenSSL
-;;; - TLS
-;;; - GNUTLS (gnutls-cli)
-;;; - STARTTLS
-;;; - OpenTLS
-
-;; "~/.emacs.d/lisp/starttls" ; Windowsで?
-;; github or Debian
 (setq load-path (append '(
-                          ;; github
-                          ; "~/.emacs.d/public_repos/wanderlust/wl"
-                          ; "~/.emacs.d/public_repos/wanderlust/elmo"
-                          ; "~/.emacs.d/public_repos/wanderlust/utils"
-                          ; "~/.emacs.d/public_repos/wanderlust/tests"
-                          "~/.emacs.d/public_repos/flim"
-                          "~/.emacs.d/public_repos/semi"
-
-                          ;; github
-                          "~/.emacs.d/lisp/wanderlust/wl"
-                          "~/.emacs.d/lisp/wanderlust/elmo"
-                          "~/.emacs.d/lisp/wanderlust/utils"
-                          "~/.emacs.d/lisp/wanderlust/tests"
-
-                          ;; Deiban
-                          ; "~/.emacs.d/lisp/debian/wl/wl"
-                          ; "~/.emacs.d/lisp/debian/wl/elmo"
-                          ; "~/.emacs.d/lisp/debian/wl/utils"
-                          ; "~/.emacs.d/lisp/debian/flim"
-                          ; "~/.emacs.d/lisp/debian/flim/attic"
-                          ; "~/.emacs.d/lisp/debian/semi"
-                          ; "~/.emacs.d/lisp/debian/semi/attic"
-
+                          "~/.emacs.d/usr/share/emacs/site-lisp/flim"
+                          "~/.emacs.d/usr/share/emacs/site-lisp/semi"
+                          "~/.emacs.d/usr/share/emacs/site-lisp/wl"
                           ) load-path))
 
 (autoload 'wl "wl" "Wanderlust" t)
@@ -61,6 +25,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/public_repos/calfw-gcal.el")
 (require 'calfw-gcal)
+
 
 ;;;; Evernote
 ;;; Ruby
@@ -84,6 +49,7 @@
   (interactive)
   (skype--init)
   (skype--open-all-users-buffer-command))
+
 
 ;;;; Twitter
 (setq twittering-account-authorization 'authorized)

@@ -1,25 +1,16 @@
 ;; Debianではw3mとemacs-w3mはapt-get install
 ;; Macではw3mはbrew install
 
-;; CVS版emacs-w3mをDownload
-;; w3m-load.elだけemacs-w3mをInstallしたDebianの
-;; /usr/share/emacs23/site-lisp/w3m
-;; (<- /usr/share/emacs/23.2/site-lisp/w3m)から持ってきて
-;; ~/.emacs.d/lisp/emacs-w3mに入れた.
+(when (executable-find "w3m")
 
-
-(cond
- ((eq system-type 'darwin)
-  (setq load-path (append '(
-                            "~/.emacs.d/lisp/emacs-w3m"
-                            "~/.emacs.d/lisp/emacs-w3m/attic"
-                            "~/.emacs.d/lisp/emacs-w3m/doc"
-                            "~/.emacs.d/lisp/emacs-w3m/shimbun"
-                            ) load-path))
-  ;; (add-to-list 'Info-additional-directory-list "~/.emacs.d/lisp/emacs-w3m/doc")
+  (add-to-list 'load-path "~/.emacs.d/usr/share/emacs/site-lisp/w3m")
   (require 'w3m-load)
-  (setq w3m-command "/usr/local/bin/w3m"))
- )
+
+  ; (cond
+  ;   ((eq system-type 'windows-nt)
+  ;    (setq w3m-command "C:/usr/bin/w3m.exe"))
+  ;   ;    (setq w3m-command (executable-find "w3m")))
+  ;   )
 
 ;;;; デフォルト・ブラウザ
 ;(setq browse-url-browser-function
@@ -67,6 +58,7 @@
    )
 
   )
+)
 
 ;;;; Browserを選択
 ;; (setq browse-url-browser-function 'choose-browser)
