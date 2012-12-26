@@ -47,5 +47,6 @@
 ;; CUIでMouseを使う
 (when (null window-system)
   (xterm-mouse-mode t)
-  (mouse-wheel-mode t)
+  ; (mouse-wheel-mode t)
+  ; (setq mouse-wheel-follow-mouse t)
   )
