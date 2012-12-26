@@ -1,9 +1,5 @@
 #!/bin/sh
 
-git submodule add https://github.com/wanderlust/apel.git                         public_repos/apel
-git submodule add https://github.com/wanderlust/semi.git                         public_repos/semi
-git submodule add https://github.com/wanderlust/flim.git                         public_repos/flim
-git submodule add https://github.com/wanderlust/wanderlust.git                   public_repos/wanderlust
 git submodule add https://github.com/tequilasunset/auto-complete-latex-light.git public_repos/auto-complete-latex-light
 git submodule add https://github.com/myuhe/calfw-gcal.el.git                     public_repos/calfw-gcal.el
 git submodule add https://github.com/knu/elscreen.git                            public_repos/elscreen

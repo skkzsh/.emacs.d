@@ -1,0 +1,21 @@
+--- C:/usr/home/.emacs.d/auto-install/undohist.el   Thu May 03 21:12:18 2012
++++ C:/usr/home/.emacs.d/auto-install/undohist.el_edit  Thu May 03 21:31:28 2012
+@@ -59,13 +59,17 @@
+                          "drive_"
+                          (char-to-string (downcase (aref file 0)))
+                          (if (eq (aref file 2) ?/)
+-                             ""
+-                           "/")
++                              ""
++                           (if (eq (aref file 2) ?\\)
++                               ""
++                               "/"))
+                          (substring file 2))))
+   (setq file (expand-file-name
+               (subst-char-in-string
+                ?/ ?!
+-               (replace-regexp-in-string "!" "!!" file))
++               (subst-char-in-string
++                ?\\ ?!
++                (replace-regexp-in-string "!" "!!"  file)))
+               undohist-directory)))

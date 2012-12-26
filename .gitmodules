@@ -1,12 +1,3 @@
-[submodule "public_repos/apel"]
-	path = public_repos/apel
-	url = https://github.com/wanderlust/apel.git
-[submodule "public_repos/semi"]
-	path = public_repos/semi
-	url = https://github.com/wanderlust/semi.git
-[submodule "public_repos/flim"]
-	path = public_repos/flim
-	url = https://github.com/wanderlust/flim.git
 [submodule "public_repos/auto-complete-latex-light"]
 	path = public_repos/auto-complete-latex-light
 	url = https://github.com/tequilasunset/auto-complete-latex-light.git
@@ -37,6 +28,3 @@
 [submodule "public_repos/emacsfiles"]
 	path = public_repos/emacsfiles
 	url = https://github.com/maple/emacsfiles.git
-[submodule "public_repos/wanderlust"]
-	path = public_repos/wanderlust
-	url = https://github.com/wanderlust/wanderlust.git
