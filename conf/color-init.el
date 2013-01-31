@@ -1,3 +1,20 @@
+;;;;; Color Theme
+(require 'color-theme)
+(color-theme-initialize)
+
+(when window-system
+  ; (add-to-list 'load-path "~/.emacs.d/lisp/themes")
+  ; (require 'zenburn)
+  (color-theme-hrehf-dark)
+  ; (color-theme-aalto-light)
+  ; (color-theme-ld-dark)
+  ; (color-theme-clarity)
+
+  ; (color-theme-solarized-light)
+  ; (color-theme-solarized-dark)
+  )
+
+
 ;;; 透明度
 (cond
  ((eq window-system 'x)
@@ -15,6 +32,50 @@
 ;; (setq show-paren-style 'mixed)
 ;; (set-face-background 'show-paren-match-face "plum2")
 ;; (set-face-foreground 'show-paren-match-face "Blue")
+
+
+;;; 行末Space, Tabの表示
+(setq-default show-trailing-whitespace t)
+(set-face-background 'trailing-whitespace "Pink")
+
+
+;;; 選択regionの色
+(setq-default transient-mark-mode t)
+(set-face-background 'region "LightBlue")
+
+;;; IMEのON/OFFでカーソルの色を変える
+(set-cursor-color "#fd3")
+(add-hook 'input-method-activate-hook
+          (function (lambda () (set-cursor-color "Magenta"))))
+(add-hook 'input-method-inactivate-hook
+          (function (lambda () (set-cursor-color "#fd3"))))
+
+
+;;; 現在行をハイライト
+;;; 色指定
+  (defface my-hlline-face
+           (if window-system
+
+             '((((class color) (background dark))
+                (:background "gray20"))
+               (((class color) (background light))
+                (:background "gray20"))
+               (t ()))
+
+             '((((class color) (background dark))
+                (:background "LightGray"))
+               (((class color) (background light))
+                (:background "LightGray"))
+               (t ()))
+
+             )
+           "*Face used by hl-line.")
+
+(setq hl-line-face 'my-hlline-face)
+;;; 下線
+;; (setq hl-line-face 'underline)
+;;; 有効
+(global-hl-line-mode)
 
 
 ;;; 不可視文字の表示 (jaspace-modeでも)
@@ -58,48 +119,6 @@
     )
   )
 
-
-;;; 行末Space, Tabの表示
-(setq-default show-trailing-whitespace t)
-(set-face-background 'trailing-whitespace "DeepPink")
-
-
-;;;; Cursor
-;;;点滅
-;; (blink-cursor-mode nil)
-;; (setq blink-cursor-interval 0.5)
-;; (setq blink-cursor-delay 1)
-;;; 形状
-;; (setq cursor-type 'box)       ; Box
-;; (setq cursor-type 'hollow)    ; Box
-;; (setq cursor-type 'hbar)      ; 下線
-;; (setq cursor-type '(bar . 3)) ; 幅~Pointの縦棒
-;; (add-to-list 'default-frame-alist '(cursor-type . box)) ; Box
-;; (add-to-list 'default-frame-alist '(cursor-type . hollow)) ; Box
-;; (add-to-list 'default-frame-alist '(cursor-type . hbar)) ; 下線
-(add-to-list 'default-frame-alist '(cursor-type . bar)) ; 幅~Pointの縦棒
-
-
-;;; 現在行をハイライト
-;;; 色指定
-(defface my-hlline-face
-         '((((class color) (background dark))
-            (:background "gray20"))
-           (((class color) (background light))
-            (:background "snow"))
-           (t
-             ()))
-         "*Face used by hl-line.")
-(setq hl-line-face 'my-hlline-face)
-;;; 下線
-;; (setq hl-line-face 'underline)
-;;; 有効
-(global-hl-line-mode)
-
-
-;;; 選択regionの色
-(setq-default transient-mark-mode t)
-(set-face-background 'region "LightBlue")
 
 ;;; バッファ中のキーワードを色付け
 (global-font-lock-mode t)

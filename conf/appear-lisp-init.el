@@ -1,18 +1,4 @@
-;;;;; Color Theme
-(require 'color-theme)
-(color-theme-initialize)
-
 (when window-system
-  ; (add-to-list 'load-path "~/.emacs.d/lisp/themes")
-  ; (require 'zenburn)
-  (color-theme-hrehf-dark)
-  ; (color-theme-aalto-light)
-  ; (color-theme-ld-dark)
-  ; (color-theme-clarity)
-
-  ; (color-theme-solarized-light)
-  ; (color-theme-solarized-dark)
-
   ;; 行数を表示 linum/wb-line-number/setnu
   (when (>= emacs-major-version 23)
     (global-linum-mode)

@@ -29,6 +29,22 @@
 (setq truncate-partial-width-windows nil)
 
 
+;;;; Cursor
+;;;点滅
+;; (blink-cursor-mode nil)
+;; (setq blink-cursor-interval 0.5)
+;; (setq blink-cursor-delay 1)
+;;; 形状
+;; (setq cursor-type 'box)       ; Box
+;; (setq cursor-type 'hollow)    ; Box
+;; (setq cursor-type 'hbar)      ; 下線
+;; (setq cursor-type '(bar . 3)) ; 幅~Pointの縦棒
+;; (add-to-list 'default-frame-alist '(cursor-type . box)) ; Box
+;; (add-to-list 'default-frame-alist '(cursor-type . hollow)) ; Box
+;; (add-to-list 'default-frame-alist '(cursor-type . hbar)) ; 下線
+(add-to-list 'default-frame-alist '(cursor-type . bar)) ; 幅~Pointの縦棒
+
+
 ;;;; Cursor (Windows)
 ;;; キー入力すると消える
 (setq w32-hide-mouse-on-key t)
