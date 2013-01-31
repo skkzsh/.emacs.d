@@ -1,21 +1,3 @@
-;;;; Memo
-;; 設定を場合分けしたい場合は, cond/if/when/unlessを使用.
-;; window-system, system-type, emacs(-major)-version,
-;; system-configuration, invocation-nameなどを評価.
-;; getenvも使用可.
-;;
-;; 方法は,
-;; *scratch*で<C-j>,
-;; 任意のTextで<C-xC-e>, <M-:>
-;; ielm
-;; 等
-;;
-;; window-system - x, ns, w32, win32, nil, ...
-;; system-type   - gnu/linux, darwin, windows-nt, cygwin, ms-dos, ...
-;; system-name   -
-;; featurep      - meadow, xemacs, ...
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 ;; バックアップファイル
 ;;1
 ; (setq backup-inhibited t)
@@ -57,6 +39,7 @@
                   "/Applications/gnuplot.app/bin"
                   "/Applications/Ghostscript.app"
                   "/Applications/Ghostscript.app/bin"
+                  (concat (getenv "HOME") "/bin")
                   (concat (getenv "HOME") "/perl5/perlbrew/perls/perl-5.16.0/bin")
                   (concat (getenv "HOME") "/.pythonbrew/pythons/Python-2.7.3/bin")
                   (concat (getenv "HOME") "/.rbenv/shims")
@@ -92,5 +75,5 @@
 
   ;  ((eq system-type 'windows-nt)
   ;   (progn
-  ;	 ))
+  ;  ))
   )

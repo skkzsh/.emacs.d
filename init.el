@@ -21,6 +21,7 @@
 (load "install-init")
 (load "org-init")
 (load "lisp-init")
+(load "internet-init")
 (load "elscreen-init")
 (load "appear-lisp-init")
 (load "edit-lisp-init")
@@ -29,7 +30,6 @@
 ;; (load "perl-init")
 (load "move-lisp-init")
 (load "browser-init")
-(load "internet-init")
 
 (load "yatex-init")
 (load "anything-init")
@@ -57,3 +57,20 @@
 ;;   elscreenのタブの色がcolor-themeに反映されない.
 ;; - whitespace-modeがtimestampを無効化するので,
 ;;   timestampをwhitespace-modeより先に読む.
+
+;;;; Memo
+;; 設定の場合分けは, cond/if/when/unlessを使用.
+;; window-system, system-type, emacs(-major)-version,
+;; system-configuration, invocation-nameなどを評価.
+;; getenvも使用可.
+;;
+;; 方法は,
+;; *scratch*で<C-j>,
+;; 任意のTextで<C-xC-e>, <M-:>
+;; ielm
+;; 等
+;;
+;; window-system - x, ns, w32, win32, nil, ...
+;; system-type   - gnu/linux, darwin, windows-nt, cygwin, ms-dos, ...
+;; system-name   -
+;; featurep      - meadow, xemacs, ...
