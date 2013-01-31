@@ -12,7 +12,7 @@
   ;   ;    (setq w3m-command (executable-find "w3m")))
   ;   )
 
-;;;; デフォルト・ブラウザ
+;;;; Default Browser
 ;(setq browse-url-browser-function
 ;     'w3m-browse-url)
 ;     'browse-url-firefox)
@@ -80,7 +80,7 @@
 
   )
 
-;;;; w3mの外部ブラウザ
+;;;; w3mの外部Browser
 ;;;; 未完成
 ; (add-hook 'w3m-load-hook
 ;         '(lambda ()
