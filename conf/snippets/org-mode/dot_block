@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: BEGIN_DOT - END_DOT
+# key: _d
+# --
+#+BEGIN_DOT ${1:hoge.png} ${2:-Tpng}
+digraph ${3:hoge} {
+    $0
+}
+#+END_DOT

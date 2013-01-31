@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: BEGIN_SRC - END_SRC
+# key: _s
+# --
+#+BEGIN_SRC ${1:sh}
+$0
+#+END_SRC

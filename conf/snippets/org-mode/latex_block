@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: BEGIN_SRC - END_LATEX
+# key: _l
+# --
+#+BEGIN_LATEX
+$0
+#+END_LATEX

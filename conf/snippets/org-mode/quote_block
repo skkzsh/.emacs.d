@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: BEGIN_SRC - END_QUOTE
+# key: _q
+# --
+#+BEGIN_QUOTE
+$0
+#+END_QUOTE

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: STARTUP
+# key: >u
+# --
+#+STARTUP: ${1:beamer}

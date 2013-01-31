@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: STYLE
+# key: >s
+# --
+#+STYLE: <link rel="stylesheet" type="text/css" href="http://skkzsh.github.com/style_sheet/org/org.css" title="org">

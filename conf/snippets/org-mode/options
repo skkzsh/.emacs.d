@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: OPTIONS
+# key: >o
+# --
+#+OPTIONS: toc:nil author:nil creator:nil timestamp:nil num:nil \n:t

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: LATEX_CLASS
+# key: >lc
+# --
+#+LATEX_CLASS: ${1:beamer}
+$0

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: INCLUDE
+# key: >i
+# --
+#+INCLUDE: ${1:file}

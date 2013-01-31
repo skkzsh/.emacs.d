@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: BEAMER_HEADER_EXTRA
+# key: >bhe
+# --
+#+BEAMER_HEADER_EXTRA: \usepackage{${1:org-beamer}}
+$0

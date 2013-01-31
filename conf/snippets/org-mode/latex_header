@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: LATEX_HEADER
+# key: >lh
+# --
+#+LATEX_HEADER: \usepackage{${1:org}}
+$0

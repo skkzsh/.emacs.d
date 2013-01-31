@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: PLOT
+# key: >p
+# --
+#+PLOT: title '${1:title}'
