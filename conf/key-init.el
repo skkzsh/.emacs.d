@@ -7,7 +7,16 @@
 ;; C-k で改行を含めてカット
 (setq kill-whole-line t)
 
+
 ;; Cocoa
+(when (eq system-type 'darwin)
+  ;; IME toggle
+  (define-key function-key-map (kbd "C-_") (kbd "C-\\"))
+  ;; (global-set-key (kbd "C-_") (kbd "C-\\"))
+  ;; (global-set-key "\C-_" 'toggle-input-method)
+  ;; (global-set-key "\C-_" 'mac-toggle-input-method)
+  )
+
 (when (eq window-system 'ns)
   ;; Fullscreen by Command + Ctrl + f
   (global-set-key (kbd "<C-s-268632070>") 'ns-toggle-fullscreen)

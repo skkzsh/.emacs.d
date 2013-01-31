@@ -1,5 +1,5 @@
 ;;;; Wanderlust
-;;; Debianではwlとgnutlsはapt-get install
+;;; Debianではwlはapt-get install
 ;;; Macではgnutlsはbrew install
 
 (setq load-path (append '(
@@ -32,7 +32,7 @@
 ;; (add-to-list 'load-path "~/.emacs.d/lisp/evernote-mode")
 ;; (require 'evernote-mode)
 ;; (setq evernote-enml-formatter-command
-;; 	  '("w3m" "-dump" "-I" "UTF8" "-O" "UTF8")) ; optional
+;;    '("w3m" "-dump" "-I" "UTF8" "-O" "UTF8")) ; optional
 ;; (global-set-key "\C-cec" 'evernote-create-note)
 ;; (global-set-key "\C-ceo" 'evernote-open-note)
 ;; (global-set-key "\C-ces" 'evernote-search-notes)
@@ -52,12 +52,12 @@
 
 
 ;;;; Twitter
-(setq twittering-account-authorization 'authorized)
+;; (setq twittering-account-authorization 'authorized)
 
-(add-hook 'twittering-mode-hook
-          '(lambda ()
-             (define-key twittering-mode-map "\C-ch" 'twittering-home-timeline)
-             (define-key twittering-mode-map "F" 'twittering-favorite)
-             (define-key twittering-mode-map "R" 'twittering-native-retweet)
-             (define-key twittering-mode-map "Q" 'twittering-organic-retweet)
-             ))
+;; (add-hook 'twittering-mode-hook
+;;           '(lambda ()
+;;              (define-key twittering-mode-map "\C-ch" 'twittering-home-timeline)
+;;              (define-key twittering-mode-map "F" 'twittering-favorite)
+;;              (define-key twittering-mode-map "R" 'twittering-native-retweet)
+;;              (define-key twittering-mode-map "Q" 'twittering-organic-retweet)
+;;              ))

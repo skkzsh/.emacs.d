@@ -3,15 +3,11 @@
 ;; 数は文字の大きさ
 
 (create-fontset-from-ascii-font
- "-outline-Consolas-normal-r-normal-normal-19-*-*-*-*-*-iso8859-1"
+ "-outline-Consolas-normal-r-normal-normal-16-*-*-*-*-*-iso8859-1"
  nil "MKConsolas")
 
 (create-fontset-from-ascii-font
-  "-outline-Monaco-normal-r-normal-normal-16-*-*-*-*-*-iso8859-1"
-  nil "MKMonaco")
-
-(create-fontset-from-ascii-font
-  "-outline-Consolas-normal-r-normal-normal-19-*-*-*-*-*-iso8859-1"
+  "-outline-Consolas-normal-r-normal-normal-16-*-*-*-*-*-iso8859-1"
   nil "MConsolas")
 
 ;; (create-fontset-from-ascii-font
@@ -22,7 +18,6 @@
 
 (setq face-font-rescale-alist
       '(
-        (".*Monaco.*" . 1.0)
         (".*MeiryoKe_.*" . 1.2)
         ;; (".*Consolas.*" . 1.0)
         ;; (".*Courier.*" . 1.0)

@@ -4,7 +4,7 @@
 ;;  (setq menu-tree-coding-system 'utf-8))
 (when (or (>= emacs-major-version 23)
           (featurep 'meadow))
-  (require 'menu-tree)
+  (when (require 'menu-tree nil t))
   )
 
 ;;;; 日本語環境設定
@@ -21,13 +21,6 @@
 ;; (setq default-process-coding-system 'utf-8-unix, 'utf-8-unix)
 ;; (set-keyboard-coding-system 'utf-8-unix) ; 日本語入力
 ;; (set-clipboard-coding-system 'utf-8-unix)
-
-;;; IMEのON/OFFでカーソルの色を変える
-(set-cursor-color "#fd3")
-(add-hook 'input-method-activate-hook
-          (function (lambda () (set-cursor-color "Red"))))
-(add-hook 'input-method-inactivate-hook
-          (function (lambda () (set-cursor-color "#fd3"))))
 
 (cond
   ;;;; Linux
@@ -53,19 +46,16 @@
 
   ;;;; Mac
   ((eq window-system 'ns)
-   (cond
-     ;;; NTEmacs 23
-     ((eq emacs-major-version 23)
-      ;;; ことえりが起動してしまう!!
-      ;; (setq default-input-method "MacOSX")
-      ;;; Shift Key有効化
-      (mac-add-key-passed-to-system 'shift)
-      ;;; Google日本語入力
-      ;; (mac-set-input-method-parameter "com.google.inputmethod.Japanese.base" `title "漢")
-      ;; (mac-set-input-method-parameter "com.google.inputmethod.Japanese.base" `cursor-type `box)
-      ;; (mac-set-input-method-parameter "com.google.inputmethod.Japanese.base" `cursor-color "magenta")
-      )
-     ))
+   ;; (mac-get-current-input-source) ; 確認
+   ;; ことえりが起動してしまう!!
+   ;; (setq default-input-method "MacOSX")
+   ;;; Google IME
+   ;; (mac-set-input-method-parameter "com.google.inputmethod.Japanese.base" `title "漢")
+   ;; (mac-set-input-method-parameter "com.google.inputmethod.Japanese.base" `cursor-type `box)
+   ;; (mac-set-input-method-parameter "com.google.inputmethod.Japanese.base" `cursor-color "Magenta")
+   ;;; Shift Key有効化
+   ;; (mac-add-key-passed-to-system 'shift)
+     )
 
   ;;;; Windows
   ((eq window-system 'w32)

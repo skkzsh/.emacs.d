@@ -7,7 +7,12 @@
 
 ;; 補完
 ;; Find fileの補完で大文字・小文字を区別しない
-(setq completion-ignore-case t)
+(when (eq system-type 'gnu/linux)
+  ;; 1
+  ;; (setq completion-ignore-case t)
+  ;; 2
+  (setq read-file-name-completion-ignore-case t)
+  )
 ;; M-xで補完
 ; (icomplete-mode t)
 (when (<= emacs-major-version 23)

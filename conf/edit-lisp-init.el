@@ -56,8 +56,8 @@
 ; (setq ac-ll-dict-directory "~/.emacs.d/public_repos/auto-complete-latex-light/ac-ll-dict")
 
 ;;;; Junk File
-(require 'open-junk-file)
-(setq open-junk-file-format "~/.junk/%Y-%m%d-%H%M.")
-
+(when (require 'open-junk-file nil t)
+  (setq open-junk-file-format "~/.junk/%Y-%m%d-%H%M.")
+  )
 ;; for Dropbox
 ;; (setq open-junk-file-format "~/Dropbox/.junk/%Y-%m%d-%H%M.")

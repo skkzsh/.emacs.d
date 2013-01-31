@@ -71,7 +71,7 @@
                 (org-mode          . "template.org")
                 (markdown-mode     . "template.md")
                 (gfm-mode          . "template.md")
-                (batch-mode     . "template.bat")
+                (batch-mode        . "template.bat")
                 ) auto-insert-alist))
 
 

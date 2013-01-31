@@ -22,7 +22,7 @@
       (setq initial-frame-alist
             (append (list
                       '(font . "Ricty-12")
-                      ;; '(font . "Osaka－等幅-12")
+                      ;; '(font . "Osaka−等幅-12")
                       ;; '(font . "fontset-MonacoMigu")
                       ;; '(font . "fontset-MonacoRicty")
                       ;; '(font . "fontset-RictySet")
@@ -70,29 +70,48 @@
   ;;  (setq default-frame-alist initial-frame-alist)
   ;;  )
 
-  ;;; 上記以外のWindows(NTEmacs)
+  ;;; 上記以外のWindows (NTEmacs)
   ((eq window-system 'w32)
-   (load "nt-font-init")
 
    (cond
 
-    ((string-match "^ZENBOOK" system-name)
+    ((string-match "ZENBOOK" system-name)
+     (cond
+      ((>= emacs-major-version 24)
+       (load "nt-monaco-init")
+       (setq initial-frame-alist
+             (append (list
+                      ;; '(font . "fontset-MKConsolas")
+                      ;; '(font . "fontset-MConsolas")
+                      '(font . "fontset-MKMonaco")
+                      ;; '(font . "fontset-MMonaco")
+                      ;; '(font . "Migu 1M-11")
+                      ;; '(font . "Osaka−等幅-11")
+                      ;; '(width . 40)
+                      '(height . 32)
+                      ;; '(top . 40)
+                      ;; '(left . 40)
+                      ;; '(line-spacing . 0)
+                      )
+                     initial-frame-alist))
+       (setq default-frame-alist initial-frame-alist)
+      ))
+
+     )
+
+    ((string-match "^HASHI-PC\\|^PC-6763" system-name)
+     (load "nt-font-init")
      (setq initial-frame-alist
            (append (list
-                    ;; '(font . "fontset-MKConsolas")
-                    '(font . "fontset-MKMonaco")
-                    ;; '(font . "Migu 1M-11")
-                    ;; '(font . "VL Gothic-11")
-                    ;; '(font . "Osaka－等幅-11")
-                    ;; '(width . 40)
-                    '(height . 32)
+                    '(font . "fontset-MConsolas")
+                    ;; '(width . 75)
+                    '(height . 36)
                     ;; '(top . 40)
-                    ;; '(left . 40)
+                    ;;'(left . 40)
                     ;; '(line-spacing . 0)
                     )
                    initial-frame-alist))
      (setq default-frame-alist initial-frame-alist)
-
      )
 
     )

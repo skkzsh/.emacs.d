@@ -1,15 +1,19 @@
 ;;;; ELPA
-;; Emacs22では?
-; (when
-;    (load
-;  	(expand-file-name "~/.emacs.d/elpa/package.el"))
+;; (when
+;;     (load
+;;      (expand-file-name "~/.emacs.d/elpa/package.el"))
 (when (>= emacs-major-version 23)
-  (require 'package)
+
+  (when (= emacs-major-version 23)
+    (require 'package)
+    )
+
   (setq package-archives '(
                            ("ELPA" . "http://tromey.com/elpa/")
                            ("gnu" . "http://elpa.gnu.org/packages/")
                            ("marmalade" . "http://marmalade-repo.org/packages/")
                            ))
+
   (package-initialize)
   )
 

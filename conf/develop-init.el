@@ -53,13 +53,26 @@
 (add-hook 'markdown-mode-hook
            (lambda()
              (define-key markdown-mode-map "\C-i" 'markdown-cycle)
-             (hide-sublevels 2)
+             ;; (hide-sublevels 2)
              ))
 ;; (add-hook 'markdown-mode-hook
 ;;           '(lambda()
 ;;              (markdown-custom) ;; カスタム設定を使う場合
 ;;              (define-key markdown-mode-map [(shift tab)] 'markdown-shifttab)
 ;;              ))
+
+
+;; HTMLが存在すれば, 保存後にExport
+;; (add-hook 'markdown-mode-hook
+;;           (lambda ()
+;;              (when (executable-find markdown-command)
+;;                ; (add-hook 'write-file-hooks
+;;                (add-hook 'after-save-hook
+;;                          (lambda ()
+;;                             ; (when (file-writable-p (concat (buffer-file-name) . ".html"))
+;;                               (markdown-export)
+;;                               ; )
+;;                             )))))
 
 
 ;;;; reStructuredText

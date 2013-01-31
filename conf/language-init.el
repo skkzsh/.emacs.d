@@ -18,11 +18,20 @@
 ;;;; Python
 
 ;;;; Lisp
-(require 'lispxmp)
-(add-hook 'emacs-lisp-mode-hook
-           (lambda()
-             (define-key emacs-lisp-mode-map "\C-ce" 'lispxmp)
-             ))
+(when (require 'lispxmp nil t)
+  (add-hook 'emacs-lisp-mode-hook
+            (lambda()
+              (define-key emacs-lisp-mode-map "\C-ce" 'lispxmp)
+              ))
+  )
+
+;;;; PowerShell
+(autoload 'powershell-mode "powershell-mode" "Mode PowerShell" t)
+(push '("\\.ps[12]?$" . powershell-mode) auto-mode-alist)
+
+;;;; Batch
+(when (require 'batch-mode nil t)
+  )
 
 ;;;; Gnuplot
 (setq auto-mode-alist
@@ -33,7 +42,3 @@
 
 ;;;; MATLAB
 (add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
-
-;;;; Batch
-;; (require 'batch-mode)
-;;;; PowerShell
