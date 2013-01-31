@@ -21,7 +21,7 @@
 ;; previewerの拡張子補完リストの追加
 (defvar YaTeX-dvi2-command-ext-alist
   '(("[agx]dvi\\|dviout\\|Pictprinter\\|emacsclient" . ".dvi")
-    ("ghostview\\|gv" . ".ps")
+    ("ghostview\\|gv" . ".eps")
     ("acroread\\|pdf\\|Preview\\|TeXShop\\|Skim\\|evince\\|apvlv\\|zathura" . ".pdf")))
 
 ;; YaTeX Mode
