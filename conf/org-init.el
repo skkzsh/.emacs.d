@@ -108,22 +108,51 @@
 ;; (setq org-log-done 'time)
 
 
-;;; アジェンダ表示の対象ファイル
+;;; Agenda表示の対象File
 ;; (setq org-agenda-files (list org-directory))
-;;; アジェンダ表示で下線を用いる
+;;; Agenda表示で下線を用いる
 ;; (add-hook 'org-agenda-mode-hook '(lambda () (hl-line-mode 1)))
 ;; (setq hl-line-face 'underline)
 ;;; 標準の祝日を利用しない
 ;; (setq calendar-holidays nil)
 
+;---------------------------------------------------------------------------
+;;;; Open Applicaiton
+;; Default
+;; (
+;;  (auto-mode . emacs)
+;;  ("\\.mm\\'" . default)
+;;  ("\\.x?html?\\'" . default)
+;;  ("\\.pdf\\'" . default)
+;;  )
 
-;; HTML
+;; (cond
+;;   ;;;; Linux
+;;   ((eq system-type 'gnu/linux)
+;;    (setq org-file-apps '(
+;;                          ("pdf"  . "zathura %s")
+;;                          )))
+;;   ;;;; Mac
+;;   ((eq system-type 'darwin)
+;;    (setq org-file-apps '(
+;;                          )))
+;;   ;;;; Windows
+;;   ((eq system-type 'windows-nt)
+;;    (setq org-file-apps '(
+;;                          )))
+;; )
+
+;---------------------------------------------------------------------------
+;;;; Browser
+
+;---------------------------------------------------------------------------
+;;;; HTML
 ;; Backgroundで変換
-; (setq org-export-run-in-background t)
+;; (setq org-export-run-in-background t)
 
 ;;
-; (setq org-export-html-style-include-scripts nil
-;       org-export-html-style-include-default nil)
+;; (setq org-export-html-style-include-scripts nil
+;;       org-export-html-style-include-default nil)
 
 ;;
 ; (setq org-export-html-style
