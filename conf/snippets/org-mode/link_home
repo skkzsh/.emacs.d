@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: LINK HOME
+# key: >lh
+# --
+#+LINK_HOME:
