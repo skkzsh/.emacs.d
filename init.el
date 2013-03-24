@@ -27,6 +27,7 @@
 (load "edit-lisp-init")
 (load "language-init")
 (load "develop-init")
+(load "markdown-init")
 ;; (load "perl-init")
 (load "move-lisp-init")
 (load "browser-init")
