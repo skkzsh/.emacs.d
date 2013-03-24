@@ -44,6 +44,12 @@
 ; (ido-mode file)
 ; (ido-everywhere t)
 
+;---------------------------------------------------------------------------
+;; dired
+(require 'wdired)
+(define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
+
+;---------------------------------------------------------------------------
 ;; View
 (setq view-read-only t)
 ;; 自動でView Mode
