@@ -9,21 +9,39 @@
   (when (require 'menu-tree nil t))
   )
 
+;---------------------------------------------------------------------------
 ;;;; 日本語環境設定
 (set-language-environment "Japanese")
 
 ;;; coding-system
-(prefer-coding-system 'utf-8-unix) ; ファイル新規作成時
-;; (set-default-coding-systems 'utf-8-unix) ; ファイル新規作成時
-;; (setq file-name-coding-system 'utf-8-unix)
+(prefer-coding-system 'utf-8-unix)
+;; (set-default-coding-systems 'utf-8-unix)
+;; (set-file-name-coding-system 'utf-8-unix)
 ;; (set-buffer-file-coding-system 'utf-8-unix)
-;; (setq default-buffer-file-coding-system 'utf-8-unix)
-;; (set-terminal-coding-system 'utf-8-unix) ; 端末入出力
+;; (set-terminal-coding-system 'utf-8-unix)
+;; (set-keyboard-coding-system 'utf-8-unix)
 ;; (set-buffer-process-coding-system 'utf-8-unix, 'utf-8-unix)
-;; (setq default-process-coding-system 'utf-8-unix, 'utf-8-unix)
-;; (set-keyboard-coding-system 'utf-8-unix) ; 日本語入力
 ;; (set-clipboard-coding-system 'utf-8-unix)
+;; (setq default-file-name-coding-system 'utf-8-unix)
+;; (setq default-buffer-file-coding-system 'utf-8-unix)
+;; (setq default-terminal-coding-system 'utf-8-unix, 'utf-8-unix)
+;; (setq default-keyboard-coding-system 'utf-8-unix, 'utf-8-unix)
+;; (setq default-process-coding-system 'utf-8-unix, 'utf-8-unix)
+;; (setq file-name-coding-system 'utf-8-unix)
+;; (setq buffer-name-coding-system 'utf-8-unix)
+;; (setq keyboard-coding-system 'utf-8-unix)
 
+;; WindowsでのFile名文字化け対策
+;; TODO
+(when (eq system-type 'windows-nt)
+  (set-file-name-coding-system 'sjis-dos)
+  ;; (setq default-file-name-coding-system 'sjis-dos)
+  ;; (setq file-name-coding-system 'sjis-dos)
+  )
+
+;; TODO mode-hook
+
+;---------------------------------------------------------------------------
 (cond
   ;;;; Linux
   ((eq system-type 'gnu/linux)
