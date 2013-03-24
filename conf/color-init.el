@@ -81,25 +81,26 @@
 
  )
 
-;;; 現在行をハイライト
+;---------------------------------------------------------------------------
+;;; 現在行をHighlight
 ;;; 色指定
-  (defface my-hlline-face
-           (if window-system
+(defface my-hlline-face
+  (if window-system
 
-             '((((class color) (background dark))
-                (:background "gray20"))
-               (((class color) (background light))
-                (:background "gray20"))
-               (t ()))
+      '((((class color) (background dark))
+         (:background "gray20"))
+        (((class color) (background light))
+         (:background "gray20"))
+        (t ()))
 
-             '((((class color) (background dark))
-                (:background "LightGray"))
-               (((class color) (background light))
-                (:background "LightGray"))
-               (t ()))
+    '((((class color) (background dark))
+       (:background "LightGray"))
+      (((class color) (background light))
+       (:background "LightGray"))
+      (t ()))
 
-             )
-           "*Face used by hl-line.")
+    )
+  "*Face used by hl-line.")
 
 (setq hl-line-face 'my-hlline-face)
 ;;; 下線
