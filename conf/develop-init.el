@@ -105,5 +105,13 @@
                 ))
               )
 
+;; HTMLが存在すれば, 保存後にExport
+;; TODO
+
+;; Sphinx
+;; TOOD: make html & view のKeybind
+;; browse-url
+
+;---------------------------------------------------------------------------
 ;;;; blockdiag
 (load "~/.emacs.d/public_repos/emacsfiles/blockdiag-mode.el")
