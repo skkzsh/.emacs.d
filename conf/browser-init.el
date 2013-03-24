@@ -7,11 +7,13 @@
   (add-to-list 'load-path "~/.emacs.d/usr/share/emacs/site-lisp/w3m")
   (require 'w3m-load)
 
-  ; (cond
-  ;   ((eq system-type 'windows-nt)
-  ;    (setq w3m-command "C:/usr/bin/w3m.exe"))
-  ;   ;    (setq w3m-command (executable-find "w3m")))
-  ;   )
+  (cond
+   ((or
+     (eq system-type 'darwin)
+     (eq system-type 'windows-nt)
+     )
+    (setq w3m-command (executable-find "w3m")))
+   )
 
 ;;;; Default Browser
 ;(setq browse-url-browser-function
