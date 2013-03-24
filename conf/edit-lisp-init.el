@@ -1,8 +1,11 @@
+;;;; Edit Settings by Extensions
+;---------------------------------------------------------------------------
 ;;;; yasnippet
 (add-to-list 'load-path "~/.emacs.d/public_repos/yasnippet")
 (require 'yasnippet)
 (setq yas-snippet-dirs '(
                          "~/.emacs.d/conf/snippets"
+                         "~/.emacs.d/public_repos/yasnippet/snippets"
                          "~/.emacs.d/public_repos/yasnippet/extras/imported"
                          ))
 (yas-global-mode 1)
@@ -17,6 +20,7 @@
 
 (setq yas/prompt-functions '(yas/dropdown-prompt))
 
+;---------------------------------------------------------------------------
 ;;;; Auto Complete
 (require 'auto-complete-config)
 (global-auto-complete-mode t)
