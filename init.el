@@ -6,9 +6,9 @@
                 ) load-path))
 
 
-
 (load "edit-init")
 (load "font-init")
+(load "install-init")
 (load "appear-init")
 (load "color-init")
 (load "base-init")
