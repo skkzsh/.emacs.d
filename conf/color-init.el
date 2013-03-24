@@ -38,25 +38,27 @@
   (add-to-list 'default-frame-alist '(alpha . 90)))
   )
 
-
-;;; 対応括弧をハイライト表示
+;---------------------------------------------------------------------------
+;;; 対応括弧をHighlight表示
 (show-paren-mode t)
 ;;; tと追加可能
 ;; (setq show-paren-style 'mixed)
 ;; (set-face-background 'show-paren-match-face "plum2")
 ;; (set-face-foreground 'show-paren-match-face "Blue")
 
-
+;---------------------------------------------------------------------------
 ;;; 行末Space, Tabの表示
 (setq-default show-trailing-whitespace t)
 (set-face-background 'trailing-whitespace "Pink")
 
-
+;---------------------------------------------------------------------------
 ;;; 選択regionの色
 (setq-default transient-mark-mode t)
 (set-face-background 'region "LightBlue")
 
-;;; IMEのON/OFFでカーソルの色を変える
+;---------------------------------------------------------------------------
+;;; IMEのON/OFFでCursorの色を変える
+;; XXX: Buffer移動のときに誤表示?
 (set-cursor-color "#fd3")
 (add-hook 'input-method-activate-hook
           (function (lambda () (set-cursor-color "Magenta"))))
@@ -134,8 +136,8 @@
     )
   )
 
-
-;;; バッファ中のキーワードを色付け
+;---------------------------------------------------------------------------
+;;; Buffer中のKeywordを色付け
 (global-font-lock-mode t)
 ;;; 色付け方
 ;; (setq font-lock-support-mode 'jit-lock-mode)
