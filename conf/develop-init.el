@@ -1,3 +1,5 @@
+;;;; Development Settings
+;---------------------------------------------------------------------------
 ;;;; Magit
 (add-to-list 'load-path "~/.emacs.d/public_repos/magit")
 (require 'magit)
@@ -76,13 +78,12 @@
 
 
 ;;;; reStructuredText
+;; TODO
 (setq frame-background-mode 'dark) ; 背景に合わせて (requireの前)
 (require 'rst)
-(setq auto-mode-alist
-      (append '(
-                ("\\.rst$" . rst-mode)
-                ("\\.rest$" . rst-mode)
-                ) auto-mode-alist))
+(add-to-list 'auto-mode-alist
+             '("\\.\\(rst\\|rest\\)$" . rst-mode))
+
 ;; (add-hook 'rst-adjust-hook 'rst-toc-update)
 (add-hook 'rst-mode-hook
               (lambda ()
@@ -114,4 +115,5 @@
 
 ;---------------------------------------------------------------------------
 ;;;; blockdiag
+;; TODO
 (load "~/.emacs.d/public_repos/emacsfiles/blockdiag-mode.el")
