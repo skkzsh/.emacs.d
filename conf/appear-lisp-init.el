@@ -8,9 +8,11 @@
   )
 
 
+;---------------------------------------------------------------------------
 ;;;; fold-dwim / hideshow
+;; TODO
 ; (require 'hideshow)
-(require 'fold-dwim)
+(when (require 'fold-dwim nil t))
 ; (autoload 'fold-dwim-toggle
 ;         "fold-dwim"
 ;         "try to show any hidden text at the cursor" t)
