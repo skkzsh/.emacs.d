@@ -12,15 +12,54 @@
 ;; 拡張子がorgのFileを開いた時, 自動的にorg-modeにする
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 
-;;; Keybind
-(global-set-key "\C-cr" 'org-remember)
-(global-set-key "\C-cl" 'org-store-link)
-;; (global-set-key "\C-ca" 'org-agenda)
+;---------------------------------------------------------------------------
+;;;; Keybind
+;;; Global
+(global-set-key (kbd "C-c r") 'org-remember)
+(global-set-key (kbd "C-c l") 'org-store-link)
+;; (global-set-key (kbd "C-c a") 'org-agenda)
+;;; Org
+(add-hook 'org-mode-hook
+          (lambda()
 
+            (define-key org-mode-map (kbd "C-S-n") 'org-shiftcontroldown)
+            (define-key org-mode-map (kbd "C-S-b") 'org-shiftcontrolleft)
+            ;;;; (define-key org-mode-map (kbd "C-S-m") 'org-insert-todo-heading-respect-content)
+            (define-key org-mode-map (kbd "C-S-f") 'org-shiftcontrolright)
+            (define-key org-mode-map (kbd "C-S-p") 'org-shiftcontrolup)
+
+            ;;;; (define-key org-mode-map (kbd "C-m") 'org-insert-heading-respect-content)
+            ;;;; (define-key org-mode-map (kbd "C-i") 'org-force-cycle-archived)
+
+            (define-key org-mode-map (kbd "M-N") 'org-shiftmetadown)
+            (define-key org-mode-map (kbd "M-B") 'org-shiftmetaleft)
+            ;;;; (define-key org-mode-map (kbd "M-M") 'org-insert-todo-heading)
+            (define-key org-mode-map (kbd "M-F") 'org-shiftmetaright)
+            (define-key org-mode-map (kbd "M-P") 'org-shiftmetaup)
+
+            (define-key org-mode-map (kbd "M-J") 'org-metadown)
+            (define-key org-mode-map (kbd "M-H") 'org-metaleft)
+            (define-key org-mode-map (kbd "M-L") 'org-metaright)
+            ;;;; (define-key org-mode-map (kbd "M-I") 'pcomplete)
+            (define-key org-mode-map (kbd "M-K") 'org-metaup)
+
+            (define-key org-mode-map (kbd "C-c m") 'org-meta-return)
+
+            (define-key org-mode-map (kbd "C-S-j") 'org-shiftdown)
+            (define-key org-mode-map (kbd "C-S-h") 'org-shiftleft)
+            ;;;; (define-key org-mode-map (kbd "C-S-m") 'org-table-copy-down)
+            (define-key org-mode-map (kbd "C-S-l") 'org-shiftright)
+            (define-key org-mode-map (kbd "C-S-k") 'org-shiftup)
+
+            (define-key org-mode-map (kbd "C-S-i") 'org-shifttab)
+            (define-key org-mode-map (kbd "C-c i") 'org-shifttab)
+            ))
+
+;---------------------------------------------------------------------------
 ;;; 折り返し
 (setq org-startup-truncated nil)
 
-;;; 画像のインライン表示
+;;; 画像のInline表示
 ;;; 1
 (setq org-startup-with-inline-images t)
 ;;; 2
