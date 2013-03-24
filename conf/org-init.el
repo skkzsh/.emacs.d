@@ -85,10 +85,12 @@
 ;;; 初期化
 (org-remember-insinuate)
 ;;; Templates
+;;; TODO: Make Templates
 (setq org-remember-templates
       '(
-        ("Note" ?n "** %?\n  %i\n  %a\n  %T" nil "Inbox")
-        ("Todo" ?t "** TODO %?\n  %i\n  %a\n  %T" nil "Inbox")
+        ("Note" ?n "** %?\n  %i\n  %a\n  %T\n" nil "Inbox")
+        ("Todo" ?t "** TODO %?\n  %i\n  %a\n  %T\n" "TODO.org" "Tasks")
+        ("Idea" ?i "** %?\n  %i\n  %a\n  %T\n" "Ideas.org" "Ideas")
         ))
 
 ;;;; Tag
