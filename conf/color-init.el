@@ -63,11 +63,23 @@
 ;;; IMEのON/OFFでCursorの色を変える
 ;; XXX: Buffer移動のときに誤表示?
 (set-cursor-color "#fd3")
-(add-hook 'input-method-activate-hook
-          (function (lambda () (set-cursor-color "Magenta"))))
-(add-hook 'input-method-inactivate-hook
-          (function (lambda () (set-cursor-color "#fd3"))))
+(cond
 
+ ((eq window-system 'x)
+  (add-hook 'input-method-activate-hook
+            (function (lambda () (set-cursor-color "Magenta"))))
+  (add-hook 'input-method-inactivate-hook
+            (function (lambda () (set-cursor-color "#fd3"))))
+  )
+
+ ((eq window-system 'w32)
+  (add-hook 'w32-ime-on-hook
+            (function (lambda () (set-cursor-color "Magenta"))))
+  (add-hook 'w32-ime-off-hook
+            (function (lambda () (set-cursor-color "#fd3"))))
+  )
+
+ )
 
 ;;; 現在行をハイライト
 ;;; 色指定
