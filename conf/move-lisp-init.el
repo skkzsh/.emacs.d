@@ -84,16 +84,23 @@
   )
 ;;;; moccur edit
 
-
+;---------------------------------------------------------------------------
 ;;;; summarye
-(when (require 'summarye nil t))
+;; TODO
+(when (require 'summarye nil t)
+  ;;; INI File用の定義 [XXX]
+  (add-hook 'conf-windows-mode-hook
+            '(lambda () (setq se/item-delimiter-regexp
+                              "^\\s-*\\[.+\\]\\s-*$"
+                              )
+               ))
+  )
 
-;;;; dired
-
-
+;---------------------------------------------------------------------------
 ;;;; recentf
 ;; (setq recentf-max-saved-items 10000)
 ;; (when (require 'recentf-ext) nil t)
 
+;---------------------------------------------------------------------------
 ;;;; bashのようにミニバッファのヒストリをインクリメンタルサーチ
 ;; (require 'minibuf-isearch)
