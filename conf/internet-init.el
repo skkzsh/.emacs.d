@@ -26,10 +26,10 @@
 ;; (cfw:install-ical-schedules)
 
 
-(add-to-list 'load-path "~/.emacs.d/public_repos/calfw-gcal.el")
-(require 'calfw-gcal)
+;; (add-to-list 'load-path "~/.emacs.d/public_repos/calfw-gcal.el")
+;; (require 'calfw-gcal)
 
-
+;---------------------------------------------------------------------------
 ;;;; Evernote
 ;;; Ruby
 ;; (add-to-list 'load-path "~/.emacs.d/lisp/evernote-mode")
