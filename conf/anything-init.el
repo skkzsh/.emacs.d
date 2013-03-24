@@ -45,9 +45,11 @@
             '(lambda ()
                (local-set-key (kbd "O") 'anything-c-moccur-dired-do-moccur-by-moccur)))
 
-  ;;;; auto-complete
-  (when (require 'ac-anything nil t)
-  (define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-anything)
-  )
+  ;;;; Ack
+  ;; (when (executable-find "ack")
+  ;;   (when (require 'anything-ack nil t)
+  ;;     (setq anything-ack-command "ack --nocolor --nogroup ")
+  ;;     )
+  ;;  )
 
 )

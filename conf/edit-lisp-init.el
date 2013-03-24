@@ -22,42 +22,41 @@
 
 ;---------------------------------------------------------------------------
 ;;;; Auto Complete
-(require 'auto-complete-config)
-(global-auto-complete-mode t)
-; (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-1.4/dict")
-; (ac-config-default)
+;; TODO
+(when (require 'auto-complete-config nil t)
+  (global-auto-complete-mode t)
+  ;; (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-1.4/dict")
+;; (ac-config-default)
 
-;; Sources
-;; (push 'ac-source-filename ac-sources)
-;; or
-;; (setq ac-sources '(
-;;                    ac-source-filename
-;;                    ac-source-words-in-buffer
-;;                    ac-source-words-in-same-mode-buffers
-;;                    ))
+  ;; Sources
+  ;; (push 'ac-source-filename ac-sources)
+  ;; or
+  ;; (setq ac-sources '(
+  ;;                    ac-source-filename
+  ;;                    ac-source-words-in-buffer
+  ;;                    ac-source-words-in-same-mode-buffers
+  ;;                    ))
 
-; (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
-(global-set-key "\M-/" 'ac-start)
-;; 補完ウィンドウでC-p,C-nで候補選択
-(setq ac-use-menu-map t)
+  ;; (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+  (global-set-key "\M-/" 'ac-start)
+  ;; 補完ウィンドウでC-p,C-nで候補選択
+  (setq ac-use-menu-map t)
 
-;; カレントバッファ以外の補完機能は２文字目から作動させる。
-;(setq ac-dabbrev-all-min-count 2)
+  ;; カレントバッファ以外の補完機能は２文字目から作動させる。
+  ;;(setq ac-dabbrev-all-min-count 2)
 
-;; ***-mode にも対応
-(setq ac-modes
-      (append ac-modes
-              (list
-               'yatex-mode
-               'org-mode
-               )))
+  ;; ***-mode にも対応
+  (setq ac-modes
+        (append ac-modes
+                (list
+                 'yatex-mode
+                 'org-mode
+                 )))
 
-;; Lisp
-
-;; LaTeX
-; (add-to-list 'load-path "~/.emacs.d/public_repos/auto-complete-latex-light")
-; (require 'auto-complete-latex-light)
-; (setq ac-ll-dict-directory "~/.emacs.d/public_repos/auto-complete-latex-light/ac-ll-dict")
+  ;;;; anything
+  (when (require 'ac-anything nil t)
+    (define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-anything)
+    )
 
 ;;;; Junk File
 (when (require 'open-junk-file nil t)
