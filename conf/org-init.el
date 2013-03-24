@@ -70,10 +70,15 @@
 ;;; 見出しの余分な*を消す
 ;; (setq org-hide-leading-stars t)
 
-
-;; Memoを格納するorgファイルの設定
-(setq org-directory "~/Dropbox/.org")
-(setq org-default-notes-file (expand-file-name "notes.org" org-directory))
+;---------------------------------------------------------------------------
+;; Memoを格納するOrg Fileの設定
+;; XXX: Prefix, Local Variable
+(if (eq system-type 'windows-nt)
+    (setq org-directory (concat (getenv "USERPROFILE") "/Dropbox/.org"))
+  (setq org-directory "~/Dropbox/.org")
+  ;; (setq org-directory "~/Repository/bitbucket/doc/.org")
+  )
+(setq org-default-notes-file "Notes.org")
 
 
 ;;; Remember
