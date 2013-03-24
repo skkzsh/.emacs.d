@@ -32,10 +32,15 @@
 ;---------------------------------------------------------------------------
 ;;;; Evernote
 ;;; Ruby
-;; (add-to-list 'load-path "~/.emacs.d/lisp/evernote-mode")
+;; (add-to-list 'load-path "~/.emacs.d/public_repos/evernote-mode")
 ;; (require 'evernote-mode)
 ;; (setq evernote-enml-formatter-command
 ;;    '("w3m" "-dump" "-I" "UTF8" "-O" "UTF8")) ; optional
+;; Passwordをgpgで管理
+;; (setq evernote-password-cache t)
+;; gpgファイルの保存先
+;; (setq enh-password-cache-file "~/.emacs.d/evernote-mode.gpg")
+;; Keybind
 ;; (global-set-key "\C-cec" 'evernote-create-note)
 ;; (global-set-key "\C-ceo" 'evernote-open-note)
 ;; (global-set-key "\C-ces" 'evernote-search-notes)
@@ -43,8 +48,9 @@
 ;; (global-set-key "\C-cew" 'evernote-write-note)
 ;; (global-set-key "\C-cep" 'evernote-post-region)
 ;; (global-set-key "\C-ceb" 'evernote-browser)
+;; (global-set-key "\C-cee" 'evernote-change-edit-mode)
 
-
+;---------------------------------------------------------------------------
 ;;;; Skype
 (defun my-skype ()
   (require 'skype)
@@ -53,7 +59,7 @@
   (skype--init)
   (skype--open-all-users-buffer-command))
 
-
+;---------------------------------------------------------------------------
 ;;;; Twitter
 ;; (setq twittering-account-authorization 'authorized)
 
