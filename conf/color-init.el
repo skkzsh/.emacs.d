@@ -144,3 +144,21 @@
 (global-font-lock-mode t)
 ;;; 色付け方
 ;; (setq font-lock-support-mode 'jit-lock-mode)
+
+;---------------------------------------------------------------------------
+;;; 正規表現のGroupingを色付け
+(if window-system
+    (progn
+      ;; (set-face-foreground 'font-lock-regexp-grouping-backslash "orange")
+      ;; (set-face-background 'font-lock-regexp-grouping-backslash "white")
+      ;; (set-face-foreground 'font-lock-regexp-grouping-construct "red")
+      ;; (set-face-background 'font-lock-regexp-grouping-construct "green")
+      )
+
+    (progn
+      ;; (set-face-foreground 'font-lock-regexp-grouping-backslash "orange")
+      ;; (set-face-background 'font-lock-regexp-grouping-backslash "white")
+      ;; (set-face-foreground 'font-lock-regexp-grouping-construct "red")
+      ;; (set-face-background 'font-lock-regexp-grouping-construct "green")
+      )
+    )
