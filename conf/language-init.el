@@ -29,6 +29,10 @@
               ))
   )
 
+;;;; Zsh
+(add-to-list 'auto-mode-alist '("\\.zsh$" . sh-mode))
+;; (add-to-list 'auto-mode-alist '("\\.zsh$" . shell-script-mode))
+
 ;;;; PowerShell
 (autoload 'powershell-mode "powershell-mode" "Mode PowerShell" t)
 (push '("\\.ps[12]?$" . powershell-mode) auto-mode-alist)
