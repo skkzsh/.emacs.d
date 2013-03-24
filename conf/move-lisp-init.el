@@ -1,24 +1,37 @@
+;;;; Motion Settings by Extensions
+;---------------------------------------------------------------------------
 ;;;; ace-jump
 (global-set-key "\C-cj" 'ace-jump-mode)
 ;; (key-chord-define-global "jf" 'ace-jump-mode)
 
-
+;---------------------------------------------------------------------------
 ;;;; historyを保存し，次回起動時にそのhistoryを再利用
-(require 'session)
-(add-hook 'after-init-hook 'session-initialize)
-;;; 前回閉じたときの位置にカーソルを復帰
-;; (setq session-undo-check -1)
-(setq history-length 100) ;; ミニバッファ履歴の最大長 (Default:30)
-(setq session-initialize '(de-saveplace session keys menus places)
-      session-globals-include
-      '(
-        (kill-ring 50)             ; kill-ring の保存件数 (Default:10)
-        (session-file-alist 500 t) ; カーソル位置の保存件数 (Default:100)
-        (file-name-history 10000)  ; ファイルを開いた履歴の保存件数 (Default:200)
-        ))
-(setq session-globals-max-string 100000000) ; (Default: 1024)
+;; FIXME: 保存件数が増えない.
+(when (require 'session nil t)
+  ;; 前回閉じたときの位置にカーソルを復帰
+  ;; (setq session-undo-check -1)
+  (setq history-length 100) ;; ミニバッファ履歴の最大長 (Default:30)
+  (setq session-initialize '(de-saveplace session keys menus places)
+        session-globals-include
+        '(
+          (kill-ring 50)             ; kill-ring の保存件数 (Default:10)
+          (session-file-alist 500 t) ; カーソル位置の保存件数 (Default:100)
+          (file-name-history 1000)  ; ファイルを開いた履歴の保存件数 (Default:200)
+          ))
+  (setq session-globals-max-size 1000) ; (Default: 50)
+  (setq session-globals-max-string 100000000) ; (Default: 1024)
+  (add-hook 'after-init-hook 'session-initialize)
 
+  ;; (setq session-initialize '(session places))
+  ;; (setq session-globals-include '((kill-ring 512)
+  ;;                                   (session-file-alist 512)
+  ;;                                   (file-name-history 512)
+  ;;                                   (tags-table-set-list 128)
+  ;;                                   (tags-table-list 128)))
 
+  )
+
+;---------------------------------------------------------------------------
 ;;;; Redo
 (require 'redo+)
 (global-set-key (kbd "C-.") 'redo)
