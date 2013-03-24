@@ -7,6 +7,10 @@
     )
   )
 
+;---------------------------------------------------------------------------
+(add-to-list 'load-path "~/.emacs.d/public_repos/rainbow-delimiters")
+(require 'rainbow-delimiters)
+(add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
 
 ;---------------------------------------------------------------------------
 ;;;; fold-dwim / hideshow
