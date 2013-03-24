@@ -39,20 +39,23 @@
 ;; (undohist-initialize)
   ; )
 
-
+;---------------------------------------------------------------------------
 ;;;; Point Undo
 (when (require 'point-undo nil t)
   (global-set-key "\M-[" 'point-undo)
   (global-set-key "\M-]" 'point-redo)
   )
 
+;---------------------------------------------------------------------------
 ;;;; Goto Change
 (when (require 'goto-chg nil t)
 ;; (global-set-key "\C-xj" 'goto-last-change)
 ;; (global-set-key "\C-xJ" 'goto-last-change-reverse)
 )
 
+;---------------------------------------------------------------------------
 ;;;; color moccur
+;; TODO
 (when (require 'color-moccur nil t)
   ;; (global-set-key "\M-o" 'occur-by-moccur)
   ;;; スペース区切りでAND検索

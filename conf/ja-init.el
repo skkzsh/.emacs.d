@@ -1,3 +1,5 @@
+;;;; Japanese Settings
+;---------------------------------------------------------------------------
 ;;;; メニューを日本語化
 ;; (if (and (= emacs-major-version 22)
 ;;          (eq window-system 'x))
@@ -45,6 +47,7 @@
    )
 
   ;;;; Mac
+  ;; FIXME
   ((eq window-system 'ns)
    ;; (mac-get-current-input-source) ; 確認
    ;; ことえりが起動してしまう!!

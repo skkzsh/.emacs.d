@@ -1,8 +1,10 @@
+;;;; Edit Settings
+;---------------------------------------------------------------------------
 ;;;; CommentOut
 (setq comment-style 'multi-line) ; 複数行
 ;; (setq comment-style 'box)     ; BOX型
 
-
+;---------------------------------------------------------------------------
 ;;; TAB KeyによるIndentではModeを問わず空白を挿入
 (setq-default indent-tabs-mode nil)
 ;; (setq c-basic-offset 4)
@@ -88,17 +90,19 @@
 ;;     nil))
 ;; (if (not (memq 'time-stamp-with-locale-c write-file-hooks))
 ;;     (add-hook 'write-file-hooks 'time-stamp-with-locale-c))
-;; Keyword (Default: start="Time-stamp:[   ]+\\\\?[\"<]+" end="\\\\?[\">]")
+
+;;; Keyword (Default: start="Time-stamp:[   ]+\\\\?[\"<]+" end="\\\\?[\">]")
 (setq time-stamp-start "Last Modified:[   ]+\\\\?[\"<]+")
 (setq time-stamp-end "\\\\?[\">]")
 ;; (setq time-stamp-start "Last Modified:")
 ;; (setq time-stamp-end "\\\\?[\".]")
+
 ;;; Format
 ;; (setq time-stamp-format "%:y/%02m/%02d(%3a) %02H:%02M:%02S %Z")
 (setq time-stamp-format "%:y/%02m/%02d %02H:%02M:%02S %Z")
 ;; (setq time-stamp-format " %:y/%02m/%02d %02H:%02M:%02S %Z")
 
-
+;---------------------------------------------------------------------------
 ;;;; Clipboard
 ;;; emacs -nwのYank -> Clipboardができない
 (when (eq window-system 'x)

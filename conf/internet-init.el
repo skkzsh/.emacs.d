@@ -1,3 +1,6 @@
+;;;; Internet Settings
+
+;---------------------------------------------------------------------------
 ;;;; Wanderlust
 ;;; Debianではwlはapt-get install
 ;;; Macではgnutlsはbrew install

@@ -1,4 +1,5 @@
 ;;;; Perl
+
 ;; perl-modeでなくcperl-mode
 (defalias 'perl-mode 'cperl-mode)
 

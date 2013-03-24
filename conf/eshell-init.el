@@ -2,14 +2,17 @@
 
 ;; 補完時に、大文字小文字を区別しない
 (setq eshell-cmpl-ignore-case t)
-;; 確認なしでヒストリ保存
+
+;; 確認なしでHistory保存
 (setq eshell-ask-to-save-history (quote always))
-;; キーバインド
+
+;; Keybind
 (add-hook 'eshell-mode-hook
           '(lambda ()
              (progn
                (define-key eshell-mode-map "\C-a" 'eshell-bol)
                )))
+
 ;; alias
 (eval-after-load "em-alias"
                  '(progn

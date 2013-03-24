@@ -1,5 +1,7 @@
 ;;;; org-mode
+;; TODO
 
+;---------------------------------------------------------------------------
 (add-to-list 'load-path "~/.emacs.d/public_repos/org-mode/lisp")
 ;; (add-to-list 'load-path "~/.emacs.d/public_repos/org-mode/contrib/lisp")
 ;; (add-to-list 'load-path "~/.emacs.d/public_repos/org-mode/testing/lisp")
@@ -183,7 +185,8 @@
 (setq org-s5-theme "railscast")
 ;; (setq org-s5-theme "i18n")
 
-;;; MobileOrg
+;---------------------------------------------------------------------------
+;;;; MobileOrg
 ;;; 同期するFile
 ;; (setq org-agenda-files
 ;;       (list "~/org/memo.org"

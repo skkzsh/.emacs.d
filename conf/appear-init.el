@@ -1,3 +1,5 @@
+;;;; Appearance Settings
+;---------------------------------------------------------------------------
 ;;; 起動時の画面を非表示にする
 ;; (unless
 ;;   (eq window-system 'ns)
@@ -6,7 +8,7 @@
 ;;; scratchバッファのメッセージを消す(Emacs23)
 (setq initial-scratch-message nil)
 
-
+;---------------------------------------------------------------------------
 ;;;; Barの表示
 (when (null window-system)
   ;;; Menu Bar
@@ -44,14 +46,13 @@
 ;; (add-to-list 'default-frame-alist '(cursor-type . hbar)) ; 下線
 (add-to-list 'default-frame-alist '(cursor-type . bar)) ; 幅~Pointの縦棒
 
-
 ;;;; Cursor (Windows)
 ;;; キー入力すると消える
 (setq w32-hide-mouse-on-key t)
 ;;; 一定時間マウス操作をしないと消える
 (setq w32-hide-mouse-timeout 5000)
 
-
+;---------------------------------------------------------------------------
 ;;;; zone
 ;; (require 'zone)
 ;; (zone-when-idle 1200) ; ~秒Idleならzone

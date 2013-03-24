@@ -1,16 +1,19 @@
+;;;; Key Settings
+;---------------------------------------------------------------------------
 ;; Keybind
 (global-set-key "\C-h" 'delete-backward-char)
 ; (global-set-key "\M-g" 'goto-line)
 ; (global-set-key "\M-N" 'next-error)
 ; (global-set-key "\M-P" 'previous-error)
 
-;; C-k で改行を含めてカット
+;; C-k で改行を含めてCut
 (setq kill-whole-line t)
 
-
+;---------------------------------------------------------------------------
 ;; Cocoa
 (when (eq system-type 'darwin)
   ;; IME toggle
+  ;; TODO
   (define-key function-key-map (kbd "C-_") (kbd "C-\\"))
   ;; (global-set-key (kbd "C-_") (kbd "C-\\"))
   ;; (global-set-key "\C-_" 'toggle-input-method)

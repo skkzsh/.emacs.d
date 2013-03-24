@@ -1,4 +1,5 @@
 ;;;; anything
+;; TODO
 (when (require 'anything-startup nil t)
 
   ;;; Keybind
@@ -28,6 +29,7 @@
   (setq anything-enable-shortcuts 'alphabet)
 
   ;;;; c-moccur
+  ;; TODO
   (add-to-list 'load-path "~/.emacs.d/public_repos/anything-c-moccur")
   (require 'anything-c-moccur)
 

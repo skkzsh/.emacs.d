@@ -1,4 +1,4 @@
-;; abbrev
+;;;; abbrev
 ;; 保存先
 ; (setq abbrev-file-name "~/.abbrev_defs")
 ;; 保存
@@ -21,7 +21,7 @@
 ; Sort
 ; (require 'abbrev-sort)
 
-;; dabbrev
+;;;; dabbrev
 ;; Japanese
 ; (load "dabbrev-ja")
 ;; Highlight

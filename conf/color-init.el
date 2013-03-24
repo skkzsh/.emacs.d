@@ -78,6 +78,7 @@
 (global-hl-line-mode)
 
 
+;---------------------------------------------------------------------------
 ;;; 不可視文字の表示 (jaspace-modeでも)
 ;;; 強調表示するもの
 ;; (setq whitespace-style
@@ -89,6 +90,7 @@
 ;;; White Spaceを常に表示 (何故かtimestampを無効化してしまう)
 (global-whitespace-mode t)
 ;;; 表示する文字, 色
+
 (if window-system
     (progn
       (setq whitespace-display-mappings

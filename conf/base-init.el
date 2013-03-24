@@ -1,15 +1,18 @@
-;; バックアップファイル
+;;;; Basic Settings
+;---------------------------------------------------------------------------
+;; Backup File
 ;;1
 ; (setq backup-inhibited t)
 ;;2
 (setq make-backup-files nil)
-;; 自動保存用ファイル(#*#)
+;; 自動保存用File(#*#)
 (setq auto-save-default nil)
-;; 自動保存用ファイル作成までの秒間隔
+;; 自動保存用File作成までの秒間隔
 ; (setq auto-save-timeout 15)
-;; 自動保存用ファイル作成までのタイプ間隔
+;; 自動保存用File作成までのタイプ間隔
 ; (setq auto-save-interval 60)
 
+;---------------------------------------------------------------------------
 ;;;; Emacs server
 ; (cond
 ;   ((>= emacs-major-version 23)

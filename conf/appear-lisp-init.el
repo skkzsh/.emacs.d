@@ -1,3 +1,5 @@
+;;;; Appearance Settings by Extensions
+;---------------------------------------------------------------------------
 (when window-system
   ;; 行数を表示 linum/wb-line-number/setnu
   (when (>= emacs-major-version 23)

@@ -1,8 +1,9 @@
 ;;;; YaTeX
-
+;---------------------------------------------------------------------------
 (add-to-list 'load-path "~/.emacs.d/public_repos/yatex")
 ; (add-to-list 'Info-additional-directory-list "~/.emacs.d/public_repos/yatex")
 
+;---------------------------------------------------------------------------
 ;; 文字コードをEUC-JPに指定
 (setq YaTeX-kanji-code 3
       YaTeX-latex-message-code 'euc-jp
@@ -43,6 +44,8 @@
 ;      (executable-find "perl"))
 ;    (setq tex-command'("latexmk -dvi")))
 ;   )
+
+;---------------------------------------------------------------------------
 
 (cond
 

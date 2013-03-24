@@ -1,3 +1,4 @@
+;;;; Web Browser Settings
 ;; Debianではw3mとemacs-w3mはapt-get install
 ;; Macではw3mはbrew install
 

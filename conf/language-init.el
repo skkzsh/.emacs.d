@@ -1,4 +1,7 @@
+;;;; Programming Languages Settings
+;---------------------------------------------------------------------------
 ;;;; Compile
+;; TODO
 (setq compilation-window-height 12) ;; デフォルトは画面の下半分
 ;; mode-compile.el
 ; (autoload 'mode-compile "mode-compile"
@@ -13,6 +16,7 @@
 ; (global-set-key "\C-cc" 'smart-compile)
 
 
+;---------------------------------------------------------------------------
 ;;;; C
 ;;;; C++
 ;;;; Python

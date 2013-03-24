@@ -36,9 +36,6 @@
 (load "migemo-init")
 ;; (load "flymake-init")
 
-;; (load "browse-kill-ring-init")
-;; (load "iswitchb-init")
-
 (load "test-init")
 
 ;;; Local

@@ -1,5 +1,5 @@
-;;;; Fontsとフレーム (GUIのみ)
-;; フォントサイズを変えると, フレームのサイズや位置も変わる
+;;;; Fonts and Frame Setttings (GUI Only)
+;; Font Sizeを変えると, FrameのSizeやLocationも変わる
 ;; 使用可能Fontsは以下で確認
 ;; (prin1-to-string (x-list-fonts "*"))
 ;; UNIXでは，fc-listコマンド
@@ -17,7 +17,7 @@
 
    (cond
 
-     ((string-match "^over\\|^box" system-name)
+     ((string-match "^\\(over\\|box\\)" system-name)
       ;; TODO: Org ModeのTITLEが大きくならない.
       (setq initial-frame-alist
             (append (list
@@ -88,7 +88,7 @@
                       ;; '(font . "Migu 1M-11")
                       ;; '(font . "Osaka−等幅-11")
                       ;; '(width . 40)
-                      '(height . 32)
+                      '(height . 35)
                       ;; '(top . 40)
                       ;; '(left . 40)
                       ;; '(line-spacing . 0)
@@ -99,7 +99,7 @@
 
      )
 
-    ((string-match "^HASHI-PC\\|^PC-6763" system-name)
+    ((string-match "-PC$" system-name)
      (load "nt-font-init")
      (setq initial-frame-alist
            (append (list
