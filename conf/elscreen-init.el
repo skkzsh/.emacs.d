@@ -1,6 +1,6 @@
 ;;;; ElScreen
-
 ;; バグ回避のため, Ubuntuではapt-get install
+
 (unless
   (file-directory-p "/usr/share/emacs/site-lisp/elscreen")
 
