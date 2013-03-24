@@ -11,16 +11,19 @@
   (setq migemo-options '("-q" "--emacs"))
 
   ;;; migemo-dictのPath
-  ;;; TODO: migmeo-dictのPATHの取得
+  ;;; XXX: Prefix, Local variable
   (cond
    ((or (eq system-type 'gnu/linux)
         (eq system-type 'darwin))
-    (setq migemo-dictionary "/usr/local/share/migemo/utf-8/migemo-dict")
+    (setq migemo-prefix "/usr/local/share/migemo")
     )
    ((eq system-type 'windows-nt)
-    (setq migemo-dictionary "C:/usr/local/share/migemo/utf-8/migemo-dict")
+    (setq migemo-prefix "C:/Applications/cmigemo-default/dict")
     )
    )
+
+  (setq migemo-dictionary
+        (concat migemo-prefix "/utf-8/migemo-dict"))
 
   (setq migemo-user-dictionary nil)
   (setq migemo-regex-dictionary nil)
