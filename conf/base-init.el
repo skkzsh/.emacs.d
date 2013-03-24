@@ -27,7 +27,8 @@
 ;    )
 ;   )
 
-;;;; ビープ音を消す
+;---------------------------------------------------------------------------
+;;;; Beep音を消す
 (setq visible-bell t)
 
 ;; MacでPathを追加
@@ -59,24 +60,22 @@
 ;; 印刷
 (cond
   ((eq system-type 'gnu/linux)
-   (progn
-     (setq ps-multibyte-buffer 'non-latin-printer) ; 日本語
-     (require 'ps-mule)
-     (defalias 'ps-mule-header-string-charsets 'ignore)
-     ; (setq ps-paper-type 'a4)
-     ; (setq lpr-command "lpr")
-     ; (setq ps-lpr-command "lpr")
-     ; (setq ps-printer-name "")
-     ; (setq ps-font-size 7)
-     ; (setq ps-n-up-printing 1)
-     ; (setq ps-left-margin 20)
-     ; (setq ps-right-margin 20)
-     ; (setq ps-top-margin 20)
-     ; (setq ps-bottom-margin 20)
-     ; (setq ps-n-up-margin 20)
-     ))
+   (setq ps-multibyte-buffer 'non-latin-printer) ; Japanese
+   (require 'ps-mule)
+   (defalias 'ps-mule-header-string-charsets 'ignore)
+   ; (setq ps-paper-type 'a4)
+   ; (setq lpr-command "lpr")
+   ; (setq ps-lpr-command "lpr")
+   ; (setq ps-printer-name "")
+   ; (setq ps-font-size 7)
+   ; (setq ps-n-up-printing 1)
+   ; (setq ps-left-margin 20)
+   ; (setq ps-right-margin 20)
+   ; (setq ps-top-margin 20)
+   ; (setq ps-bottom-margin 20)
+   ; (setq ps-n-up-margin 20)
+   )
 
   ;  ((eq system-type 'windows-nt)
-  ;   (progn
-  ;  ))
+  ;  )
   )
