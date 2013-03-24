@@ -1,20 +1,33 @@
+;;;; Color Settings
+
+;---------------------------------------------------------------------------
 ;;;;; Color Theme
+(add-to-list 'load-path "~/.emacs.d/lisp/color-theme")
 (require 'color-theme)
 (color-theme-initialize)
+;; TODO
 
-(when window-system
-  ; (add-to-list 'load-path "~/.emacs.d/lisp/themes")
-  ; (require 'zenburn)
-  (color-theme-hrehf-dark)
-  ; (color-theme-aalto-light)
-  ; (color-theme-ld-dark)
-  ; (color-theme-clarity)
-
-  ; (color-theme-solarized-light)
-  ; (color-theme-solarized-dark)
+(cond
+ ((eq window-system 'x)
+  (color-theme-hrehf-dark))
+ ((eq window-system 'ns)
+  (color-theme-hrehf-dark))
+ ((eq window-system 'w32)
+  (color-theme-wombat))
   )
 
+;; (when window-system
+;;   (color-theme-hrehf-dark)
+;;   ;; (color-theme-wombat)
+;;   ;; (color-theme-railscasts)
+;;   )
 
+;; (when (>= emacs-major-version 24)
+;; (load-theme 'molokai t)
+;; (enable-theme 'molokai)
+;; )
+
+;---------------------------------------------------------------------------
 ;;; 透明度
 (cond
  ((eq window-system 'x)
