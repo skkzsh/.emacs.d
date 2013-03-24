@@ -155,30 +155,23 @@
 ;;       org-export-html-style-include-default nil)
 
 ;;
-; (setq org-export-html-style
-;       "<link rel=\"stylesheet\" type=\"text/css\" href=\"org-style.css\" />")
+;; (setq org-export-html-style
+;;       "<link rel=\"stylesheet\" type=\"text/css\" href=\"org-style.css\" />")
 
-;; Open Applicaiton
-(cond
-  ;;;; Linux
-  ((eq system-type 'gnu/linux)
-   (setq org-file-apps '(
-                         ("pdf"  . "zathura %s")
-                         )))
-  ;;;; Mac
-  ((eq system-type 'darwin)
-   (setq org-file-apps '(
-                         )))
-  ;;;; Windows
-  ((eq system-type 'windows-nt)
-   (setq org-file-apps '(
-                         )))
-)
-
-;;; Browser
-
-;;; LaTeX
-; (require 'org-latex)
+;; HTMLが存在すれば, 保存後にExport
+;; (add-hook 'org-mode-hook
+;;           (lambda ()
+            ;; (add-hook 'after-save-hook
+                      ;; (lambda ()
+                        ;; (when (file-writable-p (replace-regexp-in-string "\..+$" ".html" (buffer-file-name)))
+                          ;; 'org-export-as-html
+                          ;; )
+;; )
+;; )
+            ;; ))
+;---------------------------------------------------------------------------
+;;;; LaTeX
+;; (require 'org-latex)
 (setq org-export-latex-coding-system 'euc-jp-unix)
 (setq org-export-latex-date-format "%Y/%m/%d")
 (setq org-export-latex-classes nil)
@@ -203,11 +196,11 @@
      (executable-find "latexmk")
      (executable-find "perl"))
    (setq org-latex-to-pdf-process '("latexmk -pdfdvi %f")))
-  ; (setq org-latex-to-pdf-process '("latexmk -pdf %f")))
+  ;; (setq org-latex-to-pdf-process '("latexmk -pdf %f")))
   ((executable-find "pdfplatex")
    (setq org-latex-to-pdf-process '("pdfplatex %f")))
- ; ((executable-find "pdflatex")
- ;  (setq org-latex-to-pdf-process '("pdflatex %f")))
+ ;; ((executable-find "pdflatex")
+ ;;  (setq org-latex-to-pdf-process '("pdflatex %f")))
  )
 
 ;;; 拡張子epsの取扱いについて
