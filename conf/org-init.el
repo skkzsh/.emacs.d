@@ -207,8 +207,8 @@
 ;; (setq org-export-latex-inline-image-extensions nil)
 ;; (add-to-list 'org-export-latex-inline-image-extensions "eps")
 
-
-;;; babel
+;---------------------------------------------------------------------------
+;;;; babel
 ;; (eval-after-load "org"
 ;;                  '(progn
 ;;                     (require 'ob-perl)
@@ -239,13 +239,13 @@
 ;;                              (R . t)
 ;;                              ))
 
-
-;;; S5
+;---------------------------------------------------------------------------
+;;;; S5
 (add-to-list 'load-path "~/.emacs.d/public_repos/org-s5")
 (load "org-export-as-s5")
 (add-hook 'org-mode-hook
            (lambda()
-             (define-key org-mode-map "\C-cs" 'org-export-as-s5)
+             (define-key org-mode-map (kbd "C-c s") 'org-export-as-s5)
              ))
 
 ;; (setq org-export-htmlize-output-type 'CSS) ; CSSを変更するとき
