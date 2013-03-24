@@ -52,6 +52,7 @@
 ;;                   (message (concat "Wrote " name " (+x)"))))
 ;;             )))))
 
+(add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 
 ;---------------------------------------------------------------------------
 ;;;; tags
