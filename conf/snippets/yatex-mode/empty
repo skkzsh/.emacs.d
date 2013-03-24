@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: empty
+# key: #empty
+# --
+%#!tex2eps.sh
+%(setq dvi2-command "gv")
+
+\documentclass[30pt]{jsarticle}
+\usepackage{amsmath}
+\pagestyle{empty}
+\begin{document}
+
+\[
+$0
+\]
+
+\end{document}
