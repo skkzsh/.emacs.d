@@ -15,6 +15,32 @@
 (autoload 'wl-other-frame "wl" "Wanderlust on new frame." t)
 (autoload 'wl-draft "wl-draft" "Write draft with Wanderlust." t)
 
+;---------------------------------------------------------------------------
+;;;; Translator
+(when (require 'text-translator nil t)
+  (global-set-key "\C-x\M-t" 'text-translator)
+  (global-set-key "\C-x\M-T" 'text-translator-translate-last-string)
+  ;; (setq text-translator-prefix-key "\M-n")
+  ;; 自動選択に使用する関数を設定
+  (setq text-translator-auto-selection-func
+        'text-translator-translate-by-auto-selection-enja)
+  (global-set-key "\C-xt" 'text-translator-translate-by-auto-selection)
+  )
+
+;; google-translate
+
+;---------------------------------------------------------------------------
+;;;; Weather
+;;;; Yahoo
+;;; TODO: Local Variable
+(when (require 'yahoo-weather nil t)
+  ;; JAXX00
+  ;; 85 ; Tokyo
+  ;; 47 ; Kyoto
+  (setq yahoo-weather-location 'JAXX0047)
+  )
+
+;---------------------------------------------------------------------------
 ;;;; Calendar
 (add-to-list 'load-path "~/.emacs.d/public_repos/emacs-calfw")
 ;; (require 'calfw) ; 初回一度だけ
