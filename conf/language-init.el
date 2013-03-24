@@ -34,10 +34,13 @@
 ;; (add-to-list 'auto-mode-alist '("\\.zsh$" . shell-script-mode))
 
 ;;;; PowerShell
+;; TODO hook encoding
 (autoload 'powershell-mode "powershell-mode" "Mode PowerShell" t)
-(push '("\\.ps[12]?$" . powershell-mode) auto-mode-alist)
+(push '("\\.\\(ps1\\|psd1\\|psm1\\)$" . powershell-mode) auto-mode-alist)
+;; (push '("\\.ps[12]?$" . powershell-mode) auto-mode-alist)
 
 ;;;; Batch
+;; TODO hook encoding
 (when (require 'batch-mode nil t)
   )
 
