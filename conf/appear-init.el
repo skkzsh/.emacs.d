@@ -35,6 +35,15 @@
 (setq truncate-partial-width-windows nil)
 
 
+;---------------------------------------------------------------------------
+;;; Buffer名が重複した場合に分かりやすくする
+(require 'uniquify)
+;; filename<dir> 形式にする
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+;; *で囲まれたBuffer名を対象外
+(setq uniquify-ignore-buffers-re "*[^*]+*")
+
+;---------------------------------------------------------------------------
 ;;;; Cursor
 ;;;点滅
 ;; (blink-cursor-mode nil)
