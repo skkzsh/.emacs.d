@@ -1,3 +1,5 @@
+;;;; Flymake
+;; TODO
 (require 'flymake)
 
 ;; 全てのファイルで flymakeを有効化
