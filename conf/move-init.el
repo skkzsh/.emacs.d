@@ -34,6 +34,12 @@
 ;; (global-set-key (kbd "C-M-l") 'windmove-right)
 ;; (global-set-key (kbd "C-M-h") 'windmove-left)
 
+;---------------------------------------------------------------------------
+;;;; Find File at Point
+(ffap-bindings)
+;; TODO: PATH設定
+
+;---------------------------------------------------------------------------
 ;; ido
 ; (ido-mode file)
 ; (ido-everywhere t)
