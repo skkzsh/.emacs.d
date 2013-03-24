@@ -33,16 +33,22 @@
 
 ;---------------------------------------------------------------------------
 ;;;; Redo
-(require 'redo+)
-(global-set-key (kbd "C-.") 'redo)
-(global-set-key (kbd "C-M-/") 'redo)
-(global-set-key (kbd "M-_") 'redo)
-(setq undo-no-redo t) ; 過去のundoがredoされないように
-(setq undo-limit 600000)
-(setq undo-strong-limit 900000)
+(when (require 'redo+ nil t)
 
+  (global-set-key (kbd "C-.") 'redo)
+  (global-set-key (kbd "C-M-/") 'redo)
+  (global-set-key (kbd "M-_") 'redo)
 
+  (setq undo-no-redo t) ; 過去のundoがredoされないように
+
+  (setq undo-limit 600000)
+  (setq undo-strong-limit 900000)
+
+  )
+
+;---------------------------------------------------------------------------
 ;;;; Undo History
+;; FIXME
 ;;;; Errorを出すときは, undohistのFileを消してみる.
 ;; (add-to-list 'load-path "~/.emacs.d/lisp/undohist")
 ;; (require 'undohist)
