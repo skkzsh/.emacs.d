@@ -4,6 +4,11 @@
 (add-to-list 'load-path "~/.emacs.d/public_repos/magit")
 (require 'magit)
 
+;---------------------------------------------------------------------------
+;;;; YAML
+(when (require 'yaml-mode nil t)
+  (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+  )
 
 ;;;; Markdown / GFM
 (add-to-list 'load-path "~/.emacs.d/public_repos/markdown-mode")
