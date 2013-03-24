@@ -58,9 +58,6 @@
     (define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-anything)
     )
 
-;;;; Junk File
-(when (require 'open-junk-file nil t)
-  (setq open-junk-file-format "~/.junk/%Y-%m%d-%H%M.")
   )
 
 ;---------------------------------------------------------------------------

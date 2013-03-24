@@ -18,9 +18,9 @@
 (load "move-init")
 (load "eshell-init")
 
-(load "install-init")
-(load "org-init")
 (load "lisp-init")
+(load "junk-init")
+(load "org-init")
 (load "internet-init")
 (load "elscreen-init")
 (load "appear-lisp-init")
