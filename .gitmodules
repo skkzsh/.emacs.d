@@ -28,3 +28,9 @@
 [submodule "public_repos/emacsfiles"]
 	path = public_repos/emacsfiles
 	url = https://github.com/maple/emacsfiles.git
+[submodule "public_repos/rainbow-delimiters"]
+	path = public_repos/rainbow-delimiters
+	url = https://github.com/jlr/rainbow-delimiters.git
+[submodule "public_repos/exec-path-from-shell"]
+	path = public_repos/exec-path-from-shell
+	url = https://github.com/purcell/exec-path-from-shell.git
