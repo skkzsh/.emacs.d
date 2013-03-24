@@ -44,12 +44,20 @@
 (when (require 'batch-mode nil t)
   )
 
-;;;; Gnuplot
+;;;; Visual Basic
+(autoload 'visual-basic-mode "visual-basic-mode" "Visual Basic mode." t)
 (setq auto-mode-alist
-      (append '(
-                ("\\.gp$"  . gnuplot-mode)
-                ("\\.plt$" . gnuplot-mode)
-                ) auto-mode-alist))
+    (append '(
+              ("\\.vb$"  . visual-basic-mode)
+              ("\\.vbs$" . visual-basic-mode)
+              ("\\.bas$" . visual-basic-mode)
+              ("\\.frm$" . visual-basic-mode)
+              ;; ("\\.cls$" . visual-basic-mode)
+              ) auto-mode-alist))
+
+;;;; Gnuplot
+(add-to-list 'auto-mode-alist
+    '("\\.\\(gp\\|plt\\)$" . gnuplot-mode))
 
 ;;;; MATLAB
 (add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))
