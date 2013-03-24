@@ -54,7 +54,10 @@
 ;---------------------------------------------------------------------------
 ;;; 選択regionの色
 (setq-default transient-mark-mode t)
-(set-face-background 'region "LightBlue")
+(if window-system
+    (set-face-background 'region "DarkSlateBlue")
+  (set-face-background 'region "LightBlue")
+  )
 
 ;---------------------------------------------------------------------------
 ;;; IMEのON/OFFでCursorの色を変える
