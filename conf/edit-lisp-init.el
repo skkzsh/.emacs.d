@@ -63,5 +63,18 @@
 (when (require 'open-junk-file nil t)
   (setq open-junk-file-format "~/.junk/%Y-%m%d-%H%M.")
   )
-;; for Dropbox
-;; (setq open-junk-file-format "~/Dropbox/.junk/%Y-%m%d-%H%M.")
+
+;---------------------------------------------------------------------------
+;;;; 矩形選択
+;; TODO
+;; (require 'sense-region)
+;; (sense-region-on)
+
+;---------------------------------------------------------------------------
+;;;; Lisp
+
+;---------------------------------------------------------------------------
+;;;; LaTeX
+;; (add-to-list 'load-path "~/.emacs.d/public_repos/auto-complete-latex-light")
+;; (require 'auto-complete-latex-light)
+;; (setq ac-ll-dict-directory "~/.emacs.d/public_repos/auto-complete-latex-light/ac-ll-dict")
