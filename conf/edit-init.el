@@ -77,16 +77,18 @@
                 (org-mode          . "template.org")
                 (markdown-mode     . "template.md")
                 (gfm-mode          . "template.md")
+                (powershell-mode   . "template.ps1")
                 (batch-mode        . "template.bat")
                 ) auto-insert-alist))
 
-
+;---------------------------------------------------------------------------
 ;;;; Time Stamp
 (require 'time-stamp)
 ;;; 保存時にTime-stamp
 (if (not (memq 'time-stamp write-file-hooks))
     (setq write-file-hooks
           (cons 'time-stamp write-file-hooks)))
+
 ;;; 日本語で日付を入れたくないのでlocaleをCにする
 ;; (defun time-stamp-with-locale-c ()
 ;;   (let ((system-time-locale "C"))
