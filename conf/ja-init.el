@@ -4,8 +4,10 @@
 ;; (if (and (= emacs-major-version 22)
 ;;          (eq window-system 'x))
 ;;  (setq menu-tree-coding-system 'utf-8))
-(when (or (>= emacs-major-version 23)
-          (featurep 'meadow))
+(when (or
+       (= emacs-major-version 23)
+       (featurep 'meadow)
+       )
   (when (require 'menu-tree nil t))
   )
 
