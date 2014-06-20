@@ -10,7 +10,6 @@
 (load "font-init")
 (load "install-init")
 (load "appear-init")
-(load "color-init")
 (load "base-init")
 (load "ja-init")
 (load "key-init")
@@ -23,6 +22,9 @@
 (load "org-init")
 (load "internet-init")
 (load "elscreen-init")
+
+(load "color-init")
+
 (load "appear-lisp-init")
 (load "edit-lisp-init")
 (load "language-init")
@@ -51,7 +53,7 @@
 ;;;; 読み込み順
 ;; - font-initの後にappear-initにしないと,
 ;;   default-frame-alistが反映されない.
-;; - elscreen-initの後にappear-listp-initにしないと,
+;; - elscreen-initの後にcolor-initにしないと,
 ;;   elscreenのタブの色がcolor-themeに反映されない.
 ;; - whitespace-modeがtimestampを無効化するので,
 ;;   timestampをwhitespace-modeより先に読む.
