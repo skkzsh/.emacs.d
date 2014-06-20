@@ -3,6 +3,7 @@
 ;---------------------------------------------------------------------------
 ;;;;; Color Theme
 (add-to-list 'load-path "~/.emacs.d/lisp/color-theme")
+(add-to-list 'load-path "~/.emacs.d/bundle/emacs-color-theme-solarized")
 (require 'color-theme)
 (color-theme-initialize)
 ;; TODO
@@ -11,7 +12,7 @@
  ((eq window-system 'x)
   (color-theme-hrehf-dark))
  ((eq window-system 'ns)
-  (color-theme-hrehf-dark))
+  (color-theme-wombat))
  ((eq window-system 'w32)
   (color-theme-wombat))
   )
