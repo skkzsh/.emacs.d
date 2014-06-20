@@ -4,7 +4,7 @@
 (unless
   (file-directory-p "/usr/share/emacs/site-lisp/elscreen")
 
-  (add-to-list 'load-path "~/.emacs.d/public_repos/elscreen")
+  (add-to-list 'load-path "~/.emacs.d/bundle/elscreen")
   ;;;; Add-On
   (require 'elscreen-dired)
   (require 'elscreen-w3m)

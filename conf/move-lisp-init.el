@@ -1,8 +1,23 @@
 ;;;; Motion Settings by Extensions
 ;---------------------------------------------------------------------------
 ;;;; ace-jump
+(add-to-list 'load-path "~/.emacs.d/bundle/ace-jump-mode")
+(autoload
+  'ace-jump-mode
+  "ace-jump-mode"
+  "Emacs quick move minor mode"
+  t)
 (global-set-key "\C-cj" 'ace-jump-mode)
 ;; (key-chord-define-global "jf" 'ace-jump-mode)
+
+;; (autoload
+;;   'ace-jump-mode-pop-mark
+;;   "ace-jump-mode"
+;;   "Ace jump back:-)"
+;;   t)
+;; (eval-after-load "ace-jump-mode"
+;;   '(ace-jump-mode-enable-mark-sync))
+;; (define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
 
 ;---------------------------------------------------------------------------
 ;;;; historyを保存し，次回起動時にそのhistoryを再利用

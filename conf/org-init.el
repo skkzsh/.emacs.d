@@ -2,10 +2,11 @@
 ;; TODO
 
 ;---------------------------------------------------------------------------
-(add-to-list 'load-path "~/.emacs.d/public_repos/org-mode/lisp")
-;; (add-to-list 'load-path "~/.emacs.d/public_repos/org-mode/contrib/lisp")
-;; (add-to-list 'load-path "~/.emacs.d/public_repos/org-mode/testing/lisp")
-;; (add-to-list 'Info-additional-directory-list "~/.emacs.d/public_repos/org-mode/doc")
+
+(add-to-list 'load-path "~/.emacs.d/bundle/org-mode/lisp")
+(add-to-list 'load-path "~/.emacs.d/bundle/org-mode/contrib/lisp")
+;; (add-to-list 'load-path "~/.emacs.d/bundle/org-mode/testing/lisp")
+;; (add-to-list 'Info-additional-directory-list "~/.emacs.d/bundle/org-mode/doc")
 
 ;;; 初期化
 (require 'org-install)

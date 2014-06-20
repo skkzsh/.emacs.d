@@ -1,6 +1,6 @@
 ;;;; Markdown / GFM
 ;---------------------------------------------------------------------------
-(add-to-list 'load-path "~/.emacs.d/public_repos/markdown-mode")
+(add-to-list 'load-path "~/.emacs.d/bundle/markdown-mode")
 (autoload 'gfm-mode "markdown-mode.el"
   "Major mode for editing Markdonw files" t)
 ;; (autoload 'markdown-mode "markdown-mode.el"

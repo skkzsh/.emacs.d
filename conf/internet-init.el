@@ -42,7 +42,7 @@
 
 ;---------------------------------------------------------------------------
 ;;;; Calendar
-(add-to-list 'load-path "~/.emacs.d/public_repos/emacs-calfw")
+(add-to-list 'load-path "~/.emacs.d/bundle/emacs-calfw")
 ;; (require 'calfw) ; 初回一度だけ
 ;; (cfw:open-calendar-buffer) ; カレンダー表示
 
@@ -52,13 +52,13 @@
 ;; (cfw:install-ical-schedules)
 
 
-;; (add-to-list 'load-path "~/.emacs.d/public_repos/calfw-gcal.el")
+;; (add-to-list 'load-path "~/.emacs.d/bundle/calfw-gcal.el")
 ;; (require 'calfw-gcal)
 
 ;---------------------------------------------------------------------------
 ;;;; Evernote
 ;;; Ruby
-;; (add-to-list 'load-path "~/.emacs.d/public_repos/evernote-mode")
+;; (add-to-list 'load-path "~/.emacs.d/bundle/evernote-mode")
 ;; (require 'evernote-mode)
 ;; (setq evernote-enml-formatter-command
 ;;    '("w3m" "-dump" "-I" "UTF8" "-O" "UTF8")) ; optional

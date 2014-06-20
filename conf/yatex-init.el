@@ -1,7 +1,7 @@
 ;;;; YaTeX
 ;---------------------------------------------------------------------------
-(add-to-list 'load-path "~/.emacs.d/public_repos/yatex")
-; (add-to-list 'Info-additional-directory-list "~/.emacs.d/public_repos/yatex")
+(add-to-list 'load-path "~/.emacs.d/bundle/yatex")
+; (add-to-list 'Info-additional-directory-list "~/.emacs.d/bundle/yatex")
 
 ;---------------------------------------------------------------------------
 ;; 文字コードをEUC-JPに指定

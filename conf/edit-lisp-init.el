@@ -1,17 +1,16 @@
 ;;;; Edit Settings by Extensions
 ;---------------------------------------------------------------------------
 ;;;; yasnippet
-(add-to-list 'load-path "~/.emacs.d/public_repos/yasnippet")
+(add-to-list 'load-path "~/.emacs.d/bundle/yasnippet_0.8.0")
 (require 'yasnippet)
 (setq yas-snippet-dirs '(
                          "~/.emacs.d/conf/snippets"
-                         "~/.emacs.d/public_repos/yasnippet/snippets"
-                         "~/.emacs.d/public_repos/yasnippet/extras/imported"
+                         "~/.emacs.d/bundle/yasnippet_0.8.0/snippets"
                          ))
 (yas-global-mode 1)
 
 ; (setq yas/root-directory '(
-;                             "~/.emacs.d/public_repos/yasnippet-org-mode"
+;                             "~/.emacs.d/bundle/yasnippet-org-mode"
 ;                             "~/.emacs.d/conf/snippets"
 ;                             ))
 ; (yas/initialize)
@@ -71,6 +70,6 @@
 
 ;---------------------------------------------------------------------------
 ;;;; LaTeX
-;; (add-to-list 'load-path "~/.emacs.d/public_repos/auto-complete-latex-light")
+;; (add-to-list 'load-path "~/.emacs.d/bundle/auto-complete-latex-light")
 ;; (require 'auto-complete-latex-light)
-;; (setq ac-ll-dict-directory "~/.emacs.d/public_repos/auto-complete-latex-light/ac-ll-dict")
+;; (setq ac-ll-dict-directory "~/.emacs.d/bundle/auto-complete-latex-light/ac-ll-dict")

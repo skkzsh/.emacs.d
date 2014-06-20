@@ -32,7 +32,7 @@
 ;;;; PATH
 ;; (when (memq window-system '(mac ns))
 (when (eq window-system 'ns)
-  (add-to-list 'load-path "~/.emacs.d/public_repos/exec-path-from-shell")
+  (add-to-list 'load-path "~/.emacs.d/bundle/exec-path-from-shell")
   (require 'exec-path-from-shell)
   (exec-path-from-shell-initialize)
   )

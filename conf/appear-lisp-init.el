@@ -8,7 +8,7 @@
   )
 
 ;---------------------------------------------------------------------------
-(add-to-list 'load-path "~/.emacs.d/public_repos/rainbow-delimiters")
+(add-to-list 'load-path "~/.emacs.d/bundle/rainbow-delimiters")
 (require 'rainbow-delimiters)
 (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
 

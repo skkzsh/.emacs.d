@@ -1,14 +1,14 @@
 ;;;; Development Settings
 ;---------------------------------------------------------------------------
 ;;;; Magit
-(add-to-list 'load-path "~/.emacs.d/public_repos/magit")
+(add-to-list 'load-path "~/.emacs.d/bundle/magit_maint")
 (require 'magit)
 
 ;---------------------------------------------------------------------------
 ;;;; YAML
-(when (require 'yaml-mode nil t)
-  (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-  )
+(add-to-list 'load-path "~/.emacs.d/bundle/yaml-mode")
+(require 'yaml-mode nil t)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
 ;---------------------------------------------------------------------------
 ;;;; reStructuredText
@@ -50,7 +50,7 @@
 ;---------------------------------------------------------------------------
 ;;;; blockdiag
 ;; TODO
-(load "~/.emacs.d/public_repos/emacsfiles/blockdiag-mode.el")
+(load "~/.emacs.d/bundle/emacsfiles/blockdiag-mode.el")
 
 ;---------------------------------------------------------------------------
 ;;;; CSV
