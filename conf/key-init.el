@@ -22,7 +22,8 @@
 
 (when (eq window-system 'ns)
   ;; Fullscreen by Command + Ctrl + f
-  (global-set-key (kbd "<C-s-268632070>") 'ns-toggle-fullscreen)
+  (setq ns-use-native-fullscreen nil)
+  (global-set-key (kbd "<C-s-268632070>") 'toggle-frame-fullscreen)
   ;; BackSlash
   (define-key global-map [165] nil)
   (define-key global-map [67109029] nil)
