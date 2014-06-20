@@ -9,16 +9,18 @@
 ;; (add-to-list 'Info-additional-directory-list "~/.emacs.d/bundle/org-mode/doc")
 
 ;;; 初期化
-(require 'org-install)
-;; 拡張子がorgのFileを開いた時, 自動的にorg-modeにする
-(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+;; (require 'org-install)
+;;; 拡張子がorgのFileを開いた時, 自動的にorg-modeにする
+;; (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 
 ;---------------------------------------------------------------------------
 ;;;; Keybind
 ;;; Global
-(global-set-key (kbd "C-c r") 'org-remember)
+;; (global-set-key (kbd "C-c r") 'org-remember)
+(global-set-key (kbd "C-c r") 'org-capture)
 (global-set-key (kbd "C-c l") 'org-store-link)
 ;; (global-set-key (kbd "C-c a") 'org-agenda)
+
 ;;; Org
 (add-hook 'org-mode-hook
           (lambda()
@@ -72,8 +74,8 @@
 ;; (setq org-hide-leading-stars t)
 
 ;---------------------------------------------------------------------------
-;; Memoを格納するOrg Fileの設定
-;; XXX: Prefix, Local Variable
+;;; Memoを格納するOrg Fileの設定
+;;; XXX: Prefix, Local Variable
 (if (eq system-type 'windows-nt)
     (setq org-directory (concat (getenv "USERPROFILE") "/Dropbox/.org"))
   (setq org-directory "~/Dropbox/.org")
@@ -84,17 +86,17 @@
 
 ;;; Remember
 ;;; 初期化
-(org-remember-insinuate)
+;; (org-remember-insinuate)
 ;;; Templates
 ;;; TODO: Make Templates
-(setq org-remember-templates
-      '(
-        ("Note" ?n "** %?\n  %i\n  %a\n  %T\n" nil "Inbox")
-        ("Todo" ?t "** TODO %?\n  %i\n  %a\n  %T\n" "TODO.org" "Tasks")
-        ("Idea" ?i "** %?\n  %i\n  %a\n  %T\n" "Ideas.org" "Ideas")
-        ))
+;; (setq org-remember-templates
+;;       '(
+;;         ("Note" ?n "** %?\n   %i\n   %a\n   %T\n" nil "Inbox")
+;;         ("Task" ?t "** TODO %?\n   %i\n   %a\n   %T\n" "TODO.org" "Tasks")
+;;         ("Idea" ?i "** %?\n   %i\n   %a\n   %T\n" "Ideas.org" "Ideas")
+;;         ))
 
-;;;; Tag
+;;; Tag
 ;; (setq org-tag-alist
 ;;   '(("@OFFICE" . ?o) ("@HOME" . ?h) ("SHOPPING" . ?s)
 ;;     ("MAIL" . ?m) ("PROJECT" . ?p)))
@@ -116,6 +118,25 @@
 ;; (setq hl-line-face 'underline)
 ;;; 標準の祝日を利用しない
 ;; (setq calendar-holidays nil)
+
+;;; Capture
+(require 'org-capture)
+;;; Templates
+;;; TODO: Make Templates
+(setq org-capture-templates
+      '(
+        ("n" "Note" entry (file+headline nil "Inbox")
+         "** %?\n   %i\n   %a\n   %T\n")
+        ("t" "Task" entry (file+headline "TODO.org" "Tasks")
+         "** TODO %?\n   %i\n   %a\n   %T\n")
+        ("i" "Idea" entry (file+headline "Ideas.org" "Ideas")
+         "** %?\n   %i\n   %a\n   %T\n")
+        ("j" "Journal" entry (file+datetree "Journal.org")
+         "* %?\n   %i\n   %a\n   %T\n")
+        ("c" "Code Reading" entry (file+headline "CodeReading.org" "Inbox")
+         "** %?\n   %a\n   %i\n")
+        ))
+
 
 ;---------------------------------------------------------------------------
 ;;;; Open Applicaiton
@@ -242,7 +263,7 @@
 
 ;---------------------------------------------------------------------------
 ;;;; S5
-(add-to-list 'load-path "~/.emacs.d/public_repos/org-s5")
+(add-to-list 'load-path "~/.emacs.d/bundle/org-s5")
 (load "org-export-as-s5")
 (add-hook 'org-mode-hook
            (lambda()
@@ -263,8 +284,20 @@
 ;;             ))
 ;; (setq org-agenda-files "~/org/todo.org")
 ;; (setq org-agenda-files "~/Dropbox/org/todo.org")
+(if (eq system-type 'windows-nt)
+    (setq org-directory (concat (getenv "USERPROFILE") "/Dropbox/.org/Mobile.org"))
+  (setq org-agenda-files "~/Dropbox/.org/Mobile.org")
+  )
 ;; (setq org-mobile-files org-agenda-files)
 ;;; MobileOrgで新規作成したNoteを保存するFile
 ;; (setq org-mobile-inbox-for-pull "~/Dropbox/org/mobile.org")
+(if (eq system-type 'windows-nt)
+    (setq org-directory (concat (getenv "USERPROFILE") "/Dropbox/.org/flagged.org"))
+  (setq org-mobile-inbox-for-pull "~/Dropbox/.org/flagged.org")
+  )
 ;;; Dropboxで同期するのMobileOrgのDirectory
 ;; (setq org-mobile-directory "~/Dropbox/MobileOrg")
+(if (eq system-type 'windows-nt)
+    (setq org-directory (concat (getenv "USERPROFILE") "/Dropbox/Apps/Mobileorg"))
+  (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
+  )
