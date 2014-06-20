@@ -1,8 +1,8 @@
 #+TITLE: Memo
 #+LANGUAGE: ja
 #+OPTIONS: \n:t
-#+STYLE: <link rel="stylesheet" type="text/css" href="http://skkzsh.github.com/style_sheet/org/org.css" title="org">
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://skkzsh.github.com/style_sheet/org/org.css" title="org">
 
-# Last Modified: <2012/12/23 02:19:55 JST>
+# Last Modified: <2014/01/12 00:57:50 東京 (標準時)>
 
 Org-Mode has their snippets by default.
