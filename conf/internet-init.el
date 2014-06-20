@@ -36,9 +36,10 @@
 (when (require 'yahoo-weather nil t)
   ;; JAXX00
   ;; 85 ; Tokyo
+  ;; 71 ; Osaka
   ;; 47 ; Kyoto
-  (setq yahoo-weather-location 'JAXX0047)
-  )
+  (setq yahoo-weather-location 'JAXX0071)
+)
 
 ;---------------------------------------------------------------------------
 ;;;; Calendar
