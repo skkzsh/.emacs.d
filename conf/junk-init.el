@@ -11,12 +11,12 @@
     (let ((open-junk-file-format) (junk-prefix))
 
       (if (eq system-type 'windows-nt)
-          (setq junk-prefix (getenv "USERPROFILE"))
+        (setq junk-prefix (getenv "USERPROFILE"))
         (setq junk-prefix "~")
         )
 
-        (setq open-junk-file-format
-              (concat junk-prefix "/Dropbox/.junk/%y/%m%d-%H%M%S."))
+      (setq open-junk-file-format
+            (concat junk-prefix "/Dropbox/.junk/%y/%m%d-%H%M%S."))
 
       (open-junk-file)
       )
