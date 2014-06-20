@@ -10,12 +10,15 @@
   (require 'elscreen-w3m)
   (require 'elscreen-server)
   (require 'elscreen-speedbar)
-  (require 'elscreen-color-theme)
+  (require 'elscreen-color-theme) ;; color-themeより前に読み込む
   (require 'elscreen-dnd)
-  (require 'elscreen-wl)
+  (require 'elscreen-wl) ;; wlより後に読み込む
   )
 
-(load "elscreen" "ElScreen" t)
+(if (eq system-type 'windows-nt)
+  (load "elscreen" "ElScreen" t)
+  (elscreen-start)
+  )
 
 ;;;; タブバーの設定
 ;; タブの左側のXを消す
