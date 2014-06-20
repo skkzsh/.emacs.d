@@ -1,4 +1,8 @@
-auto-install/*
-!auto-install/auto-install.el
 elpa/*
 !elpa/.gitkeep
+el-get/*
+!el-get/.gitkeep
+auto-install/*
+!auto-install/auto-install.el
+bundle/*
+!bundle/.gitkeep
