@@ -5,11 +5,7 @@
 ;; (when
 ;;     (load
 ;;      (expand-file-name "~/.emacs.d/elpa/package.el"))
-(when (>= emacs-major-version 23)
-
-  (when (= emacs-major-version 23)
-    (require 'package)
-    )
+(when (>= emacs-major-version 24)
 
   (setq package-archives '(
                            ("ELPA" . "http://tromey.com/elpa/")
@@ -19,6 +15,59 @@
 
   (package-initialize)
   )
+
+;---------------------------------------------------------------------------
+;;;; el-get
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+
+;;; Install el-get
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
+       )
+      (goto-char (point-max))
+      (eval-print-last-sexp)
+      ))
+
+;;; Auto Update
+(el-get 'sync)
+(el-get 'sync '(
+                ac-anything
+                batch-mode
+                color-moccur
+                goto-chg
+                graphviz-dot-mode
+                htmlize
+                key-chord
+                lispxmp
+                menu-tree
+                open-junk-file
+                point-undo
+                PowerShell-Mode
+                redo+
+                recentf-ext
+                summarye
+                visual-basic-mode
+                yahoo-weather
+                ))
+                ;; auto-install
+
+;;; Define recipe
+;; (setq el-get-sources
+;;       '(
+;;         (
+;;          :name
+;;                :type github
+;;                :pkgname ""
+;;                ; :branch ""
+;;                )
+;;         ))
+
+;---------------------------------------------------------------------------
+;;;; Cask
+;; (require 'cask "~/.cask/cask.el")
+;; (cask-initialize)
 
 ;---------------------------------------------------------------------------
 ;;;; auto-install
@@ -33,17 +82,3 @@
 
 ;; ediffを1Windowで実行
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
-
-;---------------------------------------------------------------------------
-;;;; el-get
-;; (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-
-;; (unless (require 'el-get nil 'noerror)
-;;   (with-current-buffer
-;;       (url-retrieve-synchronously
-;;        "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
-;;     (let (el-get-master-branch)
-;;       (goto-char (point-max))
-;;       (eval-print-last-sexp))))
-
-;; (el-get 'sync)
