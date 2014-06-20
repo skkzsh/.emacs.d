@@ -103,13 +103,13 @@
 ;;;; summarye
 ;; TODO
 (when (require 'summarye nil t)
-  ;;; INI File用の定義 [XXX]
-  (add-hook 'conf-windows-mode-hook
-            '(lambda () (setq se/item-delimiter-regexp
-                              "^\\s-*\\[.+\\]\\s-*$"
-                              )
-               ))
-  )
+;;; INI File用の定義 [XXX]
+(add-hook 'conf-windows-mode-hook
+          '(lambda () (setq se/item-delimiter-regexp
+                            "^\\s-*\\[.+\\]\\s-*$"
+                            )
+             ))
+)
 
 ;---------------------------------------------------------------------------
 ;;;; recentf
