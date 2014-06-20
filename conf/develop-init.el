@@ -5,6 +5,23 @@
 (require 'magit)
 
 ;---------------------------------------------------------------------------
+;;;; Git gutter
+
+;; (add-to-list 'load-path "~/.emacs.d/bundle/emacs-git-gutter")
+;; (require 'git-gutter)
+;; (global-git-gutter-mode t)
+;; (setq git-gutter:modified-sign "  ")
+;; (setq git-gutter:added-sign "++")
+;; (setq git-gutter:deleted-sign "--")
+;; (set-face-background 'git-gutter:added    "green")
+;; (set-face-background 'git-gutter:deleted  "yellow")
+;; (set-face-background 'git-gutter:modified "magenta")
+;; (setq git-gutter:window-width 2)
+
+;; (add-to-list 'load-path "~/.emacs.d/bundle/emacs-git-gutter-fringe")
+;; (require 'git-gutter-fringe)
+
+;---------------------------------------------------------------------------
 ;;;; YAML
 (add-to-list 'load-path "~/.emacs.d/bundle/yaml-mode")
 (require 'yaml-mode nil t)
