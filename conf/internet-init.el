@@ -57,6 +57,12 @@
 ;; (require 'calfw-gcal)
 
 ;---------------------------------------------------------------------------
+;;;; Simplenote
+;; (add-to-list 'load-path "~/.emacs.d/bundle/simplenote.el")
+;; (require 'simplenote)
+;; (simplenote-setup)
+
+;---------------------------------------------------------------------------
 ;;;; Evernote
 ;;; Ruby
 ;; (add-to-list 'load-path "~/.emacs.d/bundle/evernote-mode")
