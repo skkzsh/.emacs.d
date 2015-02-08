@@ -1,19 +1,17 @@
 ;;;; Internet Settings
 
 ;---------------------------------------------------------------------------
-;;;; Wanderlust
-;;; Debianではwlはapt-get install
-;;; Macではgnutlsはbrew install
+;;;; Search web
+(add-to-list 'load-path "~/.emacs.d/bundle/search-web.el")
+(require 'search-web)
 
-(setq load-path (append '(
-                          "~/.emacs.d/usr/share/emacs/site-lisp/flim"
-                          "~/.emacs.d/usr/share/emacs/site-lisp/semi"
-                          "~/.emacs.d/usr/share/emacs/site-lisp/wl"
-                          ) load-path))
-
-(autoload 'wl "wl" "Wanderlust" t)
-(autoload 'wl-other-frame "wl" "Wanderlust on new frame." t)
-(autoload 'wl-draft "wl-draft" "Write draft with Wanderlust." t)
+;---------------------------------------------------------------------------
+;;;; Google Search
+(add-to-list 'load-path "~/.emacs.d/bundle/emacs-google-this")
+(require 'google-this)
+(global-set-key "\C-cg" 'google-this-mode-submap)
+;; (setq google-this-location-suffix "co.jp")
+(google-this-mode 1)
 
 ;---------------------------------------------------------------------------
 ;;;; Translator
@@ -40,6 +38,21 @@
   ;; 47 ; Kyoto
   (setq yahoo-weather-location 'JAXX0071)
 )
+
+;---------------------------------------------------------------------------
+;;;; Wanderlust
+;;; Debianではwlはapt-get install
+;;; Macではgnutlsはbrew install
+
+(setq load-path (append '(
+                          "~/.emacs.d/usr/share/emacs/site-lisp/flim"
+                          "~/.emacs.d/usr/share/emacs/site-lisp/semi"
+                          "~/.emacs.d/usr/share/emacs/site-lisp/wl"
+                          ) load-path))
+
+(autoload 'wl "wl" "Wanderlust" t)
+(autoload 'wl-other-frame "wl" "Wanderlust on new frame." t)
+(autoload 'wl-draft "wl-draft" "Write draft with Wanderlust." t)
 
 ;---------------------------------------------------------------------------
 ;;;; Calendar
