@@ -2,9 +2,11 @@
 
 ```sh
 git clone git://github.com/skkzsh/.emacs.d.git
-cd .emacs.d
-git submodule init
-git submodule update
+```
+
+```el
+(auto-install-batch "anything")
+(package-install "session")
 ```
 
 # Update
@@ -12,8 +14,4 @@ git submodule update
 ```sh
 cd .emacs.d
 git pull origin master
-
-git submodule init
-git submodule update
-git submodule foreach 'git checkout master; git pull origin master'
 ```
