@@ -3,6 +3,6 @@ elpa/*
 el-get/*
 !el-get/.gitkeep
 auto-install/*
-!auto-install/auto-install.el
+!auto-install/.gitkeep
 bundle/*
 !bundle/.gitkeep
