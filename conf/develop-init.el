@@ -1,7 +1,7 @@
 ;;;; Development Settings
 ;---------------------------------------------------------------------------
 ;;;; Magit
-(add-to-list 'load-path "~/.emacs.d/bundle/magit_maint")
+(add-to-list 'load-path "~/.emacs.d/bundle/magit_1_2_2")
 (require 'magit)
 
 ;---------------------------------------------------------------------------

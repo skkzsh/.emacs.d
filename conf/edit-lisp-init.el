@@ -1,11 +1,11 @@
 ;;;; Edit Settings by Extensions
 ;---------------------------------------------------------------------------
 ;;;; yasnippet
-(add-to-list 'load-path "~/.emacs.d/bundle/yasnippet_0.8.0")
+(add-to-list 'load-path "~/.emacs.d/bundle/yasnippet")
 (require 'yasnippet)
 (setq yas-snippet-dirs '(
                          "~/.emacs.d/conf/snippets"
-                         "~/.emacs.d/bundle/yasnippet_0.8.0/snippets"
+                         "~/.emacs.d/bundle/yasnippet/snippets"
                          ))
 (yas-global-mode 1)
 
