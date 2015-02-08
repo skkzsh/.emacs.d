@@ -34,8 +34,10 @@
 (el-get 'sync)
 (el-get 'sync '(
                 ac-anything
+                auto-install
                 batch-mode
                 color-moccur
+                ; gnuplot-mode
                 goto-chg
                 graphviz-dot-mode
                 htmlize
@@ -51,7 +53,6 @@
                 visual-basic-mode
                 yahoo-weather
                 ))
-                ;; auto-install
 
 ;;; Define recipe
 ;; (setq el-get-sources
@@ -73,12 +74,13 @@
 ;;;; auto-install
 ;; Proxy 環境のWindowsでは?
 ;; (unless (eq system-type 'windows-nt)
-(require 'auto-install)
-(setq auto-install-directory "~/.emacs.d/auto-install")
-;;  (auto-install-update-emacswiki-package-name t)
-;;  (setq url-proxy-services '(("http" . "proxy:8080")))
-(auto-install-compatibility-setup) ; 互換性
-;; )
+(when (require 'auto-install nil t)
+  (setq auto-install-directory "~/.emacs.d/auto-install")
+  ;;  (auto-install-update-emacswiki-package-name t)
+  ;;  (setq url-proxy-services '(("http" . "proxy:8080")))
+  (auto-install-compatibility-setup) ; 互換性
+  ;; )
 
-;; ediffを1Windowで実行
-(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+  ;; ediffを1Windowで実行
+  (setq ediff-window-setup-function 'ediff-setup-windows-plain)
+  )
