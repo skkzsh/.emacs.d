@@ -1,4 +1,4 @@
-;; Hiragino Gothic, Osaka, Migu, Ricty, Yasashisa
+;; Hiragino Gothic, Osaka, Migu, Ricty, Rounded M+, Yasashisa
 ;; Monaco, Menlo, Inconsolata
 
 
@@ -6,6 +6,13 @@
                     :family "Monaco"
                     :height 140)
 
+;; (set-face-attribute 'default nil
+;;                     :family "Menlo"
+;;                     :height 140)
+
+;; (set-face-attribute 'default nil
+;;                     :family "Ricty"
+;;                     :height 170)
 
 (if (version< emacs-version "24.4")
 
@@ -40,13 +47,21 @@
   (progn
     (set-fontset-font
      (frame-parameter nil 'font)
-     'japanese-jisx0208
+     'katakana-jisx0201
+     ;; (font-spec :family "Rounded M+ 1m" :size 16))
      (font-spec :family "Hiragino Maru Gothic Pro" :size 16))
 
     (set-fontset-font
      (frame-parameter nil 'font)
+     'japanese-jisx0208
+     ;; (font-spec :family "Rounded M+ 1m" :size 16))
+    (font-spec :family "Hiragino Maru Gothic Pro" :size 16))
+
+    (set-fontset-font
+     (frame-parameter nil 'font)
      'japanese-jisx0212
-     (font-spec :family "Hiragino Maru Gothic Pro" :size 16))
+     ;; (font-spec :family "Rounded M+ 1m" :size 16))
+    (font-spec :family "Hiragino Maru Gothic Pro" :size 16))
     )
 
   )

@@ -6,6 +6,7 @@
   (global-set-key (kbd "C-;") 'anything-filelist+)
   ;; (global-set-key (kbd "C-;") 'anything)
   (global-set-key (kbd "M-y") 'anything-show-kill-ring)
+  ;; (define-key anything-map "\C-h" 'delete-backward-char)
 
 ;;; *scratch*, *eshell* 等の、ファイルと関連付けられていないバッファを候補から除外 (必要な場合、switch-to-buffer)
 ;; (setq anything-c-boring-buffer-regexp

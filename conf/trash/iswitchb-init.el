@@ -8,8 +8,8 @@
   (define-key iswitchb-mode-map (kbd "SPC") 'iswitchb-next-match)
   (define-key iswitchb-mode-map (kbd "C-s") 'iswitchb-next-match)
   (define-key iswitchb-mode-map (kbd "C-r") 'iswitchb-prev-match)
-  (define-key iswitchb-mode-map (kbd "<right>") 'iswitchb-next-match)
-  (define-key iswitchb-mode-map (kbd "<left>") 'iswitchb-prev-match)
+  (define-key iswitchb-mode-map [right] 'iswitchb-next-match)
+  (define-key iswitchb-mode-map [left]'iswitchb-prev-match)
   )
 
 ;;; 候補がなければ find-file

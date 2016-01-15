@@ -3,8 +3,8 @@
 
 ;---------------------------------------------------------------------------
 
-(add-to-list 'load-path "~/.emacs.d/bundle/org-mode/lisp")
-(add-to-list 'load-path "~/.emacs.d/bundle/org-mode/contrib/lisp")
+;; (add-to-list 'load-path "~/.emacs.d/bundle/org-mode/lisp")
+;; (add-to-list 'load-path "~/.emacs.d/bundle/org-mode/contrib/lisp")
 ;; (add-to-list 'load-path "~/.emacs.d/bundle/org-mode/testing/lisp")
 ;; (add-to-list 'Info-additional-directory-list "~/.emacs.d/bundle/org-mode/doc")
 
@@ -32,7 +32,7 @@
             (define-key org-mode-map (kbd "C-S-p") 'org-shiftcontrolup)
 
             ;;;; (define-key org-mode-map (kbd "C-m") 'org-insert-heading-respect-content)
-            ;;;; (define-key org-mode-map (kbd "C-i") 'org-force-cycle-archived)
+            ;;;; (define-key org-mode-map (kbd "tab") 'org-force-cycle-archived)
 
             (define-key org-mode-map (kbd "M-N") 'org-shiftmetadown)
             (define-key org-mode-map (kbd "M-B") 'org-shiftmetaleft)
@@ -263,7 +263,6 @@
 
 ;---------------------------------------------------------------------------
 ;;;; S5
-(add-to-list 'load-path "~/.emacs.d/bundle/org-s5")
 (load "org-export-as-s5")
 (add-hook 'org-mode-hook
            (lambda()

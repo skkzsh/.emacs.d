@@ -10,9 +10,9 @@
 ;; Defaultでabbrev mode
 (setq default-abbrev-mode t)
 ;; Keybind
-; (global-set-key "\C-x'" 'just-one-space)
-; (global-set-key "\M- " 'dabbrev-expand)
-; (global-set-key "\M-/" 'expand-abbrev)
+; (global-set-key (kbd "C-x") 'just-one-space)
+; (global-set-key (kbd "M-SPC") 'dabbrev-expand)
+; (global-set-key (kbd "M-/") 'expand-abbrev)
 ; (eval-after-load "abbrev" '(global-set-key "\M-/" 'expand-abbrev))
 ;; 拡張
 ; (require 'expand)

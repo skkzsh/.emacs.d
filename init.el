@@ -35,9 +35,12 @@
 (load "browser-init")
 
 (load "yatex-init")
-(load "anything-init")
+;; (load "anything-init")
+(load "helm-init")
 (load "migemo-init")
+(load "ace-isearch-init")
 ;; (load "flymake-init")
+(load "evil-init")
 
 (load "test-init")
 

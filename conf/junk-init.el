@@ -2,7 +2,7 @@
 (when (require 'open-junk-file nil t)
   ;; (setq open-junk-file-format "~/.junk/%Y-%m%d-%H%M.")
   (setq open-junk-file-format "~/.junk/%y/%m%d-%H%M%S.")
-  ;; (global-set-key "\C-x\C-z" 'open-junk-file)
+  ;; (global-set-key (kbd "C-x C-z") 'open-junk-file)
 
   (defun open-junk-file-in-dropbox ()
     "Junk File for Dropbox" ; XXX

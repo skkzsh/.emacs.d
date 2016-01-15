@@ -1,6 +1,5 @@
 ;;;; Markdown / GFM
 ;---------------------------------------------------------------------------
-(add-to-list 'load-path "~/.emacs.d/bundle/markdown-mode")
 (autoload 'gfm-mode "markdown-mode.el"
   "Major mode for editing Markdonw files" t)
 ;; (autoload 'markdown-mode "markdown-mode.el"
@@ -61,14 +60,14 @@
 ;---------------------------------------------------------------------------
 (add-hook 'markdown-mode-hook
            (lambda()
-             (define-key markdown-mode-map (kbd "C-i") 'markdown-cycle)
-             (define-key markdown-mode-map (kbd "C-S-i") 'markdown-shifttab)
+             (define-key markdown-mode-map [tab] 'markdown-cycle)
+             (define-key markdown-mode-map [shift tab] 'markdown-shifttab)
              ;; (hide-sublevels 2)
              ))
 ;; (add-hook 'markdown-mode-hook
 ;;           '(lambda()
 ;;              (markdown-custom) ;; カスタム設定を使う場合
-;;              (define-key markdown-mode-map [(shift tab)] 'markdown-shifttab)
+;;              (define-key markdown-mode-map [shift tab] 'markdown-shifttab)
 ;;              ))
 
 ;---------------------------------------------------------------------------

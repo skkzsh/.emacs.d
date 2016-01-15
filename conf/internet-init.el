@@ -2,28 +2,25 @@
 
 ;---------------------------------------------------------------------------
 ;;;; Search web
-(add-to-list 'load-path "~/.emacs.d/bundle/search-web.el")
 (require 'search-web)
 
 ;---------------------------------------------------------------------------
 ;;;; Google Search
-(add-to-list 'load-path "~/.emacs.d/bundle/emacs-google-this")
 (require 'google-this)
-(global-set-key "\C-cg" 'google-this-mode-submap)
+(global-set-key "\C-c g" 'google-this-mode-submap)
 ;; (setq google-this-location-suffix "co.jp")
 (google-this-mode 1)
 
 ;---------------------------------------------------------------------------
 ;;;; Translator
-(when (require 'text-translator nil t)
-  (global-set-key "\C-x\M-t" 'text-translator)
-  (global-set-key "\C-x\M-T" 'text-translator-translate-last-string)
-  ;; (setq text-translator-prefix-key "\M-n")
-  ;; 自動選択に使用する関数を設定
-  (setq text-translator-auto-selection-func
-        'text-translator-translate-by-auto-selection-enja)
-  (global-set-key "\C-xt" 'text-translator-translate-by-auto-selection)
-  )
+(require 'text-translator)
+(global-set-key (kbd "C-x M-t") 'text-translator)
+(global-set-key (kbd "C-x M-T") 'text-translator-translate-last-string)
+;; (setq text-translator-prefix-key "\M-n")
+;; 自動選択に使用する関数を設定
+(setq text-translator-auto-selection-func
+      'text-translator-translate-by-auto-selection-enja)
+(global-set-key (kbd "C-x t") 'text-translator-translate-by-auto-selection)
 
 ;; google-translate
 
@@ -31,13 +28,12 @@
 ;;;; Weather
 ;;;; Yahoo
 ;;; TODO: Local Variable
-(when (require 'yahoo-weather nil t)
-  ;; JAXX00
-  ;; 85 ; Tokyo
-  ;; 71 ; Osaka
-  ;; 47 ; Kyoto
-  (setq yahoo-weather-location 'JAXX0071)
-)
+;; (require 'yahoo-weather)
+;; (setq yahoo-weather-location 'JAXX0071)
+;; JAXX00
+;; 85 ; Tokyo
+;; 71 ; Osaka
+;; 47 ; Kyoto
 
 ;---------------------------------------------------------------------------
 ;;;; Wanderlust
@@ -56,29 +52,20 @@
 
 ;---------------------------------------------------------------------------
 ;;;; Calendar
-(add-to-list 'load-path "~/.emacs.d/bundle/emacs-calfw")
 ;; (require 'calfw) ; 初回一度だけ
 ;; (cfw:open-calendar-buffer) ; カレンダー表示
 
 ;; (require 'calfw-org)
 
-(require 'calfw-ical)
+;; (require 'calfw-ical)
 ;; (cfw:install-ical-schedules)
 
 
-;; (add-to-list 'load-path "~/.emacs.d/bundle/calfw-gcal.el")
 ;; (require 'calfw-gcal)
-
-;---------------------------------------------------------------------------
-;;;; Simplenote
-;; (add-to-list 'load-path "~/.emacs.d/bundle/simplenote.el")
-;; (require 'simplenote)
-;; (simplenote-setup)
 
 ;---------------------------------------------------------------------------
 ;;;; Evernote
 ;;; Ruby
-;; (add-to-list 'load-path "~/.emacs.d/bundle/evernote-mode")
 ;; (require 'evernote-mode)
 ;; (setq evernote-enml-formatter-command
 ;;    '("w3m" "-dump" "-I" "UTF8" "-O" "UTF8")) ; optional
@@ -87,23 +74,23 @@
 ;; gpgファイルの保存先
 ;; (setq enh-password-cache-file "~/.emacs.d/evernote-mode.gpg")
 ;; Keybind
-;; (global-set-key "\C-cec" 'evernote-create-note)
-;; (global-set-key "\C-ceo" 'evernote-open-note)
-;; (global-set-key "\C-ces" 'evernote-search-notes)
-;; (global-set-key "\C-ceS" 'evernote-do-saved-search)
-;; (global-set-key "\C-cew" 'evernote-write-note)
-;; (global-set-key "\C-cep" 'evernote-post-region)
-;; (global-set-key "\C-ceb" 'evernote-browser)
-;; (global-set-key "\C-cee" 'evernote-change-edit-mode)
+;; (global-set-key "\C-c e c" 'evernote-create-note)
+;; (global-set-key "\C-c e o" 'evernote-open-note)
+;; (global-set-key "\C-c e s" 'evernote-search-notes)
+;; (global-set-key "\C-c e S" 'evernote-do-saved-search)
+;; (global-set-key "\C-c e w" 'evernote-write-note)
+;; (global-set-key "\C-c e p" 'evernote-post-region)
+;; (global-set-key "\C-c e b" 'evernote-browser)
+;; (global-set-key "\C-c e e" 'evernote-change-edit-mode)
 
 ;---------------------------------------------------------------------------
 ;;;; Skype
-(defun my-skype ()
-  (require 'skype)
-  ;; (setq skype--my-user-handle "skkzsh")
-  (interactive)
-  (skype--init)
-  (skype--open-all-users-buffer-command))
+;; (defun my-skype ()
+;;   (require 'skype)
+;;   ;; (setq skype--my-user-handle "skkzsh")
+;;   (interactive)
+;;   (skype--init)
+;;   (skype--open-all-users-buffer-command))
 
 ;---------------------------------------------------------------------------
 ;;;; Twitter
@@ -111,7 +98,7 @@
 
 ;; (add-hook 'twittering-mode-hook
 ;;           '(lambda ()
-;;              (define-key twittering-mode-map "\C-ch" 'twittering-home-timeline)
+;;              (define-key twittering-mode-map "\C-c h" 'twittering-home-timeline)
 ;;              (define-key twittering-mode-map "F" 'twittering-favorite)
 ;;              (define-key twittering-mode-map "R" 'twittering-native-retweet)
 ;;              (define-key twittering-mode-map "Q" 'twittering-organic-retweet)

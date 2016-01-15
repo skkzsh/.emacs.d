@@ -10,12 +10,15 @@
 
 (cond
  ((eq window-system 'x)
-  (color-theme-hrehf-dark))
- ((eq window-system 'ns)
-  (color-theme-wombat))
- ((eq window-system 'w32)
-  (color-theme-wombat))
+  (color-theme-hrehf-dark)
   )
+ ((eq window-system 'ns)
+  (color-theme-wombat)
+  )
+ ((eq window-system 'w32)
+  (color-theme-wombat)
+  )
+ )
 
 ;; (when window-system
 ;;   (color-theme-hrehf-dark)

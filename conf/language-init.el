@@ -6,28 +6,25 @@
 ;; mode-compile.el
 ; (autoload 'mode-compile "mode-compile"
 ;   "Command to compile current buffer file based on the major mode" t)
-; (global-set-key "\C-cc" 'mode-compile)
+; (global-set-key "\C-c c" 'mode-compile)
 ; (autoload 'mode-compile-kill "mode-compile"
 ;   "Command to kill a compilation launched by `mode-compile'" t)
-; (global-set-key "\C-ck" 'mode-compile-kill)
+; (global-set-key "\C-c k" 'mode-compile-kill)
 
 ;; smart-compile.el
 ; (require 'smart-compile)
-; (global-set-key "\C-cc" 'smart-compile)
+; (global-set-key "\C-c c" 'smart-compile)
 
 
 ;---------------------------------------------------------------------------
-;;;; C
-;;;; C++
-;;;; Python
+;;;; Ruby, Perl, Python
 
 ;;;; Lisp
-(when (require 'lispxmp nil t)
-  (add-hook 'emacs-lisp-mode-hook
-            (lambda()
-              (define-key emacs-lisp-mode-map "\C-ce" 'lispxmp)
-              ))
-  )
+(require 'lispxmp)
+(add-hook 'emacs-lisp-mode-hook
+          (lambda()
+            (define-key emacs-lisp-mode-map (kbd "C-c e") 'lispxmp)
+            ))
 
 ;;;; Zsh
 (add-to-list 'auto-mode-alist '("\\.zsh$" . sh-mode))
@@ -41,8 +38,7 @@
 
 ;;;; Batch
 ;; TODO hook encoding
-(when (require 'batch-mode nil t)
-  )
+(require 'batch-mode)
 
 ;;;; Visual Basic
 (autoload 'visual-basic-mode "visual-basic-mode" "Visual Basic mode." t)

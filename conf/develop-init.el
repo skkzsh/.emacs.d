@@ -1,7 +1,6 @@
 ;;;; Development Settings
 ;---------------------------------------------------------------------------
 ;;;; Magit
-(add-to-list 'load-path "~/.emacs.d/bundle/magit_1_2_2")
 (require 'magit)
 
 ;---------------------------------------------------------------------------
@@ -22,9 +21,34 @@
 ;; (require 'git-gutter-fringe)
 
 ;---------------------------------------------------------------------------
+;;;; HTML
+
+;;;; See markdown-open
+(cond
+ ((file-directory-p "/Applications/Marked.app")
+  (setq html-open-command "/Applications/Marked.app/Contents/Resources/mark")
+  )
+  )
+
+(defun html-open ()
+  "Open file for the current buffer with `html-open-command'."
+  (interactive)
+  (if (not html-open-command)
+      (error "Variable `html-open-command' must be set")
+    (if (not buffer-file-name)
+        (error "Must be visiting a file")
+      (call-process html-open-command
+                    nil nil nil buffer-file-name))))
+
+;; (add-hook 'html-mode-hook
+;;            (lambda()
+;;              (define-key html-mode-map (kbd "C-c C-c o") 'html-open)
+;;              )
+;;            )
+
+;---------------------------------------------------------------------------
 ;;;; YAML
-(add-to-list 'load-path "~/.emacs.d/bundle/yaml-mode")
-(require 'yaml-mode nil t)
+(require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
 ;---------------------------------------------------------------------------
@@ -46,8 +70,8 @@
                  ;;  )
                  ;;; Mac
                  ((eq system-type 'darwin)
-                  (setq rst-pdf-program "open")
-                  (setq rst-slides-program "open -a Safari")
+                  (setq rst-pdf-program "open"
+                        rst-slides-program "open -a Safari")
                   )
                  ;;; Windows
                  ;; ((eq system-type 'windows-nt)
@@ -67,7 +91,7 @@
 ;---------------------------------------------------------------------------
 ;;;; blockdiag
 ;; TODO
-(load "~/.emacs.d/bundle/emacsfiles/blockdiag-mode.el")
+(load "~/.emacs.d/el-get/emacsfiles/blockdiag-mode.el")
 
 ;---------------------------------------------------------------------------
 ;;;; CSV

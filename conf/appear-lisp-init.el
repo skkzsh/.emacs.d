@@ -8,7 +8,6 @@
   )
 
 ;---------------------------------------------------------------------------
-(add-to-list 'load-path "~/.emacs.d/bundle/rainbow-delimiters")
 (require 'rainbow-delimiters)
 (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
 
@@ -16,7 +15,7 @@
 ;;;; fold-dwim / hideshow
 ;; TODO
 ; (require 'hideshow)
-(when (require 'fold-dwim nil t))
+(require 'fold-dwim)
 ; (autoload 'fold-dwim-toggle
 ;         "fold-dwim"
 ;         "try to show any hidden text at the cursor" t)

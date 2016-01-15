@@ -5,8 +5,8 @@ git clone git://github.com/skkzsh/.emacs.d.git
 ```
 
 ```el
-(auto-install-batch "anything")
-(package-install "session")
+(auto-install-batch "sequential-command")
+(auto-install-batch "text translator")
 ```
 
 # Update
