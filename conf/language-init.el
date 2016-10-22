@@ -18,6 +18,11 @@
 
 ;---------------------------------------------------------------------------
 ;;;; Ruby, Perl, Python
+;; (when (require 'rcodetools nil t)
+;;   (add-hook 'ruby-mode-hook
+;;             (lambda()
+;;               (define-key ruby-mode-map (kbd "C-c e") 'xmp)
+;;               )))
 
 ;;;; Lisp
 (require 'lispxmp)
@@ -25,6 +30,18 @@
           (lambda()
             (define-key emacs-lisp-mode-map (kbd "C-c e") 'lispxmp)
             ))
+;; (add-hook 'common-lisp-mode-hook
+;;           (lambda()
+;;             (define-key common-lisp-mode-map (kbd "C-c e") 'lispxmp)
+;;             ))
+;; (add-hook 'scheme-mode-hook
+;;           (lambda()
+;;             (define-key scheme-mode-map (kbd "C-c e") 'lispxmp)
+;;             ))
+;; (add-hook 'lisp-mode-hook
+;;           (lambda()
+;;             (define-key lisp-mode-map (kbd "C-c e") 'lispxmp)
+;;             ))
 
 ;;;; Zsh
 (add-to-list 'auto-mode-alist '("\\.zsh$" . sh-mode))
@@ -52,8 +69,8 @@
               ) auto-mode-alist))
 
 ;;;; Gnuplot
-(add-to-list 'auto-mode-alist
-    '("\\.\\(gp\\|plt\\)$" . gnuplot-mode))
+;; (add-to-list 'auto-mode-alist
+;;     '("\\.\\(gp\\|plt\\)$" . gnuplot-mode))
 
 ;;;; MATLAB
 ;; (add-to-list 'auto-mode-alist '("\\.m$" . octave-mode))

@@ -4,12 +4,12 @@
 ;; (if (and (= emacs-major-version 22)
 ;;          (eq window-system 'x))
 ;;  (setq menu-tree-coding-system 'utf-8))
-(when (or
-       (= emacs-major-version 23)
-       (featurep 'meadow)
-       )
-  (when (require 'menu-tree nil t))
-  )
+;; (when (or
+;;        (= emacs-major-version 23)
+;;        (featurep 'meadow)
+;;        )
+;;   (when (require 'menu-tree nil t))
+;;   )
 
 ;---------------------------------------------------------------------------
 ;;;; 日本語環境設定
@@ -82,28 +82,15 @@
 
   ;;;; Windows
   ((eq window-system 'w32)
-   (cond
-     ;;; NTEmacs 23
-     ((>= emacs-major-version 23)
-      ;;; IMEの設定
-      (setq default-input-method "W32-IME")
-      ;;; IMEインジケータ
-      (setq-default w32-ime-mode-line-state-indicator "[--]")
-      (setq w32-ime-mode-line-state-indicator-list '("[--]" "[あ]" "[--]"))
-      ;;; 初期化
-      (w32-ime-initialize)
-      ;;; バッファ切り替え時にIME状態を引き継ぐ
-      ;;    (setq w32-ime-buffer-switch-p nil)
-      )
-
-     ;;; Emacs 22
-     ((<= emacs-major-version 22)
-      ;;; IMEの設定
-      (setq default-input-method "MW32-IME")
-      ;;; IMEインジケータ
-      (setq-default mw32-ime-mode-line-state-indicator "[--]")
-      (setq mw32-ime-mode-line-state-indicator-list '("[--]" "[あ]" "[--]"))
-      ;;; 初期化
-      (mw32-ime-initialize)
-      )))
+   ;;; NTEmacs 23
+   (setq default-input-method "W32-IME")
+   ;;; IMEの設定
+   ;;; IMEインジケータ
+   (setq-default w32-ime-mode-line-state-indicator "[--]")
+   (setq w32-ime-mode-line-state-indicator-list '("[--]" "[あ]" "[--]"))
+   ;;; 初期化
+   (w32-ime-initialize)
+   ;;; バッファ切り替え時にIME状態を引き継ぐ
+   ;; (setq w32-ime-buffer-switch-p nil)
+     )
   )

@@ -1,7 +1,6 @@
 ;;;; Migemo
-;;; migemo.elはRename
 ;;; UNIXでは:
-;;; C/Migemoとmigemo-dictはMake Install
+;;; C/Migemoとmigemo-dictはbrew install
 ;;; Windowsでは:
 ;;; C/Migemo(とMigemo)とmigemo-dictはCopy
 
@@ -13,32 +12,48 @@
   (setq migemo-options '("-q" "--emacs"))
 
   ;;; migemo-dictのPath
-  ;;; XXX: Prefix, Local variable
+  ;;; XXX: Prefix
+  (setq migemo-dictionary
+        (file-name-directory (executable-find "cmigemo"))
+        )
+
   (cond
-   ((or (eq system-type 'gnu/linux)
-        (eq system-type 'darwin))
-    (setq migemo-prefix "/usr/local/share/migemo")
+    ;; ((executable-find "brew")
+    ;;  (setq migemo-dictionary
+    ;;        (concat
+    ;;          (shell-command-to-string "brew --prefix cmigemo")
+    ;;          "/share/migemo")
+    ;;        )
+    ;;  )
+
+    ((or (eq system-type 'gnu/linux)
+         (eq system-type 'darwin))
+     (setq migemo-dictionary "/usr/local/share/migemo")
+     )
+
+    ((eq system-type 'windows-nt)
+     (setq migemo-dictionary
+           (concat migemo-dictionary "/dict")
+           )
+     )
     )
-   ((eq system-type 'windows-nt)
-    (setq migemo-prefix "C:/Applications/cmigemo-default/dict")
-    )
-   )
 
   (setq migemo-dictionary
-        (concat migemo-prefix "/utf-8/migemo-dict"))
+        (concat migemo-dictionary "/utf-8/migemo-dict")
+        )
 
   (setq migemo-user-dictionary nil)
   (setq migemo-regex-dictionary nil)
 
   ;; Cache
-  (setq migemo-use-pattern-alist t)
-  (setq migemo-use-frequent-pattern-alist t)
-  (setq migemo-pattern-alist-length 1024)
+  ;; (setq migemo-use-pattern-alist t)
+  ;; (setq migemo-use-frequent-pattern-alist t)
+  ;; (setq migemo-pattern-alist-length 1024)
 
   ;; migemo-dictの文字コード
   (setq migemo-coding-system 'utf-8-unix)
 
-  (load-library "migemo")
+  ;; (load-library "migemo")
 
   ;; 起動時に初期化
   (migemo-init)

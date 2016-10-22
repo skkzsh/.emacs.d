@@ -115,3 +115,12 @@
 (when (eq window-system 'x)
   (setq x-select-enable-clipboard t)
   )
+
+;---------------------------------------------------------------------------
+;;;; Use gpg1
+;; (when (and
+;;        (executable-find "gpg2")
+;;        (executable-find "gpg1")
+;;        )
+;;   (setq epg-gpg-program "gpg1")
+;;   )

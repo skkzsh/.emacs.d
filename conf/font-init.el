@@ -75,35 +75,28 @@
 
    (cond
 
-    ((string-match "ZENBOOK" system-name)
-     (cond
-      ((>= emacs-major-version 24)
-       (load "nt-monaco-init")
-       (setq initial-frame-alist
-             (append (list
-                      ;; '(font . "fontset-MKConsolas")
-                      ;; '(font . "fontset-MConsolas")
-                      '(font . "fontset-MKMonaco")
-                      ;; '(font . "fontset-MMonaco")
-                      ;; '(font . "Migu 1M-11")
-                      ;; '(font . "Osaka−等幅-11")
-                      ;; '(width . 40)
-                      '(height . 35)
-                      ;; '(top . 40)
-                      ;; '(left . 40)
-                      ;; '(line-spacing . 0)
-                      )
-                     initial-frame-alist))
-       (setq default-frame-alist initial-frame-alist)
-      ))
-
+    ((string-match "zen" system-name)
+     (load "nt-monaco-init")
+     (setq initial-frame-alist
+           (append (list
+                     '(font . "fontset-MKMonaco")
+                     ;; '(font . "Migu 1M-11")
+                     ;; '(font . "Osaka−等幅-11")
+                     ;; '(width . 40)
+                     '(height . 35)
+                     ;; '(top . 40)
+                     ;; '(left . 40)
+                     ;; '(line-spacing . 0)
+                     )
+                   initial-frame-alist))
+     (setq default-frame-alist initial-frame-alist)
      )
 
-    ((string-match "-PC$" system-name)
+    ((string-match "^[[:upper:]]+-[[:digit:]]+PC[[:digit:]]+$" system-name)
      (load "nt-font-init")
      (setq initial-frame-alist
            (append (list
-                    '(font . "fontset-MConsolas")
+                    '(font . "fontset-MSConsolas")
                     ;; '(width . 75)
                     '(height . 36)
                     ;; '(top . 40)

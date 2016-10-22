@@ -1,9 +1,13 @@
 ;;;; Markdown / GFM
 ;---------------------------------------------------------------------------
-(autoload 'gfm-mode "markdown-mode.el"
-  "Major mode for editing Markdonw files" t)
 ;; (autoload 'markdown-mode "markdown-mode.el"
 ;;   "Major mode for editing Markdonw files" t)
+(autoload 'gfm-mode "markdown-mode.el"
+  "Major mode for editing GitHub Flavored Markdonw files" t)
+;; (autoload 'markdown-mode "markdown-mode"
+;;           "Major mode for editing Markdown files" t)
+;; (autoload 'gfm-mode "gfm-mode"
+;;           "Major mode for editing GitHub Flavored Markdown files" t)
 
 ;---------------------------------------------------------------------------
 (setq auto-mode-alist
@@ -16,6 +20,7 @@
                 ("\\.mark$"     . gfm-mode)
                 ("\\.mdown$"    . gfm-mode) ; Vim, github
                 ("\\.markdown$" . gfm-mode) ; Vim, github
+                ("README\\.md$" . gfm-mode)
                 ) auto-mode-alist))
 
 ;---------------------------------------------------------------------------
@@ -52,6 +57,31 @@
   (setq markdown-open-command "/Applications/Marked.app/Contents/Resources/mark")
   )
   )
+
+(cond
+
+ ((eq system-type 'windows-nt)
+
+  (defun markdown-export-and-preview-with-ie ()
+    " with IE" ; XXX
+    (interactive)
+
+    (let ((browse-url-browser-function))
+
+      (setq browse-url-browser-function
+            (lambda (url args)
+              (async-shell-command
+               (format "\"C:/Program Files/Internet Explorer/iexplore\" %s" url))
+              )
+            )
+
+      (markdown-export-and-preview)
+      )
+    )
+
+  )
+
+ )
 
 ;---------------------------------------------------------------------------
 ;; (setq markdown-css-path "")

@@ -1,6 +1,7 @@
 ;;;; helm
 (require 'helm-config)
 (helm-mode 1)
+(helm-migemo-mode 1)
 
 ;;; Keybind
 ;; helm-command-prefix-key
@@ -25,3 +26,5 @@
 
 ;; (setq helm-enable-shortcuts 'alphabet)
 
+;; (setq helm-split-window-in-side-p t)
+;; (setq helm-split-window-default-side 'other)

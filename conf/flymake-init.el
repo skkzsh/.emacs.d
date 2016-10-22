@@ -17,7 +17,7 @@
 ; (global-set-key "\M-n" 'flymake-goto-next-error)
 
 ;; 警告エラー行の表示
-; (global-set-key "\C-cd" 'flymake-display-err-menu-for-current-line)
+; (global-set-key "\C-c d" 'flymake-display-err-menu-for-current-line)
 
 ;; 色
 ; (set-face-background 'flymake-errline "red4")

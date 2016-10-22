@@ -1,15 +1,8 @@
 ;;;; Appearance Settings by Extensions
 ;---------------------------------------------------------------------------
-(when window-system
-  ;; 行数を表示 linum/wb-line-number/setnu
-  (when (>= emacs-major-version 23)
-    (global-linum-mode)
-    )
-  )
-
-;---------------------------------------------------------------------------
 (require 'rainbow-delimiters)
-(add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+;; (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
 
 ;---------------------------------------------------------------------------
 ;;;; fold-dwim / hideshow

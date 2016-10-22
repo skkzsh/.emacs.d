@@ -6,9 +6,13 @@
  "-outline-Consolas-normal-r-normal-normal-16-*-*-*-*-*-iso8859-1"
  nil "MKConsolas")
 
+;; (create-fontset-from-ascii-font
+;;   "-outline-Consolas-normal-r-normal-normal-16-*-*-*-*-*-iso8859-1"
+;;   nil "MConsolas")
+
 (create-fontset-from-ascii-font
-  "-outline-Consolas-normal-r-normal-normal-16-*-*-*-*-*-iso8859-1"
-  nil "MConsolas")
+  "-outline-Consolas-normal-r-normal-normal-18-*-*-*-*-*-iso8859-1"
+  nil "MSConsolas")
 
 ;; (create-fontset-from-ascii-font
 ;;  "Monaco:size=15:style=Regular:weight=normal:slant=normal"
@@ -18,6 +22,7 @@
 
 (setq face-font-rescale-alist
       '(
+        (".*ＭＳ ゴシック.*" . 1.1)
         (".*MeiryoKe_.*" . 1.2)
         ;; (".*Consolas.*" . 1.0)
         ;; (".*Courier.*" . 1.0)
@@ -35,19 +40,19 @@
                     'katakana-jisx0201
                     '("MeiryoKe_Console" . "unicode-bmp"))
 
-  (set-fontset-font "fontset-MKMonaco"
+  (set-fontset-font "fontset-MSConsolas"
                     'japanese-jisx0208
-                    '("MeiryoKe_Console" . "unicode-bmp"))
-  (set-fontset-font "fontset-MKMonaco"
+                    '("ＭＳ ゴシック" . "unicode-bmp"))
+  (set-fontset-font "fontset-MSConsolas"
                     'katakana-jisx0201
-                    '("MeiryoKe_Console" . "unicode-bmp"))
+                    '("ＭＳ ゴシック" . "unicode-bmp"))
 
-  (set-fontset-font "fontset-MConsolas"
-                    'japanese-jisx0208
-                    '("Meiryo" . "unicode-bmp"))
-  (set-fontset-font "fontset-MConsolas"
-                    'katakana-jisx0201
-                    '("Meiryo" . "unicode-bmp"))
+  ;; (set-fontset-font "fontset-MConsolas"
+  ;;                   'japanese-jisx0208
+  ;;                   '("Meiryo" . "unicode-bmp"))
+  ;; (set-fontset-font "fontset-MConsolas"
+  ;;                   'katakana-jisx0201
+  ;;                   '("Meiryo" . "unicode-bmp"))
 
 ;; (set-fontset-font "fontset-MKMonaco"
   ;;                   'japanese-jisx0208
@@ -59,14 +64,14 @@
   )
 
  ;; NTEmacs 22以下
- ((<= emacs-major-version 22)
-  (set-fontset-font "fontset-MConsolas"
-                    'japanese-jisx0208
-                    '("メイリオ*" . "jisx0208-sjis"))
-  (set-fontset-font "fontset-MConsolas"
-                    'katakana-jisx0201
-                    '("メイリオ*" . "jisx0201-katakana"))
-  )
+ ;; ((<= emacs-major-version 22)
+ ;;  (set-fontset-font "fontset-MConsolas"
+ ;;                    'japanese-jisx0208
+ ;;                    '("メイリオ*" . "jisx0208-sjis"))
+ ;;  (set-fontset-font "fontset-MConsolas"
+ ;;                    'katakana-jisx0201
+ ;;                    '("メイリオ*" . "jisx0201-katakana"))
+ ;;  )
  )
 
 ;; メイリオ(NTEmacs 22)

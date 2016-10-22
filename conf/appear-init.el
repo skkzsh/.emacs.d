@@ -1,11 +1,9 @@
 ;;;; Appearance Settings
 ;---------------------------------------------------------------------------
 ;;; 起動時の画面を非表示にする
-;; (unless
-;;   (eq window-system 'ns)
-   (setq inhibit-startup-message t)
-   ;; )
-;;; scratchバッファのメッセージを消す(Emacs23)
+(setq inhibit-startup-message t)
+
+;;; scratchバッファのメッセージを消す
 (setq initial-scratch-message nil)
 
 ;---------------------------------------------------------------------------
@@ -13,7 +11,7 @@
 (when (null window-system)
   ;;; Menu Bar
   (menu-bar-mode 0)
-  ; (menu-bar-mode nil)
+  ;; (menu-bar-mode nil)
   )
 (when window-system
   ;;; Tool Bar
@@ -25,6 +23,12 @@
 ;---------------------------------------------------------------------------
 ;;; Buffer終端の表示
 ;; (setq-default indicate-empty-lines t)
+
+;---------------------------------------------------------------------------
+(when window-system
+  ;; 行数を表示 linum/wb-line-number/setnu
+  (global-linum-mode)
+  )
 
 ;---------------------------------------------------------------------------
 ;;; Mode Line に列番号を表示

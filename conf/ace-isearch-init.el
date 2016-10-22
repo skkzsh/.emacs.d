@@ -10,8 +10,9 @@
 ;; helm-swoop実行中にhelm-multi-swoop-allに移行
 ;; (define-key helm-swoop-map "\M-i" 'helm-multi-swoop-all-from-helm-swoop)
 
-;; ウィンドウ分割方向 'split-window-vertically or 'split-window-horizontally
-;; (setq helm-swoop-split-direction 'split-window-vertically)
+;; (setq helm-swoop-split-with-multiple-windows t)
+;; 'split-window-vertically or 'split-window-horizontally
+(setq helm-swoop-split-direction 'split-window-horizontally)
 
 ;---------------------------------------------------------------------------
 ;;;; ace-jump

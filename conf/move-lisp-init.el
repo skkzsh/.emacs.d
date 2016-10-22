@@ -64,13 +64,12 @@
 ;---------------------------------------------------------------------------
 ;;;; color moccur
 ;; TODO
-(when (require 'color-moccur nil t)
-  ;; (global-set-key "\M-o" 'occur-by-moccur)
-  ;;; スペース区切りでAND検索
-  (setq moccur-split-word t)
-  ;;; Migemo
-  (setq moccur-use-migemo t)
-  )
+;; (require 'color-moccur)
+;; (global-set-key "\M-o" 'occur-by-moccur)
+;;; スペース区切りでAND検索
+;; (setq moccur-split-word t)
+;;; Migemo
+;; (setq moccur-use-migemo t)
 ;;;; moccur edit
 
 ;---------------------------------------------------------------------------

@@ -7,7 +7,7 @@
 ;---------------------------------------------------------------------------
 ;;;; Google Search
 (require 'google-this)
-(global-set-key "\C-c g" 'google-this-mode-submap)
+;; (global-set-key (kbd "C-c g") 'google-this-mode-submap)
 ;; (setq google-this-location-suffix "co.jp")
 (google-this-mode 1)
 
@@ -40,15 +40,15 @@
 ;;; Debianではwlはapt-get install
 ;;; Macではgnutlsはbrew install
 
-(setq load-path (append '(
-                          "~/.emacs.d/usr/share/emacs/site-lisp/flim"
-                          "~/.emacs.d/usr/share/emacs/site-lisp/semi"
-                          "~/.emacs.d/usr/share/emacs/site-lisp/wl"
-                          ) load-path))
+;; (setq load-path (append '(
+;;                           "~/.emacs.d/usr/share/emacs/site-lisp/flim"
+;;                           "~/.emacs.d/usr/share/emacs/site-lisp/semi"
+;;                           "~/.emacs.d/usr/share/emacs/site-lisp/wl"
+;;                           ) load-path))
 
-(autoload 'wl "wl" "Wanderlust" t)
-(autoload 'wl-other-frame "wl" "Wanderlust on new frame." t)
-(autoload 'wl-draft "wl-draft" "Write draft with Wanderlust." t)
+;; (autoload 'wl "wl" "Wanderlust" t)
+;; (autoload 'wl-other-frame "wl" "Wanderlust on new frame." t)
+;; (autoload 'wl-draft "wl-draft" "Write draft with Wanderlust." t)
 
 ;---------------------------------------------------------------------------
 ;;;; Calendar
@@ -82,15 +82,6 @@
 ;; (global-set-key "\C-c e p" 'evernote-post-region)
 ;; (global-set-key "\C-c e b" 'evernote-browser)
 ;; (global-set-key "\C-c e e" 'evernote-change-edit-mode)
-
-;---------------------------------------------------------------------------
-;;;; Skype
-;; (defun my-skype ()
-;;   (require 'skype)
-;;   ;; (setq skype--my-user-handle "skkzsh")
-;;   (interactive)
-;;   (skype--init)
-;;   (skype--open-all-users-buffer-command))
 
 ;---------------------------------------------------------------------------
 ;;;; Twitter

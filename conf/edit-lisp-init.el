@@ -22,7 +22,7 @@
 ;; TODO
 (require 'auto-complete-config)
 (global-auto-complete-mode t)
-;; (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-1.4/dict")
+;; (add-to-list 'ac-dictionary-directories "~/.emacs.d/el-get/auto-complete/dict")
 ;; (ac-config-default)
 
 ;; Sources
@@ -54,6 +54,11 @@
 (require 'ac-helm)
 (global-set-key (kbd "C-:") 'ac-complete-with-helm)
 (define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-helm)
+
+;---------------------------------------------------------------------------
+;; (require 'expand-region)
+;; (global-set-key (kbd "C-@") 'er/expand-region)
+;; (global-set-key (kbd "C-M-@") 'er/contract-region)
 
 ;---------------------------------------------------------------------------
 ;;;; 矩形選択

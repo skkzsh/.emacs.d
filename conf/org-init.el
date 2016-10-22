@@ -21,6 +21,8 @@
 (global-set-key (kbd "C-c l") 'org-store-link)
 ;; (global-set-key (kbd "C-c a") 'org-agenda)
 
+(setq org-use-speed-commands t)
+
 ;;; Org
 (add-hook 'org-mode-hook
           (lambda()
@@ -98,15 +100,42 @@
 
 ;;; Tag
 ;; (setq org-tag-alist
-;;   '(("@OFFICE" . ?o) ("@HOME" . ?h) ("SHOPPING" . ?s)
-;;     ("MAIL" . ?m) ("PROJECT" . ?p)))
+;;       '(
+;;         ("@OFFICE" . ?o)
+;;         ("@HOME" . ?h)
+;;         ("COMPUTER" . ?c)
+;;         ("BOOK" . ?b)
+;;         ("SHOPPING" . ?s)
+;;         ("MAIL" . ?m)
+;;         ("PROJECT" . ?p)
+;;         ))
 
 ;;; TODO状態
 ;; (setq org-use-fast-todo-selection t)
-;; (setq org-todo-keywords
-;;       '(
-;;         (sequence "TODO(t)" "WAIT(w)" "|" "DONE(d)" "SOMEDAY(s)")
-;;         ))
+
+(setq org-todo-keywords
+      '(
+        (sequence
+         "TODO(t)"
+;;          "ACTION(a)"
+;;          "NEXT(n)"
+;;          "STARTED(s)"
+;;          "DOING(i)"
+;;          "ACTIVE(a)"
+;;          "PLANNING(p)"   ;; Toodledo
+         "WAITING(w)"
+;;          "APPT(a)"
+         "|"
+         "DONE(d)"
+;;          "SOMEDAY(s)"
+;;          "MAYBE(m)"
+;;          "CANCELED(c)"
+;;          "HOLD(h)"       ;; Toodledo
+;;          "POSTPONED(p)"  ;; Toodledo
+;;          "DEFERRED(f)"
+         "DELEGATED(g)"  ;; Toodledo
+         )))
+
 ;; DONEの時刻を記録
 ;; (setq org-log-done 'time)
 
@@ -247,31 +276,35 @@
 ;;                     (require 'ob-octave)
 ;;                     ))
 
-;; (org-babel-do-load-languages
-;;  'org-babel-load-languages '(
-;;                              (perl . t)
-;;                              (ruby . t)
-;;                              (python. t)
-;;                              (sh . t)
+(org-babel-do-load-languages
+ 'org-babel-load-languages '(
+                             (perl . t)
+                             (ruby . t)
+                             (python . t)
+                             ;; (js. t)
+                             (shell . t)
 ;;                              (awk . t)
-;;                              (gnuplot . t)
-;;                              (emacs-lisp . t)
+;;                              (sed . t)
+                             (emacs-lisp . t)
+;;                              (lisp . t)
+;;                              (sqlite . t)
 ;;                              (octave . t)
 ;;                              (matlab . t)
 ;;                              (R . t)
-;;                              ))
+;;                              (gnuplot . t)
+                             ))
 
 ;---------------------------------------------------------------------------
 ;;;; S5
-(load "org-export-as-s5")
-(add-hook 'org-mode-hook
-           (lambda()
-             (define-key org-mode-map (kbd "C-c s") 'org-export-as-s5)
-             ))
+;; (load "org-export-as-s5")
+;; (add-hook 'org-mode-hook
+;;            (lambda()
+;;              (define-key org-mode-map (kbd "C-c s") 'org-export-as-s5)
+;;              ))
 
 ;; (setq org-export-htmlize-output-type 'CSS) ; CSSを変更するとき
 ;; (setq org-s5-theme "default")
-(setq org-s5-theme "railscast")
+;; (setq org-s5-theme "railscast")
 ;; (setq org-s5-theme "i18n")
 
 ;---------------------------------------------------------------------------

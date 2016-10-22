@@ -60,6 +60,22 @@
        ))
    )
 
+  ((eq system-type 'windows-nt)
+
+   ;; (defun browse-url-ie (url)
+   ;;   (shell-command (format "\"C:/Program Files/Internet Explorer/iexplore\" %s" url)))
+
+   (defun browse-url-ie (url)
+     (shell-command (format "start %s" url)))
+
+   (defun choose-browser (url &rest args)
+     (interactive "sURL: ")
+     (if (y-or-n-p "Use external browser ?")
+         (browse-url-start url)
+       (w3m-browse-url url)
+       ))
+   )
+
   )
 )
 

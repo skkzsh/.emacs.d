@@ -10,16 +10,16 @@
 ;---------------------------------------------------------------------------
 ;; 補完
 ;; Find fileの補完で大文字・小文字を区別しない
-(when (eq system-type 'gnu/linux)
-  (setq read-file-name-completion-ignore-case t)
-  )
+;; (when (eq system-type 'gnu/linux)
+;;   (setq read-file-name-completion-ignore-case t)
+;;   )
 
 ;; M-xで補完
 ; (icomplete-mode t)
-(when (<= emacs-major-version 23)
+;;(when (<= emacs-major-version 23)
   ;; 分割補完
-  (partial-completion-mode t)
-  )
+;;  (partial-completion-mode t)
+;;  )
 
 ;---------------------------------------------------------------------------
 ;; ウィンドウ分割時にShift+カーソルキーで移動
@@ -48,6 +48,9 @@
 ;; dired
 (require 'wdired)
 (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
+(if (executable-find "gls")
+  (setq insert-directory-program "gls")
+  )
 
 ;---------------------------------------------------------------------------
 ;; View

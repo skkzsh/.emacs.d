@@ -91,12 +91,11 @@
 ;---------------------------------------------------------------------------
 ;;;; blockdiag
 ;; TODO
-(load "~/.emacs.d/el-get/emacsfiles/blockdiag-mode.el")
+;; (load "~/.emacs.d/el-get/emacsfiles/blockdiag-mode.el")
 
 ;---------------------------------------------------------------------------
 ;;;; CSV
 ;; TODO
-(add-to-list 'auto-mode-alist
-             '("\\.[Cc][Ss][Vv]\\'" . csv-mode))
+(add-to-list 'auto-mode-alist '("\\.csv$" . csv-mode))
 (autoload 'csv-mode "csv-mode"
   "Major mode for editing comma-separated value files." t)

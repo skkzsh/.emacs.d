@@ -2,20 +2,13 @@
 ;---------------------------------------------------------------------------
 ;;;; ELPA
 
-;; (when
-;;     (load
-;;      (expand-file-name "~/.emacs.d/elpa/package.el"))
-(when (>= emacs-major-version 24)
-
-  (setq package-archives '(
-                           ("gnu" . "http://elpa.gnu.org/packages/")
-                           ("marmalade" . "http://marmalade-repo.org/packages/")
-                           ("melpa" . "https://melpa.org/packages/")
-                           ;; ("ELPA" . "http://tromey.com/elpa/")
-                           ))
-
-  (package-initialize)
-  )
+(setq package-archives '(
+                         ("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "https://melpa.org/packages/")
+                         ;; ("ELPA" . "http://tromey.com/elpa/")
+                         ))
+;; (package-initialize)
 
 ;---------------------------------------------------------------------------
 ;;;; el-get
@@ -34,7 +27,6 @@
 ;;; Auto Update
 ;; (el-get 'sync)
 ;; (el-get 'sync '(
-;;                 ac-anything
 ;;                 auto-install
 ;;                 batch-mode
 ;;                 color-moccur
@@ -63,22 +55,24 @@
   )
 
 (el-get-bundle auto-install)
-(el-get-bundle batch-mode)
-(el-get-bundle color-moccur)
+;; (el-get-bundle color-moccur)
+;; (el-get-bundle expand-region)
 (el-get-bundle goto-chg)
-(el-get-bundle graphviz-dot-mode)
 (el-get-bundle htmlize)
 (el-get-bundle key-chord)
 (el-get-bundle lispxmp)
 ;; (el-get-bundle menu-tree)
 (el-get-bundle open-junk-file)
 (el-get-bundle point-undo)
-(el-get-bundle PowerShell-Mode)
 (el-get-bundle redo+)
 (el-get-bundle recentf-ext)
 (el-get-bundle summarye)
-(el-get-bundle visual-basic-mode)
 ;; (el-get-bundle yahoo-weather)
+
+;; (el-get-bundle graphviz-dot-mode)
+(el-get-bundle visual-basic-mode)
+(el-get-bundle batch-mode)
+(el-get-bundle PowerShell-Mode)
 
 (el-get-bundle migemo)
 ;; (el-get-bundle gtags)
@@ -92,9 +86,9 @@
 (el-get-bundle elpa:session
   ;; repo:
   )
-(el-get-bundle elpa:gnuplot
+;; (el-get-bundle elpa:gnuplot
   ;; repo:
-  )
+;;  )
 
 (el-get-bundle color-theme-molokai)
 ;; (el-get-bundle color-theme)
@@ -125,19 +119,23 @@
 (el-get-bundle google-this)
 (el-get-bundle yaml-mode)
 (el-get-bundle knu/elscreen)
-(el-get-bundle eschulte/org-S5)
-(el-get-bundle maple/emacsfiles)
+;; (el-get-bundle eschulte/org-S5)
+;; (el-get-bundle maple/emacsfiles)
 ;; (el-get-bundle kiwanami/emacs-calfw)
 ;; (el-get-bundle tequilasunset/auto-complete-latex-light)
 
 (el-get-bundle wanderlust/apel)
-(el-get-bundle wanderlust/flim)
-(el-get-bundle wanderlust/semi)
-(el-get-bundle wanderlust/wanderlust)
+;; (el-get-bundle wanderlust/flim)
+;; (el-get-bundle wanderlust/semi)
+;; (el-get-bundle wanderlust/wanderlust)
 
 ;; (el-get-bundle pymander/evernote-mode)
 
 (el-get-bundle markdown-mode)
+
+;; (el-get-bundle enhanced-ruby-mode)
+;; (el-get-bundle ruby-block)
+;; (el-get-bundle ruby-end)
 
 (if (eq system-type 'windows-nt)
 
@@ -162,9 +160,9 @@
   (if (eq system-type 'windows-nt)
 
     (progn
-      (el-get-bundle yatex
-        :build ()
-        )
+      ;; (el-get-bundle yatex
+      ;;   :build ()
+      ;;   )
       (el-get-bundle evil
         :build ()
         :info
@@ -172,7 +170,7 @@
       )
 
     (progn
-      (el-get-bundle yatex)
+      ;; (el-get-bundle yatex)
       (el-get-bundle evil)
       )
 
@@ -206,6 +204,8 @@
 ;;                :pkgname ""
 ;;                )
 ;;         ))
+
+(package-initialize)
 
 ;---------------------------------------------------------------------------
 ;;;; Cask

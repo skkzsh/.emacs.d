@@ -14,6 +14,13 @@
 
 ;; (add-hook 'evil-normal-state-entry-hook)
 
+;; (add-hook 'org-mode-hook
+;;           (evil-exit-emacs-state)
+;;           )
+;; (add-hook 'dir-mode-hook
+;;           (evil-exit-emacs-state)
+;;           )
+
 ;---------------------------------------------------------------------------
 ;; (require 'evil-mode-line)
 
@@ -34,10 +41,18 @@
   (kbd "RET") 'org-cycle
   "zi" 'org-cycle
   "zI" 'org-global-cycle
+
   "zj" 'org-next-visible-heading
   "zk" 'org-previous-visible-heading
   "zJ" 'org-forward-heading-same-level
   "zK" 'org-backward-heading-same-level
+
+  "gx" 'org-open-at-point
+
+  ;; "H" 'org-shiftleft
+  ;; "J" 'org-shiftdown
+  ;; "K" 'org-shiftup
+  ;; "L" 'org-shiftright
   )
 
 ;; (require 'evil-magit)
