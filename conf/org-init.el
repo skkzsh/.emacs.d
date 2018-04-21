@@ -281,17 +281,22 @@
                              (perl . t)
                              (ruby . t)
                              (python . t)
-                             ;; (js. t)
+                             (js . t)
                              (shell . t)
-;;                              (awk . t)
-;;                              (sed . t)
+                             ;; (awk . t)
+                             ;; (sed . t)
                              (emacs-lisp . t)
-;;                              (lisp . t)
-;;                              (sqlite . t)
-;;                              (octave . t)
-;;                              (matlab . t)
-;;                              (R . t)
-;;                              (gnuplot . t)
+                             ;; (lisp . t)
+                             ;; (scheme . t)
+                             ;; (clojure . t)
+                             (java . t)
+                             ;; (dot . t)
+                             ;; (sql . t)
+                             ;; (sqlite . t)
+                             ;; (makefile . t)
+                             ;; (octave . t)
+                             ;; (R . t)
+                             ;; (gnuplot . t)
                              ))
 
 ;---------------------------------------------------------------------------
@@ -310,26 +315,22 @@
 ;---------------------------------------------------------------------------
 ;;;; MobileOrg
 ;;; 同期するFile
-;; (setq org-agenda-files
-;;       (list "~/org/memo.org"
-;;             "~/org/todo.org"
-;;             ))
-;; (setq org-agenda-files "~/org/todo.org")
-;; (setq org-agenda-files "~/Dropbox/org/todo.org")
-(if (eq system-type 'windows-nt)
-    (setq org-directory (concat (getenv "USERPROFILE") "/Dropbox/.org/Mobile.org"))
-  (setq org-agenda-files "~/Dropbox/.org/Mobile.org")
-  )
-;; (setq org-mobile-files org-agenda-files)
-;;; MobileOrgで新規作成したNoteを保存するFile
-;; (setq org-mobile-inbox-for-pull "~/Dropbox/org/mobile.org")
-(if (eq system-type 'windows-nt)
-    (setq org-directory (concat (getenv "USERPROFILE") "/Dropbox/.org/flagged.org"))
-  (setq org-mobile-inbox-for-pull "~/Dropbox/.org/flagged.org")
-  )
-;;; Dropboxで同期するのMobileOrgのDirectory
-;; (setq org-mobile-directory "~/Dropbox/MobileOrg")
-(if (eq system-type 'windows-nt)
-    (setq org-directory (concat (getenv "USERPROFILE") "/Dropbox/Apps/Mobileorg"))
-  (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
+(when (file-directory-p org-directory)
+  ;; (setq org-agenda-files
+  ;;       (list "~/org/memo.org"
+  ;;             "~/org/todo.org"
+  ;;             ))
+  ;; (setq org-agenda-files "~/org/todo.org")
+  ;; (setq org-agenda-files "~/Dropbox/org/todo.org")
+  (setq org-agenda-files (concat org-directory "/Mobile.org"))
+  ;; (setq org-mobile-files org-agenda-files)
+  ;;; MobileOrgで新規作成したNoteを保存するFile
+  ;; (setq org-mobile-inbox-for-pull "~/Dropbox/org/mobile.org")
+  (setq org-mobile-inbox-for-pull (concat org-directory "/flagged.org"))
+  ;;; Dropboxで同期するのMobileOrgのDirectory
+  ;; (setq org-mobile-directory "~/Dropbox/MobileOrg")
+  (if (eq system-type 'windows-nt)
+      (setq org-mobile-directory (concat (getenv "USERPROFILE") "/Dropbox/Apps/Mobileorg"))
+    (setq org-mobile-directory "~/Dropbox/Apps/MobileOrg")
+    )
   )

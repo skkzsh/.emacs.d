@@ -82,15 +82,16 @@
 
   ;;;; Windows
   ((eq window-system 'w32)
-   ;;; NTEmacs 23
    (setq default-input-method "W32-IME")
    ;;; IMEの設定
    ;;; IMEインジケータ
    (setq-default w32-ime-mode-line-state-indicator "[--]")
    (setq w32-ime-mode-line-state-indicator-list '("[--]" "[あ]" "[--]"))
-   ;;; 初期化
    (w32-ime-initialize)
    ;;; バッファ切り替え時にIME状態を引き継ぐ
    ;; (setq w32-ime-buffer-switch-p nil)
      )
   )
+
+;; mini bufferに移動した際は最初に日本語入力が無効な状態にする
+;; (add-hook 'minibuffer-setup-hook 'deactivate-input-method)

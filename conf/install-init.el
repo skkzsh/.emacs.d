@@ -69,6 +69,10 @@
 (el-get-bundle summarye)
 ;; (el-get-bundle yahoo-weather)
 
+(el-get-bundle powerline)
+
+(el-get-bundle diminish)
+
 ;; (el-get-bundle graphviz-dot-mode)
 (el-get-bundle visual-basic-mode)
 (el-get-bundle batch-mode)
@@ -80,8 +84,11 @@
 
 (el-get-bundle smart-compile+)
 (el-get-bundle emacswiki:csv-mode)
-;; (el-get-bundle sequential-command)
-;; (el-get-bundle emacswiki:text-translator)
+(el-get-bundle sequential-command)
+(el-get-bundle sequential-command-config)
+(el-get-bundle emacswiki:text-translator)
+(el-get-bundle emacswiki:text-translator-vars)
+(el-get-bundle emacswiki:text-translator-load)
 
 (el-get-bundle elpa:session
   ;; repo:
@@ -90,7 +97,7 @@
   ;; repo:
 ;;  )
 
-(el-get-bundle color-theme-molokai)
+;; (el-get-bundle color-theme-molokai)
 ;; (el-get-bundle color-theme)
 ;; (el-get-bundle color-theme-tango)
 ;; (el-get-bundle color-theme-solarized)
@@ -137,52 +144,43 @@
 ;; (el-get-bundle ruby-block)
 ;; (el-get-bundle ruby-end)
 
-(if (eq system-type 'windows-nt)
-
-  (progn
-    (el-get-bundle elpa:magit)
-    (el-get-bundle elpa:org)
-    ;; (el-get-bundle org-mode
-    ;;   :info
-    ;;   :build ()
-    ;;   )
-    )
-
-  (progn
-    (el-get-bundle magit)
-    (el-get-bundle org-mode)
-    )
-
+(when (executable-find "terraform")
+  (el-get-bundle terraform-mode)
   )
 
-(when (executable-find "hg")
+;; (when (executable-find "ansible")
+;;   (el-get-bundle elpa:ansible)
+;;   )
 
-  (if (eq system-type 'windows-nt)
+(el-get-bundle magit)
 
-    (progn
-      ;; (el-get-bundle yatex
-      ;;   :build ()
-      ;;   )
-      (el-get-bundle evil
-        :build ()
-        :info
-        )
-      )
+(el-get-bundle org-mode)
+;; (el-get-bundle org-mode
+;;   :info
+;;   :build ()
+;;   )
 
-    (progn
-      ;; (el-get-bundle yatex)
-      (el-get-bundle evil)
-      )
 
-    )
+;; (el-get-bundle yatex)
+;; (el-get-bundle yatex
+;;   :build ()
+;;   )
 
-  ;; if evil exists
-  ;; (el-get-bundle evil-plugins)
-  (el-get-bundle evil-leader)
-  (el-get-bundle evil-matchit)
-  (el-get-bundle powerline-evil)
-  (el-get-bundle evil-org-mode)
-  )
+(el-get-bundle evil)
+;; (el-get-bundle evil
+;;                :build ()
+;;                :info
+;;                )
+
+
+
+;; if evil exists
+;; (el-get-bundle evil-plugins)
+(el-get-bundle evil-leader)
+(el-get-bundle evil-matchit)
+(el-get-bundle evil-numbers)
+(el-get-bundle powerline-evil)
+(el-get-bundle evil-org-mode)
 
 (el-get-bundle bling/evil-visualstar)
 ;; (el-get-bundle justbur/evil-magit)

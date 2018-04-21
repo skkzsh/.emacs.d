@@ -124,3 +124,12 @@
 ;;        )
 ;;   (setq epg-gpg-program "gpg1")
 ;;   )
+
+;;;; .gpgと同様に.ascも透過的にGnuPG
+;; Decrypt
+;; (epa-file-enable)
+;; (setq epa-file-name-regexp "\\.gpg\\(~\\|\\.~[0-9]+~\\)?\\'\\|\\.asc")
+;; default: "\\.gpg\\(~\\|\\.~[0-9]+~\\)?\\'\\"
+;; (epa-file-name-regexp-update)
+;; Encrypt
+;; (setq epa-armor t)

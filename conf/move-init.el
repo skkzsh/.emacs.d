@@ -46,6 +46,7 @@
 
 ;---------------------------------------------------------------------------
 ;; dired
+(require 'dired-x)
 (require 'wdired)
 (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
 (if (executable-find "gls")
@@ -60,9 +61,9 @@
       (append '(
                 ("Changelog.*" . view-mode)
                 ("\\.log$"     . view-mode)
-                ("\\.aux$"     . view-mode)
-                ("\\.bbl$"     . view-mode)
-                ("\\.blg$"     . view-mode)
+                ;; ("\\.aux$"     . view-mode)
+                ;; ("\\.bbl$"     . view-mode)
+                ;; ("\\.blg$"     . view-mode)
                 ) auto-mode-alist))
 
 ;---------------------------------------------------------------------------

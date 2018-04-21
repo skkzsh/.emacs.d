@@ -76,12 +76,11 @@
    (cond
 
     ((string-match "zen" system-name)
-     (load "nt-monaco-init")
+     ;; (load "nt-monaco-init")
      (setq initial-frame-alist
            (append (list
-                     '(font . "fontset-MKMonaco")
-                     ;; '(font . "Migu 1M-11")
-                     ;; '(font . "Osaka−等幅-11")
+                     '(font . "Ricty Diminished-12")
+                     ;; '(font . "fontset-MKMonaco")
                      ;; '(width . 40)
                      '(height . 35)
                      ;; '(top . 40)

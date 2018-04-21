@@ -80,6 +80,23 @@
 (setq w32-hide-mouse-timeout 5000)
 
 ;---------------------------------------------------------------------------
+;;;; 日時表示
+(when (eq window-system 'ns)
+  ;; (setq display-time-format "%m/%d (%a) %H:%M")
+  ;; (setq display-time-format "%m/%d %H:%M")
+  (setq display-time-string-forms
+        '((format "%s/%s %s:%s"
+                  month day ;; dayname
+                  24-hours minutes
+                  ))
+        )
+  ;; (setq display-time-kawakami-form nil)
+  (setq display-time-day-and-date t)
+  (setq display-time-24hr-format t)
+  (display-time)
+  )
+
+;---------------------------------------------------------------------------
 ;;;; zone
 ;; (require 'zone)
 ;; (zone-when-idle 1200) ; ~秒Idleならzone

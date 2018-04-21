@@ -1,7 +1,9 @@
 ;;;; helm
 (require 'helm-config)
 (helm-mode 1)
-(helm-migemo-mode 1)
+(when (executable-find "cmigemo")
+  (helm-migemo-mode 1)
+  )
 
 ;;; Keybind
 ;; helm-command-prefix-key

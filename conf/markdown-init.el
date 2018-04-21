@@ -90,10 +90,22 @@
 ;---------------------------------------------------------------------------
 (add-hook 'markdown-mode-hook
            (lambda()
-             (define-key markdown-mode-map [tab] 'markdown-cycle)
+             ;; (define-key markdown-mode-map [tab] 'markdown-cycle)
              (define-key markdown-mode-map [shift tab] 'markdown-shifttab)
+             (define-key markdown-mode-map (kbd "C-S-i") 'markdown-shifttab)
              ;; (hide-sublevels 2)
+
+             (define-key markdown-mode-map (kbd "C-S-k") 'markdown-move-up)
+             (define-key markdown-mode-map (kbd "C-S-j") 'markdown-move-down)
+             (define-key markdown-mode-map (kbd "C-S-l") 'markdown-move-left)
+             (define-key markdown-mode-map (kbd "C-S-h") 'markdown-move-right)
+
+             (define-key markdown-mode-map (kbd "C-S-p") 'markdown-table-delete-row)
+             (define-key markdown-mode-map (kbd "C-S-n") 'markdown-table-insert-row)
+             (define-key markdown-mode-map (kbd "C-S-b") 'markdown-table-delete-column)
+             (define-key markdown-mode-map (kbd "C-S-f") 'markdown-table-insert-column)
              ))
+
 ;; (add-hook 'markdown-mode-hook
 ;;           '(lambda()
 ;;              (markdown-custom) ;; カスタム設定を使う場合

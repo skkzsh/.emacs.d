@@ -33,14 +33,20 @@
 (require 'evil-visualstar)
 (global-evil-visualstar-mode 1)
 
-;; (require 'powerline-evil)
+(require 'evil-numbers)
+(define-key evil-normal-state-map "+" #'evil-numbers/inc-at-pt)
+(define-key evil-normal-state-map "-" #'evil-numbers/dec-at-pt)
+
+(require 'powerline-evil)
 
 (require 'evil-org)
 (evil-define-key 'normal evil-org-mode-map
   (kbd "SPC") 'org-cycle
-  (kbd "RET") 'org-cycle
+  (kbd "TAB") 'org-cycle
   "zi" 'org-cycle
   "zI" 'org-global-cycle
+
+  (kbd "S-SPC") 'org-shifttab
 
   "zj" 'org-next-visible-heading
   "zk" 'org-previous-visible-heading

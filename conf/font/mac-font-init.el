@@ -1,70 +1,37 @@
-;; Hiragino Gothic, Osaka, Migu, Ricty, Rounded M+, Yasashisa
-;; Monaco, Menlo, Inconsolata
-
+;; Ricty, Migu, Rounded Mgen+
+;; Inconsolata
 
 (set-face-attribute 'default nil
-                    :family "Monaco"
-                    :height 140)
+                    :family "Ricty Diminished"
+                    :height 160)
 
-;; (set-face-attribute 'default nil
-;;                     :family "Menlo"
-;;                     :height 140)
-
-;; (set-face-attribute 'default nil
-;;                     :family "Ricty"
-;;                     :height 170)
-
-(if (version< emacs-version "24.4")
-
-    (progn
-      (set-fontset-font
-       (frame-parameter nil 'font)
-       'japanese-jisx0208
-       '("Hiragino Maru Gothic Pro" . "iso10646-1"))
-
-      (set-fontset-font
-       (frame-parameter nil 'font)
-       'japanese-jisx0212
-       '("Hiragino Maru Gothic Pro" . "iso10646-1"))
-
-      (set-fontset-font
-       (frame-parameter nil 'font)
-       'mule-unicode-0100-24ff
-       '("Monaco" . "iso10646-1"))
-
-      (setq face-font-rescale-alist
-            (add-to-list 'face-font-rescale-alist
-                         '(("^-apple-hiragino.*" . 1.2)
-                           (".*osaka-bold.*" . 1.2)
-                           (".*osaka-medium.*" . 1.2)
-                           (".*courier-bold-.*-mac-roman" . 1.0)
-                           (".*monaco cy-bold-.*-mac-cyrillic" . 0.9)
-                           (".*monaco-bold-.*-mac-roman" . 0.9)
-                           ("-cdac$" . 1.3)))
-            )
-      )
-
-  (progn
-    (set-fontset-font
-     (frame-parameter nil 'font)
-     'katakana-jisx0201
-     ;; (font-spec :family "Rounded M+ 1m" :size 16))
-     (font-spec :family "Hiragino Maru Gothic Pro" :size 16))
-
-    (set-fontset-font
-     (frame-parameter nil 'font)
-     'japanese-jisx0208
-     ;; (font-spec :family "Rounded M+ 1m" :size 16))
-    (font-spec :family "Hiragino Maru Gothic Pro" :size 16))
-
-    (set-fontset-font
-     (frame-parameter nil 'font)
-     'japanese-jisx0212
-     ;; (font-spec :family "Rounded M+ 1m" :size 16))
-    (font-spec :family "Hiragino Maru Gothic Pro" :size 16))
-    )
-
+(dolist (charset
+         '(
+           japanese-jisx0208
+           japanese-jisx0212
+           katakana-jisx0201  ; 半角ｶﾅ
+           ))
+  (set-fontset-font
+   (frame-parameter nil 'font)
+   charset
+   (font-spec :family "Ricty Diminished"))
   )
+
+;; (set-fontset-font
+;;   (frame-parameter nil 'font)
+;;   'japanese-jisx0208
+;;   (font-spec :family "Ricty Diminished" :size 16))
+
+;; (set-fontset-font
+;;   (frame-parameter nil 'font)
+;;   'japanese-jisx0212
+;;   (font-spec :family "Ricty Diminished" :size 16))
+
+;; (set-fontset-font
+;;   (frame-parameter nil 'font)
+;;   'katakana-jisx0201  ; 半角ｶﾅ
+;;   (font-spec :family "Ricty Diminished" :size 16))
+
 
 ;; (create-fontset-from-ascii-font
 ;;   "Monaco-14:weight=normal:slant=normal"

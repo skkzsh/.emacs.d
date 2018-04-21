@@ -1,8 +1,20 @@
 ;;;; Appearance Settings by Extensions
 ;---------------------------------------------------------------------------
+;;; powerline
+(powerline-evil-center-color-theme)
+
+;---------------------------------------------------------------------------
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 ;; (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
+
+;---------------------------------------------------------------------------
+; (require 'diminish)
+(diminish 'google-this-mode " G")
+(diminish 'undo-tree-mode "UT")
+(diminish 'abbrev-mode "Abv")
+(diminish 'global-whitespace-mode)
+;;(diminish 'evil-org-mode)
 
 ;---------------------------------------------------------------------------
 ;;;; fold-dwim / hideshow
