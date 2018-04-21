@@ -1,12 +1,7 @@
 # Install
 
 ```sh
-git clone git://github.com/skkzsh/.emacs.d.git
-```
-
-```el
-(auto-install-batch "sequential-command")
-(auto-install-batch "text translator")
+git clone https://github.com/skkzsh/.emacs.d.git
 ```
 
 # Update
@@ -15,3 +10,8 @@ git clone git://github.com/skkzsh/.emacs.d.git
 cd .emacs.d
 git pull origin master
 ```
+
+```el
+(el-get-update-all)
+```
+
