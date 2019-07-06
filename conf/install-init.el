@@ -1,5 +1,5 @@
 ;;;; Install Settings
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; ELPA
 
 (setq package-archives '(
@@ -10,7 +10,7 @@
                          ))
 ;; (package-initialize)
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; el-get
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
@@ -54,7 +54,7 @@
   (exec-path-from-shell-initialize)
   )
 
-(el-get-bundle auto-install)
+;; (el-get-bundle auto-install)
 ;; (el-get-bundle color-moccur)
 ;; (el-get-bundle expand-region)
 (el-get-bundle goto-chg)
@@ -67,22 +67,30 @@
 (el-get-bundle redo+)
 (el-get-bundle recentf-ext)
 (el-get-bundle summarye)
+;; (el-get-bundle col-highlight)
 ;; (el-get-bundle yahoo-weather)
 
 (el-get-bundle powerline)
 
 (el-get-bundle diminish)
 
-;; (el-get-bundle graphviz-dot-mode)
-(el-get-bundle visual-basic-mode)
-(el-get-bundle batch-mode)
-(el-get-bundle PowerShell-Mode)
+;; (when (executable-find "dot")
+;;   (el-get-bundle graphviz-dot-mode)
+;;   )
+(when (executable-find "plantuml")
+  (el-get-bundle plantuml-mode)
+  )
+;; (el-get-bundle visual-basic-mode)
+;; (el-get-bundle batch-mode)
+;; (el-get-bundle PowerShell-Mode)
 
 (el-get-bundle migemo)
 ;; (el-get-bundle gtags)
 (el-get-bundle undohist)
 
+(el-get-bundle flycheck)
 (el-get-bundle smart-compile+)
+
 (el-get-bundle emacswiki:csv-mode)
 (el-get-bundle sequential-command)
 (el-get-bundle sequential-command-config)
@@ -97,12 +105,12 @@
   ;; repo:
 ;;  )
 
-;; (el-get-bundle color-theme-molokai)
-;; (el-get-bundle color-theme)
-;; (el-get-bundle color-theme-tango)
-;; (el-get-bundle color-theme-solarized)
+;; color
+;; (el-get-bundle zenburn-theme)
+(el-get-bundle bbatsov/zenburn-emacs)
 
 (el-get-bundle auto-complete)
+;; (el-get-bundle company)
 (el-get-bundle fold-dwim)
 (el-get-bundle gist)
 
@@ -138,11 +146,21 @@
 
 ;; (el-get-bundle pymander/evernote-mode)
 
+;; (el-get-bundle lsp-mode)
+
 (el-get-bundle markdown-mode)
 
+;; Ruby
 ;; (el-get-bundle enhanced-ruby-mode)
 ;; (el-get-bundle ruby-block)
 ;; (el-get-bundle ruby-end)
+
+;; Web
+(el-get-bundle js2-mode)
+;; (el-get-bundle web-mode)
+;; (el-get-bundle tern-mode)
+;; (el-get-bundle tern-auto-complete)
+;; (el-get-bundle company-tern)
 
 (when (executable-find "terraform")
   (el-get-bundle terraform-mode)
@@ -205,20 +223,20 @@
 
 (package-initialize)
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; Cask
 ;; (require 'cask "~/.cask/cask.el")
 ;; (cask-initialize)
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; auto-install
 ;; Proxy 環境のWindowsでは?
 ;; (unless (eq system-type 'windows-nt)
-(require 'auto-install)
-(setq auto-install-directory "~/.emacs.d/auto-install")
+;; (require 'auto-install)
+;; (setq auto-install-directory "~/.emacs.d/auto-install")
 ;;  (auto-install-update-emacswiki-package-name t)
 ;;  (setq url-proxy-services '(("http" . "proxy:8080")))
-(auto-install-compatibility-setup) ; 互換性
+;; (auto-install-compatibility-setup) ; 互換性
 ;; )
 
 ;; ediffを1Windowで実行
