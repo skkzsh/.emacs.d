@@ -10,9 +10,7 @@
 (add-to-list 'load-path "~/.emacs.d/conf/font")
 
 (cond
-  ;;; Emacs23以上
-  ((and (eq window-system 'x)
-        (>= emacs-major-version 23))
+  ((eq window-system 'x)
    ;; (load "x-font-init")
 
    (cond
@@ -20,18 +18,18 @@
      ((string-match "^\\(over\\|box\\)" system-name)
       ;; TODO: Org ModeのTITLEが大きくならない.
       (setq initial-frame-alist
-            (append (list
-                      '(font . "Ricty-12")
-                      ;; '(font . "Osaka−等幅-12")
-                      ;; '(font . "fontset-MonacoMigu")
-                      ;; '(font . "fontset-MonacoRicty")
-                      ;; '(font . "fontset-RictySet")
-                      ;; '(font . "fontset-OsakaSet")
-                      ;; '(width . 40)
-                      '(height . 45)
-                      ;; '(top . 40)
-                      ;; '(left . 40)
-                      ;; '(line-spacing . 0)
+            (append '(
+                      (font . "Ricty-12")
+                      ;; (font . "Osaka−等幅-12")
+                      ;; (font . "fontset-MonacoMigu")
+                      ;; (font . "fontset-MonacoRicty")
+                      ;; (font . "fontset-RictySet")
+                      ;; (font . "fontset-OsakaSet")
+                      ;; (width . 40)
+                      (height . 45)
+                      ;; (top . 40)
+                      ;; (left . 40)
+                      ;; (line-spacing . 0)
                       )
                     initial-frame-alist))
       (setq default-frame-alist initial-frame-alist)
@@ -41,16 +39,19 @@
    )
 
   ;;; Mac
-  ((eq window-system 'ns)
+  ((or
+    (eq window-system 'mac)
+    (eq window-system 'ns)
+    )
    (load "mac-font-init")
    ;; (setq initial-frame-alist
-   ;;       (append (list
-   ;;                 '(font . "fontset-MonacoMarugo")
-   ;;                 ; '(width . 200)
-   ;;                 '(height . 45)
-   ;;                 ;; '(top . 40)
-   ;;                 ;; '(left . 40)
-   ;;                 ;; '(line-spacing . 0)
+   ;;       (append '(
+   ;;                 (font . "fontset-MonacoMarugo")
+   ;;                 ; (width . 200)
+   ;;                 (height . 45)
+   ;;                 ;; (top . 40)
+   ;;                 ;; (left . 40)
+   ;;                 ;; (line-spacing . 0)
    ;;                 )
    ;;               initial-frame-alist))
    ;; (setq default-frame-alist initial-frame-alist)
@@ -61,10 +62,10 @@
   ;;       (eq window-system 'w32))
   ;;  (load "meadow-font-init")
   ;;  (setq initial-frame-alist
-  ;;        (append (list
-  ;;                  ;; '(font . "MSG-Consolas")
-  ;;                  '(font . "Meiryo-Consolas")
-  ;;                  ;; '(line-spacing . 4)
+  ;;        (append '(
+  ;;                  ;; (font . "MSG-Consolas")
+  ;;                  (font . "Meiryo-Consolas")
+  ;;                  ;; (line-spacing . 4)
   ;;                  )
   ;;                initial-frame-alist))
   ;;  (setq default-frame-alist initial-frame-alist)
@@ -78,14 +79,14 @@
     ((string-match "zen" system-name)
      ;; (load "nt-monaco-init")
      (setq initial-frame-alist
-           (append (list
-                     '(font . "Ricty Diminished-12")
-                     ;; '(font . "fontset-MKMonaco")
-                     ;; '(width . 40)
-                     '(height . 35)
-                     ;; '(top . 40)
-                     ;; '(left . 40)
-                     ;; '(line-spacing . 0)
+           (append '(
+                     (font . "Ricty Diminished-12")
+                     ;; (font . "fontset-MKMonaco")
+                     ;; (width . 40)
+                     (height . 35)
+                     ;; (top . 40)
+                     ;; (left . 40)
+                     ;; (line-spacing . 0)
                      )
                    initial-frame-alist))
      (setq default-frame-alist initial-frame-alist)
@@ -94,13 +95,13 @@
     ((string-match "^[[:upper:]]+-[[:digit:]]+PC[[:digit:]]+$" system-name)
      (load "nt-font-init")
      (setq initial-frame-alist
-           (append (list
-                    '(font . "fontset-MSConsolas")
-                    ;; '(width . 75)
-                    '(height . 36)
-                    ;; '(top . 40)
-                    ;;'(left . 40)
-                    ;; '(line-spacing . 0)
+           (append '(
+                    (font . "fontset-MSConsolas")
+                    ;; (width . 75)
+                    (height . 36)
+                    ;; (top . 40)
+                    ;; (left . 40)
+                    ;; (line-spacing . 0)
                     )
                    initial-frame-alist))
      (setq default-frame-alist initial-frame-alist)
