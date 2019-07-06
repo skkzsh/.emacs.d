@@ -1,7 +1,7 @@
 ;;;; org-mode
 ;; TODO
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 
 ;; (add-to-list 'load-path "~/.emacs.d/bundle/org-mode/lisp")
 ;; (add-to-list 'load-path "~/.emacs.d/bundle/org-mode/contrib/lisp")
@@ -13,7 +13,7 @@
 ;;; 拡張子がorgのFileを開いた時, 自動的にorg-modeにする
 ;; (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; Keybind
 ;;; Global
 ;; (global-set-key (kbd "C-c r") 'org-remember)
@@ -25,7 +25,7 @@
 
 ;;; Org
 (add-hook 'org-mode-hook
-          (lambda()
+          (lambda ()
 
             (define-key org-mode-map (kbd "C-S-n") 'org-shiftcontroldown)
             (define-key org-mode-map (kbd "C-S-b") 'org-shiftcontrolleft)
@@ -60,7 +60,7 @@
             (define-key org-mode-map (kbd "C-c i") 'org-shifttab)
             ))
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;; 折り返し (nil: 有効, t:無効)
 (setq org-startup-truncated t)
 
@@ -75,7 +75,7 @@
 ;;; 見出しの余分な*を消す
 ;; (setq org-hide-leading-stars t)
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;; Memoを格納するOrg Fileの設定
 ;;; XXX: Prefix, Local Variable
 (if (eq system-type 'windows-nt)
@@ -143,7 +143,7 @@
 ;;; Agenda表示の対象File
 ;; (setq org-agenda-files (list org-directory))
 ;;; Agenda表示で下線を用いる
-;; (add-hook 'org-agenda-mode-hook '(lambda () (hl-line-mode 1)))
+;; (add-hook 'org-agenda-mode-hook (lambda () (hl-line-mode 1)))
 ;; (setq hl-line-face 'underline)
 ;;; 標準の祝日を利用しない
 ;; (setq calendar-holidays nil)
@@ -167,7 +167,7 @@
         ))
 
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; Open Applicaiton
 ;; Default
 ;; (
@@ -193,10 +193,10 @@
 ;;                          )))
 ;; )
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; Browser
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; HTML
 ;; Backgroundで変換
 ;; (setq org-export-run-in-background t)
@@ -220,7 +220,7 @@
 ;; )
 ;; )
             ;; ))
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; LaTeX
 ;; (require 'org-latex)
 (setq org-export-latex-coding-system 'euc-jp-unix)
@@ -258,7 +258,7 @@
 ;; (setq org-export-latex-inline-image-extensions nil)
 ;; (add-to-list 'org-export-latex-inline-image-extensions "eps")
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; babel
 ;; (eval-after-load "org"
 ;;                  '(progn
@@ -287,10 +287,10 @@
                              ;; (sed . t)
                              (emacs-lisp . t)
                              ;; (lisp . t)
-                             ;; (scheme . t)
-                             ;; (clojure . t)
                              (java . t)
                              ;; (dot . t)
+                             ;; (plantuml . t)
+                             ;; (css . t)
                              ;; (sql . t)
                              ;; (sqlite . t)
                              ;; (makefile . t)
@@ -299,11 +299,11 @@
                              ;; (gnuplot . t)
                              ))
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; S5
 ;; (load "org-export-as-s5")
 ;; (add-hook 'org-mode-hook
-;;            (lambda()
+;;            (lambda ()
 ;;              (define-key org-mode-map (kbd "C-c s") 'org-export-as-s5)
 ;;              ))
 
@@ -312,7 +312,7 @@
 ;; (setq org-s5-theme "railscast")
 ;; (setq org-s5-theme "i18n")
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; MobileOrg
 ;;; 同期するFile
 (when (file-directory-p org-directory)
