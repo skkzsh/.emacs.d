@@ -1,10 +1,10 @@
 ;;;; Edit Settings
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; CommentOut
 (setq comment-style 'multi-line) ; 複数行
 ;; (setq comment-style 'box)     ; BOX型
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;; TAB KeyによるIndentではModeを問わず空白を挿入
 (setq-default indent-tabs-mode nil)
 ;; (setq c-basic-offset 4)
@@ -16,13 +16,13 @@
 ;; (setq-default tab-stop-list
 ;;               '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; 矩形
 ;; TODO
 ;; (cua-mode t)
 ;; (setq cua-enable-cua-keys nil)
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; hippie-expand
 ;; TODO
 ;; (global-set-key "\C-o" 'hippie-expand)
@@ -37,11 +37,11 @@
 ;;         try-complete-lisp-symbol-partially
 ;;         try-complete-lisp-symbol))
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; 保存時にShebangがあれば, Change Mode +x
 ;; (add-hook
 ;;  'after-save-hook
-;;  '(lambda ()
+;;  (lambda ()
 ;;     (save-restriction
 ;;       (widen)
 ;;       (if (string= "#!" (buffer-substring 1 (min 3 (point-max))))
@@ -54,18 +54,18 @@
 
 (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; tags
 ;; TODO
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; Template
 (setq auto-insert-directory "~/.auto-insert")
 (auto-insert-mode t)
 (setq auto-insert-alist
       (append '(
                 ;; (c-mode            . "template.c")
-                ("\\.c$"           . "template.c")
+                ;; ("\\.c$"           . "template.c")
                 ;; ("\\.h$"           . "template.h")
                 ;; (c++-mode          . "template.cpp")
                 ;; ("\\.cpp$"         . "template.cpp")
@@ -74,15 +74,16 @@
                 (cperl-mode        . "template.pl")
                 (ruby-mode         . "template.rb")
                 (python-mode       . "template.py")
-                (yatex-mode        . "template.tex")
+                ;; (yatex-mode        . "template.tex")
                 (org-mode          . "template.org")
                 (markdown-mode     . "template.md")
                 (gfm-mode          . "template.md")
                 (powershell-mode   . "template.ps1")
                 (batch-mode        . "template.bat")
-                ) auto-insert-alist))
+                )
+              auto-insert-alist))
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; Time Stamp
 (require 'time-stamp)
 ;;; 保存時にTime-stamp
@@ -109,14 +110,14 @@
 (setq time-stamp-format "%:y/%02m/%02d %02H:%02M:%02S %Z")
 ;; (setq time-stamp-format " %:y/%02m/%02d %02H:%02M:%02S %Z")
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; Clipboard
 ;;; emacs -nwのYank -> Clipboardができない
 (when (eq window-system 'x)
   (setq x-select-enable-clipboard t)
   )
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; Use gpg1
 ;; (when (and
 ;;        (executable-find "gpg2")

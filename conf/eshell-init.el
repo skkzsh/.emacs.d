@@ -8,10 +8,9 @@
 
 ;; Keybind
 (add-hook 'eshell-mode-hook
-          '(lambda ()
-             (progn
-               (define-key eshell-mode-map "\C-a" 'eshell-bol)
-               )))
+          (lambda ()
+            (define-key eshell-mode-map "\C-a" 'eshell-bol)
+            ))
 
 ;; alias
 (eval-after-load "em-alias"

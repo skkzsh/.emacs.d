@@ -7,13 +7,10 @@
   (add-to-list 'load-path "~/.emacs.d/usr/share/emacs/site-lisp/w3m")
   (require 'w3m-load)
 
-  (cond
-   ((or
-     (eq system-type 'darwin)
-     (eq system-type 'windows-nt)
-     )
-    (setq w3m-command (executable-find "w3m")))
-   )
+  ;; (case system-type
+  ;;   ((darwin windows-nt)
+  ;;    (setq w3m-command (executable-find "w3m")))
+  ;;   )
 
 ;;;; Default Browser
 ;(setq browse-url-browser-function
@@ -32,77 +29,56 @@
 ;; 1.2
 ; (setq browse-url-mozilla-arguments '("-newwindow"))
 ;; 2
-(cond
 
-  ((eq system-type 'gnu/linux)
+  ;; (case system-type
 
-   (defun browse-url-opera (url)
-     (shell-command (format "opera '%s'" url)))
+  ;;  (gnu/linux
+  ;;   (defun browse-url-open (url)
+  ;;     (shell-command (format "xdg-open '%s'" url)))
+  ;;   )
+  ;;  (darwin
+  ;;   (defun browse-url-open (url)
+  ;;     (shell-command (format "open '%s'" url)))
+  ;;   )
+  ;;  (windows-nt
+  ;;   (defun browse-url-open (url)
+  ;;     (shell-command (format "start %s" url)))
+  ;;   )
+  ;;  )
 
-   (defun choose-browser (url &rest args)
-     (interactive "sURL: ")
-     (if (y-or-n-p "Use external browser ?")
-         (browse-url-opera url)
-       (w3m-browse-url url)
-       ))
-   )
+  ;; (defun choose-browser (url &rest args)
+  ;;   (interactive "sURL: ")
+  ;;   (if (y-or-n-p "Use external browser ?")
+  ;;       (browse-url-open url)
+  ;;     (w3m-browse-url url)
+  ;;     ))
 
-  ((eq system-type 'darwin)
-
-   (defun browse-url-open (url)
-     (shell-command (format "open '%s'" url)))
-
-   (defun choose-browser (url &rest args)
-     (interactive "sURL: ")
-     (if (y-or-n-p "Use external browser ?")
-         (browse-url-open url)
-       (w3m-browse-url url)
-       ))
-   )
-
-  ((eq system-type 'windows-nt)
-
-   ;; (defun browse-url-ie (url)
-   ;;   (shell-command (format "\"C:/Program Files/Internet Explorer/iexplore\" %s" url)))
-
-   (defun browse-url-ie (url)
-     (shell-command (format "start %s" url)))
-
-   (defun choose-browser (url &rest args)
-     (interactive "sURL: ")
-     (if (y-or-n-p "Use external browser ?")
-         (browse-url-start url)
-       (w3m-browse-url url)
-       ))
-   )
-
-  )
-)
+    )
 
 ;;;; Browserを選択
 ;; (setq browse-url-browser-function 'choose-browser)
 
 ;;;; Browserを指定
-(cond
+;; (case system-type
 
-  ((eq system-type 'gnu/linux)
-   (setq browse-url-browser-function
-         (lambda (url args)
-           (shell-command (format "opera '%s'" url))
-           )
-         )
-   )
+  ;; (gnu/linux
+  ;;  (setq browse-url-browser-function
+  ;;        (lambda (url args)
+  ;;          (shell-command (format "xdg-open '%s'" url))
+  ;;          )
+  ;;        )
+  ;;  )
 
-  ;; ((eq system-type 'darwin)
+  ;; (darwin
   ;;  (setq browse-url-browser-function 'browse-url-open)
   ;;  )
 
-  )
+  ;; )
 
 ;;;; w3mの外部Browser
 ;;;; 未完成
 ; (add-hook 'w3m-load-hook
-;         '(lambda ()
+;         (lambda ()
 ;            (setq browse-url-browser-function
-;                  'browse-url-opera)
+;                  'browse-url-open)
 ;            ))

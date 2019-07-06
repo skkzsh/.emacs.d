@@ -8,7 +8,7 @@
     "Junk File for Dropbox" ; XXX
     (interactive)
 
-    (let ((open-junk-file-format) (junk-prefix))
+    (let (open-junk-file-format junk-prefix)
 
       (if (eq system-type 'windows-nt)
         (setq junk-prefix (getenv "USERPROFILE"))

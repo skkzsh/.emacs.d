@@ -1,5 +1,5 @@
 ;;;; Edit Settings by Extensions
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; yasnippet
 (require 'yasnippet)
 (setq yas-snippet-dirs '(
@@ -17,7 +17,7 @@
 
 (setq yas/prompt-functions '(yas/dropdown-prompt))
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; Auto Complete
 ;; TODO
 (require 'auto-complete-config)
@@ -44,32 +44,33 @@
 
 ;; ***-mode にも対応
 (setq ac-modes
-      (append ac-modes
-              (list
-               'yatex-mode
-               'org-mode
-               )))
+      (append '(
+                ;; yatex-mode
+                org-mode
+                yaml-mode
+                )
+              ac-modes))
 
 ;;;; helm
 (require 'ac-helm)
 (global-set-key (kbd "C-:") 'ac-complete-with-helm)
 (define-key ac-complete-mode-map (kbd "C-:") 'ac-complete-with-helm)
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;; (require 'expand-region)
 ;; (global-set-key (kbd "C-@") 'er/expand-region)
 ;; (global-set-key (kbd "C-M-@") 'er/contract-region)
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; 矩形選択
 ;; TODO
 ;; (require 'sense-region)
 ;; (sense-region-on)
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; Lisp
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; LaTeX
 ;; (add-to-list 'load-path "~/.emacs.d/bundle/auto-complete-latex-light")
 ;; (require 'auto-complete-latex-light)

@@ -17,7 +17,7 @@
         (file-name-directory (executable-find "cmigemo"))
         )
 
-  (cond
+  (case system-type
     ;; ((executable-find "brew")
     ;;  (setq migemo-dictionary
     ;;        (concat
@@ -26,12 +26,11 @@
     ;;        )
     ;;  )
 
-    ((or (eq system-type 'gnu/linux)
-         (eq system-type 'darwin))
+    ((gnu/linux darwin)
      (setq migemo-dictionary "/usr/local/share/migemo")
      )
 
-    ((eq system-type 'windows-nt)
+    ((windows-nt)
      (setq migemo-dictionary
            (concat migemo-dictionary "/dict")
            )

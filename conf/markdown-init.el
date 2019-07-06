@@ -1,5 +1,5 @@
 ;;;; Markdown / GFM
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;; (autoload 'markdown-mode "markdown-mode.el"
 ;;   "Major mode for editing Markdonw files" t)
 (autoload 'gfm-mode "markdown-mode.el"
@@ -9,7 +9,7 @@
 ;; (autoload 'gfm-mode "gfm-mode"
 ;;           "Major mode for editing GitHub Flavored Markdown files" t)
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 (setq auto-mode-alist
       (append '(
                 ("\\.md$"       . gfm-mode) ; github
@@ -21,9 +21,10 @@
                 ("\\.mdown$"    . gfm-mode) ; Vim, github
                 ("\\.markdown$" . gfm-mode) ; Vim, github
                 ("README\\.md$" . gfm-mode)
-                ) auto-mode-alist))
+                )
+              auto-mode-alist))
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;; Markdown Command
 (cond
  ((executable-find "rdiscount")
@@ -83,15 +84,15 @@
 
  )
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;; (setq markdown-css-path "")
 ;; (setq markdown-xhtml-header-content "")
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 (add-hook 'markdown-mode-hook
-           (lambda()
+           (lambda ()
              ;; (define-key markdown-mode-map [tab] 'markdown-cycle)
-             (define-key markdown-mode-map [shift tab] 'markdown-shifttab)
+             (define-key markdown-mode-map [shift tab]   'markdown-shifttab)
              (define-key markdown-mode-map (kbd "C-S-i") 'markdown-shifttab)
              ;; (hide-sublevels 2)
 
@@ -107,12 +108,12 @@
              ))
 
 ;; (add-hook 'markdown-mode-hook
-;;           '(lambda()
+;;           (lambda ()
 ;;              (markdown-custom) ;; カスタム設定を使う場合
 ;;              (define-key markdown-mode-map [shift tab] 'markdown-shifttab)
 ;;              ))
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;; HTMLが存在すれば, 保存後にExport
 ;; TODO
 ;; (add-hook 'markdown-mode-hook

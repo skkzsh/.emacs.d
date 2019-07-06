@@ -1,17 +1,17 @@
 ;;;; Internet Settings
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; Search web
 (require 'search-web)
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; Google Search
 (require 'google-this)
 ;; (global-set-key (kbd "C-c g") 'google-this-mode-submap)
 ;; (setq google-this-location-suffix "co.jp")
 (google-this-mode 1)
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; Translator
 (require 'text-translator)
 (global-set-key (kbd "C-x M-t") 'text-translator)
@@ -24,7 +24,7 @@
 
 ;; google-translate
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; Weather
 ;;;; Yahoo
 ;;; TODO: Local Variable
@@ -35,7 +35,7 @@
 ;; 71 ; Osaka
 ;; 47 ; Kyoto
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; Wanderlust
 ;;; Debianではwlはapt-get install
 ;;; Macではgnutlsはbrew install
@@ -44,13 +44,14 @@
 ;;                           "~/.emacs.d/usr/share/emacs/site-lisp/flim"
 ;;                           "~/.emacs.d/usr/share/emacs/site-lisp/semi"
 ;;                           "~/.emacs.d/usr/share/emacs/site-lisp/wl"
-;;                           ) load-path))
+;;                           )
+;;                           load-path))
 
 ;; (autoload 'wl "wl" "Wanderlust" t)
 ;; (autoload 'wl-other-frame "wl" "Wanderlust on new frame." t)
 ;; (autoload 'wl-draft "wl-draft" "Write draft with Wanderlust." t)
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; Calendar
 ;; (require 'calfw) ; 初回一度だけ
 ;; (cfw:open-calendar-buffer) ; カレンダー表示
@@ -63,7 +64,7 @@
 
 ;; (require 'calfw-gcal)
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; Evernote
 ;;; Ruby
 ;; (require 'evernote-mode)
@@ -83,12 +84,12 @@
 ;; (global-set-key "\C-c e b" 'evernote-browser)
 ;; (global-set-key "\C-c e e" 'evernote-change-edit-mode)
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; Twitter
 ;; (setq twittering-account-authorization 'authorized)
 
 ;; (add-hook 'twittering-mode-hook
-;;           '(lambda ()
+;;           (lambda ()
 ;;              (define-key twittering-mode-map "\C-c h" 'twittering-home-timeline)
 ;;              (define-key twittering-mode-map "F" 'twittering-favorite)
 ;;              (define-key twittering-mode-map "R" 'twittering-native-retweet)

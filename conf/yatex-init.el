@@ -1,16 +1,16 @@
 ;;;; YaTeX
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;; (add-to-list 'load-path "~/.emacs.d/bundle/yatex")
 ;; (add-to-list 'Info-additional-directory-list "~/.emacs.d/bundle/yatex")
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;; 文字コードをEUC-JPに指定
 (setq YaTeX-kanji-code 3
       YaTeX-latex-message-code 'euc-jp
       )
 
 ;; 自動改行の無効
-(add-hook 'yatex-mode-hook'(lambda ()(setq auto-fill-function nil)))
+(add-hook 'yatex-mode-hook (lambda () (setq auto-fill-function nil)))
 
 ;; PrefixをWindowsに合わせる
 (setq YaTeX-inhibit-prefix-letter nil)
@@ -34,7 +34,8 @@
               ("\\.sty$" . yatex-mode)
               ("\\.clo$" . yatex-mode)
               ("\\.bbl$" . yatex-mode)
-              ) auto-mode-alist))
+              )
+            auto-mode-alist))
 (autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
 
 
@@ -45,12 +46,12 @@
 ;    (setq tex-command'("latexmk -dvi")))
 ;   )
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 
-(cond
+(case system-type
 
   ;;;; Mac
-  ((eq system-type 'darwin)
+  (darwin
    ;(setq YaTeX-use-AMS-LaTeX t)
    (setq tex-command "platex -kanji=euc")
    ;; (setq dvi2-command "open -a Mxdvi")
@@ -60,7 +61,7 @@
    )
 
   ;;;; Windows
-  ((eq system-type 'windows-nt)
+  (windows-nt
    (setq tex-command "platex -kanji=euc")
    (setq dvi2-command "dviout")
    (setq bibtex-command "jbibtex")
