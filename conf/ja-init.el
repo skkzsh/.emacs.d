@@ -1,5 +1,5 @@
 ;;;; Japanese Settings
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; メニューを日本語化
 ;; (if (and (= emacs-major-version 22)
 ;;          (eq window-system 'x))
@@ -11,7 +11,7 @@
 ;;   (when (require 'menu-tree nil t))
 ;;   )
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 ;;;; 日本語環境設定
 (set-language-environment "Japanese")
 
@@ -43,7 +43,7 @@
 
 ;; TODO mode-hook
 
-;---------------------------------------------------------------------------
+;;---------------------------------------------------------------------------
 (cond
   ;;;; Linux
   ((eq system-type 'gnu/linux)
@@ -67,18 +67,34 @@
    )
 
   ;;;; Mac
-  ;; FIXME
-  ((eq window-system 'ns)
+  (
+   (eq window-system 'mac)
+   ;; (mac-input-source) ; 確認
+
+   ;; TODO
+   ;; 日本語確定時にカーソルを非表示にする（カーソル表示位置の安定化）
+   ;; 変換語指定時にカーソルをオフにする．復帰後のカーソルタイプを指定すると発動．
+   ;; (setq mac-win-ime-cursor-type 'box)
+
+   ;; C-xするときに自動で日本語入力無効
+   (mac-auto-ascii-mode 1)
+   )
+
+  (
+   (eq window-system 'ns)
+   ;; 日本語入力時のちらつき対策
+   (setq redisplay-dont-pause nil)
    ;; (mac-get-current-input-source) ; 確認
+
    ;; ことえりが起動してしまう!!
    ;; (setq default-input-method "MacOSX")
    ;;; Google IME
-   ;; (mac-set-input-method-parameter "com.google.inputmethod.Japanese.base" `title "漢")
+   ;; (mac-set-input-method-parameter "com.google.inputmethod.Japanese.base" `title "あ")
    ;; (mac-set-input-method-parameter "com.google.inputmethod.Japanese.base" `cursor-type `box)
    ;; (mac-set-input-method-parameter "com.google.inputmethod.Japanese.base" `cursor-color "Magenta")
    ;;; Shift Key有効化
    ;; (mac-add-key-passed-to-system 'shift)
-     )
+   )
 
   ;;;; Windows
   ((eq window-system 'w32)
@@ -90,7 +106,7 @@
    (w32-ime-initialize)
    ;;; バッファ切り替え時にIME状態を引き継ぐ
    ;; (setq w32-ime-buffer-switch-p nil)
-     )
+   )
   )
 
 ;; mini bufferに移動した際は最初に日本語入力が無効な状態にする
