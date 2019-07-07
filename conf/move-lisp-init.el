@@ -85,6 +85,6 @@
 
 ;;---------------------------------------------------------------------------
 ;;;; recentf
-;; (setq recentf-max-saved-items 10000)
 ;; (require 'recentf-ext)
+(setq recentf-max-saved-items 1000)
 

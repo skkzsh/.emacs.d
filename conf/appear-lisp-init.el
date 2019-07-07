@@ -4,12 +4,15 @@
 (powerline-evil-center-color-theme)
 
 ;;---------------------------------------------------------------------------
-(require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 ;; (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
 
+
 ;;---------------------------------------------------------------------------
-; (require 'diminish)
+;; (add-hook 'after-init-hook 'global-color-identifiers-mode)
+
+;;---------------------------------------------------------------------------
+;; (require 'diminish)
 (diminish 'google-this-mode " G")
 (diminish 'undo-tree-mode "UT")
 (diminish 'abbrev-mode "Abv")
@@ -19,15 +22,15 @@
 ;;---------------------------------------------------------------------------
 ;;;; fold-dwim / hideshow
 ;; TODO
-; (require 'hideshow)
+;; (require 'hideshow)
 (require 'fold-dwim)
-; (autoload 'fold-dwim-toggle
-;         "fold-dwim"
-;         "try to show any hidden text at the cursor" t)
-; (autoload 'fold-dwim-hide-all
-;         "fold-dwim" "hide all folds in the buffer" t)
-; (autoload 'fold-dwim-show-all
-;         "fold-dwim" "show all folds in the buffer" t)
+;; (autoload 'fold-dwim-toggle
+;;         "fold-dwim"
+;;         "try to show any hidden text at the cursor" t)
+;; (autoload 'fold-dwim-hide-all
+;;         "fold-dwim" "hide all folds in the buffer" t)
+;; (autoload 'fold-dwim-show-all
+;;         "fold-dwim" "show all folds in the buffer" t)
 ;; 機能を利用するMajor Mode一覧
 (dolist (hook '(
                 emacs-lisp-mode-hook
@@ -41,9 +44,9 @@
   )
 
 ;; Key Bind
-; (key-chord-define-global "vi" 'fold-dwim-toggle)
-; (key-chord-define-global "vo" 'fold-dwim-show-all)
-; (key-chord-define-global "vc" 'fold-dwim-hide-all)
+;; (key-chord-define-global "vi" 'fold-dwim-toggle)
+;; (key-chord-define-global "vo" 'fold-dwim-show-all)
+;; (key-chord-define-global "vc" 'fold-dwim-hide-all)
 
 ;;---------------------------------------------------------------------------
 ;; cursor列highlight
