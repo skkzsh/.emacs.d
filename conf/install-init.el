@@ -56,10 +56,10 @@
 
 ;; (el-get-bundle auto-install)
 ;; (el-get-bundle color-moccur)
-;; (el-get-bundle expand-region)
+(el-get-bundle expand-region)
 (el-get-bundle goto-chg)
 (el-get-bundle htmlize)
-(el-get-bundle key-chord)
+;; (el-get-bundle key-chord)
 (el-get-bundle lispxmp)
 ;; (el-get-bundle menu-tree)
 (el-get-bundle open-junk-file)
@@ -89,11 +89,17 @@
 (el-get-bundle undohist)
 
 (el-get-bundle flycheck)
+;; (el-get-bundle flycheck-pos-tip)
+;; (el-get-bundle flycheck-inline)
+;; (el-get-bundle flycheck-popup-tip)
+
 (el-get-bundle smart-compile+)
 
+;; (el-get-bundle color-identifiers-mode)
+
 (el-get-bundle emacswiki:csv-mode)
-(el-get-bundle sequential-command)
-(el-get-bundle sequential-command-config)
+;; (el-get-bundle sequential-command)
+;; (el-get-bundle sequential-command-config)
 (el-get-bundle emacswiki:text-translator)
 (el-get-bundle emacswiki:text-translator-vars)
 (el-get-bundle emacswiki:text-translator-load)
@@ -129,6 +135,7 @@
 (el-get-bundle ace-jump-mode)
 (el-get-bundle avy)
 (el-get-bundle ace-isearch)
+;; (el-get-bundle ace-window)
 
 (el-get-bundle tomoya/search-web.el)
 (el-get-bundle google-this)
@@ -171,6 +178,9 @@
 ;;   )
 
 (el-get-bundle magit)
+;; (el-get-bundle git-gutter)
+(el-get-bundle git-gutter-fringe)
+;; (el-get-bundle git-gutter-fringe+)
 
 (el-get-bundle org-mode)
 ;; (el-get-bundle org-mode
@@ -195,8 +205,9 @@
 ;; if evil exists
 ;; (el-get-bundle evil-plugins)
 (el-get-bundle evil-leader)
-(el-get-bundle evil-matchit)
 (el-get-bundle evil-numbers)
+(el-get-bundle evil-matchit)
+(el-get-bundle evil-surround)
 (el-get-bundle powerline-evil)
 (el-get-bundle evil-org-mode)
 

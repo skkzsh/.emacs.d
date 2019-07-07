@@ -1,38 +1,5 @@
 ;;;; Programming Languages Settings
 ;;---------------------------------------------------------------------------
-;;;; Compile
-;; TODO
-(setq compilation-window-height 12) ;; デフォルトは画面の下半分
-;; mode-compile.el
-; (autoload 'mode-compile "mode-compile"
-;   "Command to compile current buffer file based on the major mode" t)
-; (global-set-key "\C-c c" 'mode-compile)
-; (autoload 'mode-compile-kill "mode-compile"
-;   "Command to kill a compilation launched by `mode-compile'" t)
-; (global-set-key "\C-c k" 'mode-compile-kill)
-
-;; smart-compile.el
-; (require 'smart-compile)
-; (global-set-key "\C-c c" 'smart-compile)
-
-
-;; flycheck
-;; (global-flycheck-mode)
-;; (add-hook 'after-init-hook #'global-flycheck-mode)
-(dolist (hook '(
-                ;; yaml-mode-hook
-                xml-mode-hook
-                html-mode-hook
-                css-mode-hook
-                js-mode-hook
-                ;; markdown-mode-hook
-                ;; sh-mode-hook
-                sql-mode-hook
-                ))
-  (add-hook hook 'flycheck-mode)
-  )
-
-;;---------------------------------------------------------------------------
 ;;;; Ruby, Perl, Python
 ;; (when (require 'rcodetools nil t)
 ;;   (add-hook 'ruby-mode-hook

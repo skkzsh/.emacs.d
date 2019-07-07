@@ -1,24 +1,74 @@
 ;;;; Development Settings
 ;;---------------------------------------------------------------------------
+;;;; Compile
+;; TODO
+(setq compilation-window-height 12) ;; デフォルトは画面の下半分
+;; mode-compile.el
+; (autoload 'mode-compile "mode-compile"
+;   "Command to compile current buffer file based on the major mode" t)
+; (global-set-key "\C-c c" 'mode-compile)
+; (autoload 'mode-compile-kill "mode-compile"
+;   "Command to kill a compilation launched by `mode-compile'" t)
+; (global-set-key "\C-c k" 'mode-compile-kill)
+
+;; smart-compile.el
+; (require 'smart-compile)
+; (global-set-key "\C-c c" 'smart-compile)
+
+
+;; flycheck
+;; (global-flycheck-mode)
+;; (add-hook 'after-init-hook #'global-flycheck-mode)
+(dolist (hook '(
+                ;; yaml-mode-hook
+                xml-mode-hook
+                html-mode-hook
+                css-mode-hook
+                js-mode-hook
+                ;; markdown-mode-hook
+                ;; sh-mode-hook
+                sql-mode-hook
+                ))
+  (add-hook hook 'flycheck-mode)
+  )
+
+;; (with-eval-after-load 'flycheck
+;;   (flycheck-pos-tip-mode))
+;; (with-eval-after-load 'flycheck
+;;   (add-hook 'flycheck-mode-hook #'flycheck-inline-mode))
+;; (with-eval-after-load 'flycheck
+;;   '(add-hook 'flycheck-mode-hook 'flycheck-popup-tip-mode))
+
+;;---------------------------------------------------------------------------
 ;;;; Magit
 ;; (require 'magit)
+;; (setq magit-diff-refine-hunk 'all)
 
 ;;---------------------------------------------------------------------------
 ;;;; Git gutter
 
-;; (add-to-list 'load-path "~/.emacs.d/bundle/emacs-git-gutter")
 ;; (require 'git-gutter)
-;; (global-git-gutter-mode t)
+(require 'git-gutter-fringe)
+;; (require 'git-gutter-fringe+)
+
+(global-git-gutter-mode t)
+;; (git-gutter:linum-setup)
+
+;; (global-git-gutter+-mode)
+
 ;; (setq git-gutter:modified-sign "  ")
 ;; (setq git-gutter:added-sign "++")
 ;; (setq git-gutter:deleted-sign "--")
-;; (set-face-background 'git-gutter:added    "green")
-;; (set-face-background 'git-gutter:deleted  "yellow")
-;; (set-face-background 'git-gutter:modified "magenta")
-;; (setq git-gutter:window-width 2)
 
-;; (add-to-list 'load-path "~/.emacs.d/bundle/emacs-git-gutter-fringe")
-;; (require 'git-gutter-fringe)
+;; (set-face-foreground 'git-gutter:modified "yellow")
+;; (set-face-foreground 'git-gutter:added    "blue")
+;; (set-face-foreground 'git-gutter:deleted  "white")
+
+(set-face-foreground 'git-gutter-fr:modified "yellow")
+(set-face-foreground 'git-gutter-fr:added    "blue")
+(set-face-foreground 'git-gutter-fr:deleted  "white")
+
+;; (setq git-gutter:window-width 2)
 
 ;;---------------------------------------------------------------------------
 ;;;; HTML
@@ -57,7 +107,6 @@
 
 ;;---------------------------------------------------------------------------
 ;;;; YAML
-(require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
 ;;---------------------------------------------------------------------------

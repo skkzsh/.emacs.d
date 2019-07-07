@@ -1,10 +1,11 @@
 ;;;; Evil
 ;;---------------------------------------------------------------------------
-(require 'evil)
 (evil-mode 1)
 
 ;;; Keyboard
 (define-key evil-normal-state-map ";" 'ace-jump-mode)
+(define-key evil-normal-state-map "\M-k" 'er/expand-region)
+(define-key evil-normal-state-map "\M-j" 'er/contract-region)
 
 ;;; Cursor
 (setq evil-default-cursor 'bar
@@ -22,15 +23,8 @@
 ;;           )
 
 ;;---------------------------------------------------------------------------
-;; (require 'evil-mode-line)
-
-(require 'evil-leader)
 (global-evil-leader-mode 1)
-
-(require 'evil-matchit)
 (global-evil-matchit-mode 1)
-
-(require 'evil-visualstar)
 (global-evil-visualstar-mode 1)
 
 (require 'evil-numbers)
