@@ -77,26 +77,18 @@
 ;;; 現在行をHighlight
 ;;; 色指定
 (defface my-hlline-face
-  (if window-system
-
-      '((((class color) (background dark))
-         (:background "gray30"))
-        (((class color) (background light))
-         (:background "gray30"))
-        (t ()))
-
-    '((((class color) (background dark))
-       (:background "LightGray"))
-      (((class color) (background light))
-       (:background "LightGray"))
-      (t ()))
-
-    )
+  '((((class color) (background dark))
+     (:background "gray30"))
+    (((class color) (background light))
+     (:background "gray30"))
+    (t ()))
   "*Face used by hl-line.")
 
-(setq hl-line-face 'my-hlline-face)
-;;; 下線
-;; (setq hl-line-face 'underline)
+(if window-system
+    (setq hl-line-face 'my-hlline-face)
+  (setq hl-line-face 'underline) ; 下線
+  )
+
 ;;; 有効
 (global-hl-line-mode)
 
@@ -167,3 +159,16 @@
       ;; )
     ;; )
 
+
+;;---------------------------------------------------------------------------
+;;; diff表示
+;; (set-face-attribute 'diff-refine-changed nil
+;;                     :foreground nil
+;;                     :background nil
+;;                     :weight 'bold
+;;                     :inverse-video t
+;;                     )
+
+;; (defun diff-mode-refine-automatically ()
+;;   (diff-auto-refine-mode t))
+;; (add-hook 'diff-mode-hook 'diff-mode-refine-automatically)
